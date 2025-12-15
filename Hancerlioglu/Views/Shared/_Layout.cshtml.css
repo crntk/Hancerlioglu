@@ -1,0 +1,326 @@
+﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #8b4513;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #d4a574;
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #8b4513 0%, #d4a574 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+  border: none;
+}
+
+.border-top {
+  border-top: 2px solid rgba(212, 165, 116, 0.3) !important;
+}
+
+.border-bottom {
+  border-bottom: 2px solid rgba(212, 165, 116, 0.3) !important;
+}
+
+.box-shadow {
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15) !important;
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Footer - Modern Glassmorphism Tasarım */
+.footer {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  background: rgba(240, 255, 240, 0.25) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 2px solid rgba(60, 179, 113, 0.5);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  margin-top: 50px;
+  padding: 20px 0;
+  color: #5c4033;
+  animation: slideUp 0.6s ease-out;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(60, 179, 113, 0.7) 20%,
+    rgba(46, 139, 87, 0.7) 35%,
+    rgba(72, 209, 204, 0.7) 50%,
+    rgba(50, 205, 50, 0.7) 65%,
+    rgba(85, 107, 47, 0.7) 80%,
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer-footer 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer-footer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 50%, rgba(60, 179, 113, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 50%, rgba(46, 139, 87, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 0%, rgba(72, 209, 204, 0.08) 0%, transparent 50%);
+  animation: footerGlow 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes footerGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer .container::after {
+  display: none;
+}
+
+.footer a {
+  color: #8b4513;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, 
+    rgba(60, 179, 113, 0.9) 0%, 
+    rgba(46, 139, 87, 0.9) 50%,
+    rgba(72, 209, 204, 0.9) 100%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.footer a:hover {
+  color: #5c4033;
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+.footer .text-muted {
+  color: #8b4513 !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+  .footer {
+    line-height: 1.6;
+    padding: 25px 0;
+  }
+  
+  .footer .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .footer .container > * {
+    margin: 5px 0;
+  }
+}
+
+/* Header Stilleri */
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Main Content Area */
+main {
+  min-height: calc(100vh - 200px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Container için ek stil */
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animasyonlu Arka Plan - Güçlendirilmiş Versiyon */
+body {
+  position: relative !important;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 30%, #fff8f0 60%, #ffe8d6 100%) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 15s ease infinite !important;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Yüzen Dekoratif Şekiller - body::after */
+body::after {
+  content: '' !important;
+  position: fixed !important;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 214, 153, 0.20) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(139, 69, 19, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(212, 165, 116, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 70% 20%, rgba(255, 214, 153, 0.15) 0%, transparent 50%) !important;
+  animation: floatBackground 25s ease-in-out infinite !important;
+  z-index: -1 !important;
+  pointer-events: none;
+}
+
+@keyframes floatBackground {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(-8%, -8%) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(8%, 8%) rotate(180deg) scale(1);
+  }
+  75% {
+    transform: translate(-5%, 5%) rotate(270deg) scale(1.05);
+  }
+}
+
+/* Ek Hareketli Parçacıklar - body::before override */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 165, 116, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(255, 214, 153, 0.12) 0%, transparent 35%),
+    radial-gradient(circle at 30% 60%, rgba(139, 69, 19, 0.10) 0%, transparent 35%),
+    radial-gradient(circle at 60% 40%, rgba(212, 165, 116, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(255, 214, 153, 0.10) 0%, transparent 35%) !important;
+  background-size: 250% 250%, 200% 200%, 280% 280%, 220% 220%, 240% 240% !important;
+  background-position: 0% 0%, 100% 100%, 50% 50%, 20% 80%, 80% 20% !important;
+  animation: particleMove 20s ease-in-out infinite !important;
+  z-index: -2 !important;
+  pointer-events: none;
+}
+
+@keyframes particleMove {
+  0%, 100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%, 20% 80%, 80% 20%;
+  }
+  25% {
+    background-position: 25% 25%, 75% 75%, 30% 70%, 40% 60%, 60% 40%;
+  }
+  50% {
+    background-position: 100% 100%, 0% 0%, 30% 70%, 80% 20%, 20% 80%;
+  }
+  75% {
+    background-position: 75% 75%, 25% 25%, 70% 30%, 60% 40%, 40% 60%;
+  }
+}

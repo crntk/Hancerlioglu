@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hancerlioglu</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Hancerlioglu.styles.css" asp-append-version="true" />
+    <style>
+        /* Animasyonlu Arka Plan - Doğrudan HTML'e eklendi */
+        body {
+            position: relative !important;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 30%, #fff8f0 60%, #ffe8d6 100%) !important;
+            background-size: 400% 400% !important;
+            animation: gradientShift 12s ease infinite !important;
+        }
+
+        @@keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Yüzen Dekoratif Şekiller - Koyu Yeşil Tonları */
+        body::after {
+            content: '' !important;
+            position: fixed !important;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 5% 10%, rgba(60, 179, 113, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 95% 90%, rgba(46, 139, 87, 0.16) 0%, transparent 50%),
+                radial-gradient(circle at 5% 90%, rgba(34, 139, 34, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 95% 10%, rgba(72, 209, 204, 0.17) 0%, transparent 50%),
+                radial-gradient(circle at 10% 50%, rgba(50, 205, 50, 0.14) 0%, transparent 50%),
+                radial-gradient(circle at 90% 50%, rgba(85, 107, 47, 0.16) 0%, transparent 50%),
+                radial-gradient(circle at 3% 30%, rgba(107, 142, 35, 0.13) 0%, transparent 50%),
+                radial-gradient(circle at 97% 70%, rgba(60, 179, 113, 0.15) 0%, transparent 50%) !important;
+            animation: floatBackground 25s ease-in-out infinite !important;
+            z-index: -1 !important;
+            pointer-events: none;
+        }
+
+        @@keyframes floatBackground {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translate(-8%, -8%) rotate(90deg) scale(1.1);
+            }
+            50% {
+                transform: translate(8%, 8%) rotate(180deg) scale(1);
+            }
+            75% {
+                transform: translate(-6%, 6%) rotate(270deg) scale(1.08);
+            }
+        }
+
+        /* Hareketli Parçacıklar - Koyu Yeşil Tonları */
+        body::before {
+            content: '' !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 2% 15%, rgba(60, 179, 113, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 98% 85%, rgba(46, 139, 87, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 2% 85%, rgba(34, 139, 34, 0.13) 0%, transparent 40%),
+                radial-gradient(circle at 98% 15%, rgba(72, 209, 204, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 8% 50%, rgba(50, 205, 50, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 92% 50%, rgba(85, 107, 47, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 4% 70%, rgba(107, 142, 35, 0.11) 0%, transparent 40%),
+                radial-gradient(circle at 96% 30%, rgba(60, 179, 113, 0.13) 0%, transparent 40%) !important;
+            background-size: 350% 350%, 320% 320%, 380% 380%, 340% 340%, 360% 360%, 330% 330%, 370% 370%, 350% 350% !important;
+            background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%, 0% 50%, 100% 50%, 0% 70%, 100% 30% !important;
+            animation: particleMove 20s ease-in-out infinite !important;
+            z-index: -2 !important;
+            pointer-events: none;
+        }
+
+        @@keyframes particleMove {
+            0%, 100% {
+                background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%, 0% 50%, 100% 50%, 0% 70%, 100% 30%;
+            }
+            25% {
+                background-position: 12% 12%, 88% 88%, 8% 92%, 92% 8%, 8% 48%, 92% 52%, 5% 75%, 95% 25%;
+            }
+            50% {
+                background-position: 25% 25%, 75% 75%, 15% 85%, 85% 15%, 15% 45%, 85% 55%, 10% 80%, 90% 20%;
+            }
+            75% {
+                background-position: 18% 18%, 82% 82%, 12% 88%, 88% 12%, 12% 49%, 88% 51%, 8% 75%, 92% 25%;
+            }
+        }
+
+        /* Amblemin üzerine gelmemesi için z-index */
+        .logo-container, .logo-img {
+            position: relative !important;
+            z-index: 10 !important;
+        }
+
+        .container, main {
+            position: relative !important;
+            z-index: 5 !important;
+        }
+
+        /* Tema Değiştirme Butonu */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(60, 179, 113, 0.3);
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(60, 179, 113, 0.3);
+            border-color: rgba(60, 179, 113, 0.6);
+        }
+
+        .theme-toggle svg {
+            width: 28px;
+            height: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        /* Dark Mode Stilleri */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #1a1a2e 60%, #16213e 100%) !important;
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: rgba(26, 26, 46, 0.9);
+            border-color: rgba(60, 179, 113, 0.5);
+        }
+
+        body.dark-mode .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        body.dark-mode .theme-toggle .moon-icon {
+            display: block;
+        }
+
+        body.dark-mode .container,
+        body.dark-mode main {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .footer {
+            background: rgba(26, 26, 46, 0.3) !important;
+            color: #e0e0e0 !important;
+            border-top: 2px solid rgba(60, 179, 113, 0.4);
+        }
+
+        body.dark-mode .footer a {
+            color: #90ee90 !important;
+        }
+
+        body.dark-mode .footer .text-muted {
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-mode .category-card,
+        body.dark-mode .dessert-card {
+            background: rgba(30, 30, 50, 0.8) !important;
+            border-color: rgba(60, 179, 113, 0.3) !important;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .category-name,
+        body.dark-mode .card-title {
+            color: #90ee90 !important;
+        }
+
+        body.dark-mode .category-desc,
+        body.dark-mode .card-text {
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-mode h1,
+        body.dark-mode h2 {
+            color: #90ee90 !important;
+        }
+
+        body.dark-mode .btn-dark {
+            background: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%) !important;
+            border: none;
+        }
+
+        @@media (max-width: 768px) {
+            .theme-toggle {
+                width: 50px;
+                height: 50px;
+                top: 15px;
+                right: 15px;
+            }
+
+            .theme-toggle svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Tema Değiştirme Butonu -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Tema Değiştir">
+            <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-4 5a1 1 0 100 2h1a1 1 0 100-2h-1zm-6 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm12-1a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-5-4a1 1 0 100-2H9a1 1 0 100 2h1zM7 10a1 1 0 011-1h1a1 1 0 110 2H8a1 1 0 01-1-1zm14 0a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM17.657 5.343a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zm-12.728 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM5.343 14.657a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zm12.728 0a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414z"></path>
+            </svg>
+            <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+        </button>
+      @*   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hancerlioglu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> *@
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - HANÇERLİOĞLU
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Tema Değiştirme Fonksiyonu
+        (function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            
+            // LocalStorage'dan tema tercihini oku
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            
+            // Sayfa yüklendiğinde tema tercihini uygula
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+            }
+            
+            // Tema değiştirme butonuna tıklama
+            themeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                
+                // Tema tercihini LocalStorage'a kaydet
+                const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+            });
+        })();
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,300 @@
+﻿@{
+    ViewData["Title"] = "Baklavacı Menüsü";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #fff8f0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* MENÜ Başlık Stili (Amblemdeki altın/sarı tonlarına uyumlu) */
+    .menu-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        font-size: 4rem;
+        background: linear-gradient(135deg, #d4a574 0%, #f5c76a 40%, #ffdf91 70%, #d4a574 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 4px 10px rgba(212, 165, 116, 0.6);
+        letter-spacing: 3px;
+        margin-bottom: 2rem;
+        animation: titleGlow 3s ease-in-out infinite;
+        position: relative;
+    }
+
+    @@keyframes titleGlow {
+        0%, 100% {
+            filter: drop-shadow(0 0 10px rgba(60, 179, 113, 0.3));
+        }
+        50% {
+            filter: drop-shadow(0 0 20px rgba(60, 179, 113, 0.5));
+        }
+    }
+
+    /* Favoriler Başlık Stili - MENÜ ile aynı altın tonlarında, daha küçük */
+    .favorites-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        font-size: 2.5rem;
+        background: linear-gradient(135deg, #d4a574 0%, #f5c76a 40%, #ffdf91 70%, #d4a574 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 4px 10px rgba(212, 165, 116, 0.6);
+        letter-spacing: 3px;
+        margin-bottom: 2rem;
+        animation: titleGlow 3s ease-in-out infinite;
+        position: relative;
+    }
+
+    @@media (max-width: 768px) {
+        .menu-title {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        .favorites-title {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .menu-title {
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .favorites-title {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+    }
+
+    .category-card {
+        border-radius: 20px;
+        overflow: hidden;
+        transition: 0.3s;
+        cursor: pointer;
+        background: #fff3e0;
+        border: 2px solid #ffd699;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+        .category-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+    .category-img {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        border: 3px solid #ffd699;
+    }
+
+    h1 {
+        color: #b35d17;
+    }
+
+    .category-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #8b4513;
+    }
+
+    .category-desc {
+        font-size: 1rem;
+        color: #6b3e26;
+    }
+
+    /* Responsive düzenleme */
+    @@media (max-width: 992px) {
+        .category-card
+
+    {
+        margin-bottom: 25px;
+    }
+
+    }
+
+    @@media (max-width: 768px) {
+        .category-card img,
+        .dessert-card img {
+            height: 200px;
+        }
+
+        .category-name {
+            font-size: 1.3rem;
+        }
+
+        .category-desc {
+            font-size: 0.9rem;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .category-card {
+            padding: 12px;
+        }
+
+        .category-card img,
+        .dessert-card img {
+            height: 180px;
+        }
+
+        .category-name {
+            font-size: 1.2rem;
+        }
+
+        .category-desc {
+            font-size: 0.85rem;
+        }
+    }
+
+    /* Tüm Fotoğraflar için Standart Boyut */
+    .category-card img,
+    .dessert-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 15px;
+        display: block;
+    }
+
+    /* Logo/Amblem Stilleri */
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 20px 0;
+    }
+
+    .logo-img {
+        max-width: 280px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 15px rgba(139, 69, 19, 0.3));
+        transition: all 0.4s ease;
+    }
+
+    .logo-img:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 6px 20px rgba(139, 69, 19, 0.5));
+    }
+
+    /* Responsive Logo */
+    @@media (max-width: 768px) {
+        .logo-img {
+            max-width: 220px;
+        }
+    }
+
+    @@media (max-width: 576px) {
+        .logo-img {
+            max-width: 180px;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+            padding: 15px 0;
+        }
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="logo-container">
+        <img alt="HANÇERLİOĞLU" src="https://static.ticimax.cloud/71939//uploads/editoruploads/kalitelissdsd.png" class="logo-img">
+    </div>
+    <h1 class="text-center menu-title">MENÜ</h1>
+    <div class="row g-4 justify-content-center">
+
+        <!-- Baklava -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <a href="/Home/Baklava" class="text-decoration-none">
+                <div class="category-card">
+                    <img src="~/resimler/baklava.jpg" />
+                    <div class="category-name">Baklava</div>
+                    <div class="category-desc">Şöbiyet-Midye-Havuç Dilim ...</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Künefe -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <a href="/Home/Kunefe" class="text-decoration-none">
+				<div class="category-card">
+                    <img src="~/resimler/künefe.jpg" />
+                    <div class="category-name">Künefe</div>
+                    <div class="category-desc">Klasik - Hasır </div>
+                </div>
+            </a>
+        </div>
+        <!-- Kadayıf -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <a href="/Home/Kadayif" class="text-decoration-none">
+                <div class="category-card">
+                    <img src="~/resimler/kadayıf.jpg" />
+                    <div class="category-name">Diğer</div>
+                    <div class="category-desc">Kadayıf - Kerebiç</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4 favorites-title">Favoriler</h2>
+    <div class="row g-4 justify-content-center">
+
+        <!-- Favori 1 -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="card dessert-card text-center" style="padding:10px;">
+				<img src="~/resimler/midye.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size:1.1rem;">Midye Baklava</h5>
+                    <p class="card-text" style="font-size:0.9rem;">..açıklama ...</p>
+                 
+                </div>
+            </div>
+        </div>
+
+        <!-- Favori 2 -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="card dessert-card text-center" style="padding:10px;">
+				<img src="~/resimler/künefe.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size:1.1rem;">Künefe</h5>
+                    <p class="card-text" style="font-size:0.9rem;">..açıklama ...</p>
+                 
+                </div>
+            </div>
+        </div>
+
+        <!-- Favori 3 -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="card dessert-card text-center" style="padding:10px;">
+				<img src="~/resimler/kadayıf.jpg" />
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size:1.1rem;">Kadayıf</h5>
+                    <p class="card-text" style="font-size:0.9rem;">..açıklama ...</p>
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
