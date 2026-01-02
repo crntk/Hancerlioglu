@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Hancerlioglu.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,20 +13,38 @@ namespace Hancerlioglu.Controllers
             _logger = logger;
         }
 
+        [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any, VaryByHeader = "User-Agent")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any, VaryByHeader = "User-Agent")]
         public IActionResult Baklava()
         {
             return View();
         }
+
+        [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any, VaryByHeader = "User-Agent")]
         public IActionResult Kadayif()
         {
             return View();
         }
+
+        [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any, VaryByHeader = "User-Agent")]
         public IActionResult Kunefe()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any, VaryByHeader = "User-Agent")]
+        public IActionResult Icecekler()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any, VaryByHeader = "User-Agent")]
+        public IActionResult AnaSayfa()
         {
             return View();
         }

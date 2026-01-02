@@ -1,127 +1,446 @@
 ﻿@{
-    ViewData["Title"] = "Baklava Çeşitleri";
+    ViewData["Title"] = "Baklava Çeşitleri - HANÇERLİOĞLU";
 }
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 
 <style>
     body {
         background-color: #fff8f0;
-        font-family: 'Segoe UI', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
 
-    .dessert-card {
-        border-radius: 15px;
-        overflow: hidden;
-        transition: 0.3s;
-        background: #fff3e0;
-        border: 1px solid #ffd699;
+    .page-header {
+        background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(139, 69, 19, 0.15) 100%);
+        padding: 50px 0;
+        margin-bottom: 50px;
+        border-bottom: 3px solid rgba(212, 165, 116, 0.3);
+        animation: fadeIn 0.8s ease;
+    }
+
+    .page-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        font-size: 3.5rem;
+        text-align: center;
+        color: #8b4513;
         margin-bottom: 20px;
+        position: relative;
+        animation: slideDown 0.8s ease;
     }
 
-        .dessert-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        .page-title::after {
+            content: '🥐';
+            margin-left: 15px;
         }
 
-    .dessert-card img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 15px;
-        display: block;
-    }
-
-    .badge {
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #8b4513 0%, #d4a574 100%);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 5px 20px rgba(139, 69, 19, 0.3);
+        border: none;
         font-size: 1rem;
     }
 
-    @@media (max-width: 768px) {
-        .dessert-card img {
-            height: 200px;
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(139, 69, 19, 0.4);
+            background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+            color: white;
         }
 
-        .badge {
-            font-size: 0.9rem;
+        .back-button::before {
+            content: '←';
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
         }
+
+        .back-button:hover::before {
+            transform: translateX(-5px);
+        }
+
+    @@keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+    }
+
+    @@keyframes slideDown {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    /* Ürün Kartları */
+    .product-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: white;
+        border: none;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        animation: fadeInUp 0.8s ease backwards;
+    }
+
+        .product-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .product-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .product-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .product-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .product-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .product-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+    @@keyframes fadeInUp {
+        from
+
+    {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    .product-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 18px 50px rgba(139, 69, 19, 0.25);
+    }
+
+    .product-img-container {
+        position: relative;
+        overflow: hidden;
+        height: 280px;
+    }
+
+    .product-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .product-card:hover .product-img {
+        transform: scale(1.15);
+    }
+
+    .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-card:hover .product-overlay {
+        opacity: 1;
+    }
+
+    .view-details {
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: rgba(212, 165, 116, 0.9);
+        padding: 12px 30px;
+        border-radius: 25px;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .product-card:hover .view-details {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .product-content {
+        padding: 25px;
+        text-align: center;
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #8b4513;
+        margin-bottom: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .product-card:hover .product-title {
+        color: #d4a574;
+    }
+
+    .price-badge {
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+        .price-badge.premium {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        }
+
+        .price-badge.standard {
+            background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+        }
+
+        .price-badge.special {
+            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+            color: #333;
+        }
+
+    .product-card:hover .price-badge {
+        transform: scale(1.1);
+    }
+
+    /* Best Seller Badge */
+    .bestseller-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+        color: white;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        z-index: 10;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        animation: pulse 2s ease infinite;
+    }
+
+    @@keyframes pulse {
+        0%, 100%
+
+    {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .page-title
+
+    {
+        font-size: 2.5rem;
+    }
+
+    .page-header {
+        padding: 35px 0;
+        margin-bottom: 35px;
+    }
+
+    .product-img-container {
+        height: 240px;
+    }
+
+    .product-title {
+        font-size: 1.3rem;
+    }
+
+    .price-badge {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
     }
 
     @@media (max-width: 576px) {
-        .dessert-card img {
-            height: 180px;
-        }
+        .page-title
 
-        .badge {
-            font-size: 0.8rem;
-        }
+    {
+        font-size: 2rem;
+    }
+
+    .product-img-container {
+        height: 220px;
+    }
+
+    .product-content {
+        padding: 20px;
+    }
+
+    .back-button {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+
     }
 </style>
 
-<div class="container mt-4">
-    <h1 class="text-center mb-4">Baklava Çeşitleri</h1>
-    <a href="/Home/Index" class="btn btn-dark mb-3">← Ana Menüye Dön</a>
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">Baklava Çeşitleri</h1>
+        <div class="text-center">
+            <a href="/Home/Index" class="back-button">Ana Menüye Dön</a>
+        </div>
+    </div>
+</div>
 
+<div class="container mb-5">
     <div class="row g-4 justify-content-center">
 
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card ">
-                <img src="~/resimler/fıstıklı b.jpg" />
-                <div class="card-body text-center">
-                    <h5 class="card-title">Fıstıklı Baklava</h5>
-                    <span class="badge bg-success">1200 ₺</span>
+        <!-- Fıstıklı Baklava -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card">
+                <span class="bestseller-badge">ÇOK SATAN</span>
+                <div class="product-img-container">
+                    <img src="~/resimler/fıstıklı b.jpg" class="product-img" alt="Fıstıklı Baklava">
+                    <div class="product-overlay">
+                        <span class="view-details">Detayları Gör</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h5 class="product-title">Fıstıklı Baklava</h5>
+                    <span class="price-badge standard">1200 ₺</span>
                 </div>
             </div>
         </div>
 
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card">
-                <img src="https://images.unsplash.com/photo-1588167059847-b2db2f85c29e" />
-                <div class="card-body text-center">
-                    <h5 class="card-title">Fıstıklı Soğuk Baklava</h5>
-                    <span class="badge bg-success">1000 ₺</span>
+        <!-- Fıstıklı Soğuk Baklava -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1588167059847-b2db2f85c29e" class="product-img" alt="Fıstıklı Soğuk Baklava">
+                    <div class="product-overlay">
+                        <span class="view-details">Detayları Gör</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h5 class="product-title">Fıstıklı Soğuk Baklava</h5>
+                    <span class="price-badge standard">1000 ₺</span>
                 </div>
             </div>
         </div>
 
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card">
-                <img src="~/resimler/baklava.jpg" />
-                <div class="card-body text-center">
-                    <h5 class="card-title">Cevizli Baklava</h5>
-                    <span class="badge bg-warning text-dark">800 ₺</span>
+        <!-- Cevizli Baklava -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="~/resimler/baklava.jpg" class="product-img" alt="Cevizli Baklava">
+                    <div class="product-overlay">
+                        <span class="view-details">Detayları Gör</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h5 class="product-title">Cevizli Baklava</h5>
+                    <span class="price-badge special">800 ₺</span>
                 </div>
             </div>
         </div>
 
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card">
-                <img src="~/resimler/şöbiyet.jpg" />
-                <div class="card-body text-center">
-                    <h5 class="card-title">Şöbiyet</h5>
-                    <span class="badge bg-danger">1300 ₺</span>
+        <!-- Şöbiyet -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card">
+                <span class="bestseller-badge">ÖZEL</span>
+                <div class="product-img-container">
+                    <img src="~/resimler/şöbiyet.jpg" class="product-img" alt="Şöbiyet">
+                    <div class="product-overlay">
+                        <span class="view-details">Detayları Gör</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h5 class="product-title">Şöbiyet</h5>
+                    <span class="price-badge premium">1300 ₺</span>
                 </div>
             </div>
         </div>
 
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card">
-                <img src="~/resimler/midye.jpg" />
-                <div class="card-body text-center">
-                    <h5 class="card-title">Midye Baklava</h5>
-                    <span class="badge bg-danger">1300 ₺</span>
+        <!-- Midye Baklava -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card">
+                <span class="bestseller-badge">POPÜLER</span>
+                <div class="product-img-container">
+                    <img src="~/resimler/midye.jpg" class="product-img" alt="Midye Baklava">
+                    <div class="product-overlay">
+                        <span class="view-details">Detayları Gör</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card">
-                <img src="~/resimler/havucdilimi.jpg" />
-                <div class="card-body text-center">
-                    <h5 class="card-title">Havuç Dilim Baklava</h5>
-                    <span class="badge bg-danger">1200 ₺</span>
+                <div class="product-content">
+                    <h5 class="product-title">Midye Baklava</h5>
+                    <span class="price-badge premium">1300 ₺</span>
                 </div>
             </div>
         </div>
 
-    
+        <!-- Havuç Dilim Baklava -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="~/resimler/havucdilimi.jpg" class="product-img" alt="Havuç Dilim Baklava">
+                    <div class="product-overlay">
+                        <span class="view-details">Detayları Gör</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h5 class="product-title">Havuç Dilim Baklava</h5>
+                    <span class="price-badge standard">1200 ₺</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

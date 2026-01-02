@@ -1,300 +1,625 @@
 ﻿@{
-    ViewData["Title"] = "Baklavacı Menüsü";
+    ViewData["Title"] = "HANÇERLİOĞLU - Dijital Menü";
 }
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        background-color: #fff8f0;
-        font-family: 'Segoe UI', sans-serif;
+    * {
+    margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    /* MENÜ Başlık Stili (Amblemdeki altın/sarı tonlarına uyumlu) */
-    .menu-title {
+    body {
+   background-color: #fff8f0;
         font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    }
+
+    /* Hero Section - Logo ve Başlık */
+    .hero-section {
+        position: relative;
+        padding: 60px 0 40px;
+   text-align: center;
+     background: linear-gradient(135deg, rgba(255, 248, 240, 0.9) 0%, rgba(255, 232, 214, 0.9) 100%);
+    border-bottom: 3px solid rgba(212, 165, 116, 0.3);
+        margin-bottom: 50px;
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+    align-items: center;
+        margin-bottom: 30px;
+        animation: fadeInDown 1s ease;
+    }
+
+    .logo-img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+     object-fit: contain;
+        filter: drop-shadow(0 8px 25px rgba(139, 69, 19, 0.25));
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+        .logo-img:hover {
+   transform: scale(1.08) rotate(2deg);
+       filter: drop-shadow(0 12px 35px rgba(139, 69, 19, 0.4));
+        }
+
+    .menu-title {
+        font-family: 'Playfair Display', serif;
         font-weight: 900;
-        font-size: 4rem;
+    font-size: 4.5rem;
         background: linear-gradient(135deg, #d4a574 0%, #f5c76a 40%, #ffdf91 70%, #d4a574 100%);
-        -webkit-background-clip: text;
+    -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-shadow: 0 4px 10px rgba(212, 165, 116, 0.6);
+ letter-spacing: 8px;
+     margin-bottom: 15px;
+        animation: titleGlow 3s ease-in-out infinite, fadeInUp 1s ease;
+      position: relative;
+        text-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+    }
+
+    .menu-subtitle {
+        font-size: 1.3rem;
+        color: #8b4513;
+font-weight: 400;
         letter-spacing: 3px;
-        margin-bottom: 2rem;
-        animation: titleGlow 3s ease-in-out infinite;
-        position: relative;
+      opacity: 0.8;
+        animation: fadeInUp 1.2s ease;
+    }
+
+    @@keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+
+    @@keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     @@keyframes titleGlow {
-        0%, 100% {
-            filter: drop-shadow(0 0 10px rgba(60, 179, 113, 0.3));
-        }
-        50% {
-            filter: drop-shadow(0 0 20px rgba(60, 179, 113, 0.5));
-        }
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(212, 165, 116, 0.4)); }
+        50% { filter: drop-shadow(0 0 25px rgba(212, 165, 116, 0.7)); }
     }
 
-    /* Favoriler Başlık Stili - MENÜ ile aynı altın tonlarında, daha küçük */
-    .favorites-title {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 900;
-        font-size: 2.5rem;
-        background: linear-gradient(135deg, #d4a574 0%, #f5c76a 40%, #ffdf91 70%, #d4a574 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: 0 4px 10px rgba(212, 165, 116, 0.6);
-        letter-spacing: 3px;
-        margin-bottom: 2rem;
-        animation: titleGlow 3s ease-in-out infinite;
+    /* Kategori Kartları */
+    .category-section {
+        margin-bottom: 80px;
+    }
+
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        font-size: 3rem;
+        text-align: center;
+        color: #8b4513;
+        margin-bottom: 50px;
         position: relative;
-    }
+        animation: fadeInUp 1s ease;
+ }
 
-    @@media (max-width: 768px) {
-        .menu-title {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+        .section-title::after {
+      content: '';
+position: absolute;
+        bottom: -15px;
+            left: 50%;
+    transform: translateX(-50%);
+  width: 120px;
+            height: 4px;
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);
+            border-radius: 2px;
         }
-
-        .favorites-title {
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-        }
-    }
-
-    @@media (max-width: 576px) {
-        .menu-title {
-            font-size: 2rem;
-            letter-spacing: 1px;
-        }
-
-        .favorites-title {
-            font-size: 1.4rem;
-            letter-spacing: 1px;
-        }
-    }
 
     .category-card {
-        border-radius: 20px;
+        position: relative;
+border-radius: 25px;
         overflow: hidden;
-        transition: 0.3s;
-        cursor: pointer;
-        background: #fff3e0;
-        border: 2px solid #ffd699;
-        text-align: center;
-        padding: 15px;
-        margin-bottom: 20px;
-    }
+   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+cursor: pointer;
+        background: #ffffff;
+ border: none;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+animation: fadeInUp 0.8s ease backwards;
+  }
 
-        .category-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .category-card::before {
+          content: '';
+   position: absolute;
+            top: 0;
+            left: 0;
+ right: 0;
+            bottom: 0;
+   background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            opacity: 0;
+transition: opacity 0.4s ease;
+       z-index: 1;
         }
 
-    .category-img {
-        height: 150px;
-        width: 150px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 10px;
-        border: 3px solid #ffd699;
+        .category-card:hover::before { opacity: 1; }
+
+        .category-card:hover {
+         transform: translateY(-15px) scale(1.02);
+          box-shadow: 0 20px 60px rgba(139, 69, 19, 0.25);
+  }
+
+    .category-img-container {
+ position: relative;
+  overflow: hidden;
+        height: 280px;
     }
 
-    h1 {
-        color: #b35d17;
+    .category-img {
+        width: 100%;
+  height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+    .category-card:hover .category-img {
+        transform: scale(1.15) rotate(2deg);
+    }
+
+    .category-overlay {
+        position: absolute;
+        top: 0;
+    left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .category-card:hover .category-overlay { opacity: 1; }
+
+    .category-content {
+  padding: 25px;
+ position: relative;
+     z-index: 2;
     }
 
     .category-name {
-        font-size: 1.5rem;
-        font-weight: bold;
+font-size: 1.8rem;
+   font-weight: 700;
         color: #8b4513;
+        margin-bottom: 10px;
+  transition: color 0.3s ease;
     }
+
+    .category-card:hover .category-name { color: #d4a574; }
 
     .category-desc {
         font-size: 1rem;
         color: #6b3e26;
+ line-height: 1.6;
+        opacity: 0.9;
     }
 
-    /* Responsive düzenleme */
-    @@media (max-width: 992px) {
-        .category-card
-
-    {
-        margin-bottom: 25px;
+    .category-badge {
+ position: absolute;
+        top: 20px;
+        right: 20px;
+    background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+ color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+   font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        z-index: 3;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        animation: pulse 2s ease infinite;
     }
 
+    @@keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
     }
 
-    @@media (max-width: 768px) {
-        .category-card img,
-        .dessert-card img {
-            height: 200px;
-        }
-
-        .category-name {
-            font-size: 1.3rem;
-        }
-
-        .category-desc {
-            font-size: 0.9rem;
-        }
+    /* Fiyat Bilgilendirme Bölümü */
+ .price-info-section {
+        background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(255, 223, 145, 0.1) 100%);
+        border: 3px solid rgba(212, 165, 116, 0.3);
+        border-radius: 25px;
+        padding: 35px;
+        margin: 0 20px 60px;
+   text-align: center;
+  box-shadow: 0 10px 40px rgba(139, 69, 19, 0.15);
+        animation: fadeInUp 0.8s ease;
+    position: relative;
+      overflow: hidden;
     }
 
-    @@media (max-width: 576px) {
-        .category-card {
-            padding: 12px;
-        }
-
-        .category-card img,
-        .dessert-card img {
-            height: 180px;
-        }
-
-        .category-name {
-            font-size: 1.2rem;
-        }
-
-        .category-desc {
-            font-size: 0.85rem;
-        }
+    .price-info-section::before {
+   content: '💰';
+        position: absolute;
+   font-size: 5rem;
+    opacity: 0.05;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
-    /* Tüm Fotoğraflar için Standart Boyut */
-    .category-card img,
-    .dessert-card img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 15px;
-        display: block;
+    .price-info-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        animation: bounce 2s ease infinite;
     }
 
-    /* Logo/Amblem Stilleri */
-    .logo-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    @@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .price-info-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 800;
+     color: #8b4513;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+  .price-info-text {
+font-size: 1.3rem;
+        color: #6b3e26;
+        font-weight: 600;
+     line-height: 1.8;
+    position: relative;
+        z-index: 1;
+    }
+
+    .price-info-text .price-highlight {
+        color: #d4a574;
+        font-weight: 800;
+        font-size: 1.5rem;
+   text-shadow: 2px 2px 4px rgba(212, 165, 116, 0.3);
+    }
+
+ /* Favoriler Bölümü */
+    .favorites-section {
+     background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 248, 240, 0.8) 100%);
+        padding: 60px 0;
+        border-radius: 30px;
+      margin: 0 20px 50px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .favorites-title {
+     font-family: 'Playfair Display', serif;
+        font-weight: 800;
+    font-size: 2.8rem;
+        text-align: center;
+        color: #8b4513;
+      margin-bottom: 50px;
+        position: relative;
+    }
+
+        .favorites-title::before {
+            content: '⭐';
+       position: absolute;
+         left: 50%;
+ transform: translateX(-50%);
+       top: -40px;
+        font-size: 2rem;
+         animation: rotate 3s linear infinite;
+        }
+
+    @@keyframes rotate {
+        from { transform: translateX(-50%) rotate(0deg); }
+        to { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    .favorite-card {
+        border-radius: 20px;
+        overflow: hidden;
+        background: white;
+    border: none;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         margin-bottom: 30px;
-        padding: 20px 0;
-    }
+        animation: fadeInUp 0.8s ease backwards;
+ }
 
-    .logo-img {
-        max-width: 280px;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        filter: drop-shadow(0 4px 15px rgba(139, 69, 19, 0.3));
-        transition: all 0.4s ease;
-    }
+        .favorite-card:nth-child(1) { animation-delay: 0.2s; }
+        .favorite-card:nth-child(2) { animation-delay: 0.3s; }
+        .favorite-card:nth-child(3) { animation-delay: 0.4s; }
 
-    .logo-img:hover {
-        transform: scale(1.05);
-        filter: drop-shadow(0 6px 20px rgba(139, 69, 19, 0.5));
-    }
-
-    /* Responsive Logo */
-    @@media (max-width: 768px) {
-        .logo-img {
-            max-width: 220px;
+  .favorite-card:hover {
+       transform: translateY(-10px);
+          box-shadow: 0 15px 45px rgba(139, 69, 19, 0.2);
         }
+
+    .favorite-img {
+        width: 100%;
+        height: 220px;
+    object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .favorite-card:hover .favorite-img { transform: scale(1.1); }
+
+    .favorite-card .card-body { padding: 20px; }
+
+    .favorite-card .card-title {
+    font-size: 1.4rem;
+      font-weight: 700;
+        color: #8b4513;
+        margin-bottom: 10px;
+    }
+
+    .favorite-card .card-text {
+  font-size: 0.95rem;
+        color: #6b3e26;
+        line-height: 1.5;
+    }
+
+    /* Responsive Tasarım */
+    @@media (max-width: 992px) {
+        .menu-title { font-size: 3.5rem; letter-spacing: 5px; }
+        .section-title { font-size: 2.5rem; }
+        .price-info-title { font-size: 1.7rem; }
+        .price-info-text { font-size: 1.1rem; }
+    }
+
+    @@media (max-width: 768px) {
+    .hero-section { padding: 40px 0 30px; }
+        .logo-img { max-width: 220px; }
+        .menu-title { font-size: 2.8rem; letter-spacing: 3px; }
+.menu-subtitle { font-size: 1rem; letter-spacing: 2px; }
+   .section-title { font-size: 2rem; }
+   .favorites-title { font-size: 2.2rem; }
+        .category-img-container { height: 220px; }
+        .category-name { font-size: 1.5rem; }
+        .category-desc { font-size: 0.9rem; }
+        .price-info-section { padding: 25px; margin: 0 15px 50px; }
+        .price-info-title { font-size: 1.5rem; }
+        .price-info-text { font-size: 1rem; }
+        .price-info-text .price-highlight { font-size: 1.2rem; }
     }
 
     @@media (max-width: 576px) {
-        .logo-img {
-            max-width: 180px;
-        }
-        
-        .logo-container {
-            margin-bottom: 20px;
-            padding: 15px 0;
-        }
+        .menu-title { font-size: 2.2rem; letter-spacing: 2px; }
+        .section-title { font-size: 1.8rem; margin-bottom: 35px; }
+      .favorites-title { font-size: 1.8rem; }
+        .category-img-container { height: 200px; }
+   .category-content { padding: 20px; }
+        .favorites-section { margin: 0 10px 40px; padding: 40px 0; }
+        .price-info-section { padding: 20px; margin: 0 10px 40px; }
+        .price-info-icon { font-size: 2.5rem; }
+        .price-info-title { font-size: 1.3rem; }
+        .price-info-text { font-size: 0.95rem; }
+        .price-info-text .price-highlight { font-size: 1.1rem; }
+ }
+
+    /* Link Stilleri */
+    a { text-decoration: none; color: inherit; }
+    a:hover { color: inherit; }
+
+    /* Dark Mode Stilleri */
+    body.dark-mode .category-card {
+        background: rgba(30, 30, 50, 0.8);
+   border: 1px solid rgba(60, 179, 113, 0.3);
+    }
+
+    body.dark-mode .category-card:hover {
+        box-shadow: 0 20px 60px rgba(60, 179, 113, 0.4);
+        border-color: rgba(60, 179, 113, 0.5);
+    }
+
+    body.dark-mode .category-name {
+        color: #90ee90;
+    }
+
+    body.dark-mode .category-desc {
+        color: #b0b0b0;
+    }
+
+    body.dark-mode .category-badge {
+        background: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%);
+    }
+
+    body.dark-mode .price-info-section {
+        background: linear-gradient(135deg, rgba(60, 179, 113, 0.15) 0%, rgba(46, 139, 87, 0.15) 100%);
+        border: 3px solid rgba(60, 179, 113, 0.4);
+    }
+
+    body.dark-mode .price-info-title {
+        color: #90ee90;
+    }
+
+    body.dark-mode .price-info-text {
+ color: #b0b0b0;
+    }
+
+    body.dark-mode .price-info-text .price-highlight {
+   color: #90ee90;
+    }
+
+    body.dark-mode .favorites-section {
+        background: linear-gradient(135deg, rgba(26, 26, 46, 0.6) 0%, rgba(22, 33, 62, 0.6) 100%);
+    }
+
+    body.dark-mode .favorite-card {
+  background: rgba(30, 30, 50, 0.8);
+        border: 1px solid rgba(60, 179, 113, 0.3);
+    }
+
+    body.dark-mode .favorite-card:hover {
+ box-shadow: 0 15px 45px rgba(60, 179, 113, 0.3);
+  }
+
+    body.dark-mode .favorite-card .card-title {
+        color: #90ee90;
+    }
+
+    body.dark-mode .favorite-card .card-text {
+    color: #b0b0b0;
+    }
+
+    body.dark-mode .section-title,
+    body.dark-mode .favorites-title {
+ color: #90ee90;
+    }
+
+ body.dark-mode .section-title::after {
+        background: linear-gradient(90deg, transparent, #90ee90, transparent);
     }
 </style>
 
-<div class="container mt-5">
-    <div class="logo-container">
-        <img alt="HANÇERLİOĞLU" src="https://static.ticimax.cloud/71939//uploads/editoruploads/kalitelissdsd.png" class="logo-img">
+<div class="hero-section">
+    <div class="container">
+        <div class="logo-container">
+            <img alt="HANÇERLİOĞLU" src="https://static.ticimax.cloud/71939//uploads/editoruploads/kalitelissdsd.png" class="logo-img">
+        </div>
+     <h1 class="menu-title">MENÜ</h1>
+        <p class="menu-subtitle">Geleneksel Lezzetler</p>
     </div>
-    <h1 class="text-center menu-title">MENÜ</h1>
+</div>
+
+<div class="container category-section">
+    <h2 class="section-title">Kategoriler</h2>
     <div class="row g-4 justify-content-center">
 
-        <!-- Baklava -->
-        <div class="col-10 col-sm-6 col-md-4">
-            <a href="/Home/Baklava" class="text-decoration-none">
-                <div class="category-card">
-                    <img src="~/resimler/baklava.jpg" />
-                    <div class="category-name">Baklava</div>
-                    <div class="category-desc">Şöbiyet-Midye-Havuç Dilim ...</div>
-                </div>
+  <!-- Baklava -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <a href="/Home/Baklava">
+              <div class="category-card">
+      <div class="category-badge">POPÜLER</div>
+            <div class="category-img-container">
+         <img src="~/resimler/baklava.jpg" class="category-img" alt="Baklava" loading="lazy">
+         <div class="category-overlay"></div>
+    </div>
+         <div class="category-content">
+       <div class="category-name">🥐 Baklava</div>
+              <div class="category-desc">Fıstıklı, Cevizli, Şöbiyet, Midye, Havuç Dilim ve daha fazlası...</div>
+      </div>
+            </div>
             </a>
         </div>
 
         <!-- Künefe -->
-        <div class="col-10 col-sm-6 col-md-4">
-            <a href="/Home/Kunefe" class="text-decoration-none">
-				<div class="category-card">
-                    <img src="~/resimler/künefe.jpg" />
-                    <div class="category-name">Künefe</div>
-                    <div class="category-desc">Klasik - Hasır </div>
-                </div>
-            </a>
-        </div>
-        <!-- Kadayıf -->
-        <div class="col-10 col-sm-6 col-md-4">
-            <a href="/Home/Kadayif" class="text-decoration-none">
+ <div class="col-12 col-md-6 col-lg-3">
+            <a href="/Home/Kunefe">
+            <div class="category-card">
+      <div class="category-badge">SICAK SERVİS</div>
+    <div class="category-img-container">
+            <img src="~/resimler/künefe.jpg" class="category-img" alt="Künefe" loading="lazy">
+       <div class="category-overlay"></div>
+    </div>
+    <div class="category-content">
+             <div class="category-name">🔥 Künefe</div>
+     <div class="category-desc">Klasik ve Hasır künefe çeşitleri, sıcak servis ile...</div>
+            </div>
+            </div>
+    </a>
+   </div>
+
+        <!-- Kadayıf & Diğer -->
+        <div class="col-12 col-md-6 col-lg-3">
+       <a href="/Home/Kadayif">
                 <div class="category-card">
-                    <img src="~/resimler/kadayıf.jpg" />
-                    <div class="category-name">Diğer</div>
-                    <div class="category-desc">Kadayıf - Kerebiç</div>
-                </div>
-            </a>
+           <div class="category-badge">ÖZEL</div>
+       <div class="category-img-container">
+              <img src="~/resimler/kadayıf.jpg" class="category-img" alt="Kadayıf" loading="lazy">
+    <div class="category-overlay"></div>
         </div>
-    </div>
-</div>
-<div class="container mt-5">
-    <h2 class="text-center mb-4 favorites-title">Favoriler</h2>
-    <div class="row g-4 justify-content-center">
+         <div class="category-content">
+        <div class="category-name">✨ Diğer</div>
+             <div class="category-desc">Fıstıklı Kadayıf, Kerebiç ve özel tatlılarımız...</div>
+ </div>
+         </div>
+    </a>
+      </div>
 
-        <!-- Favori 1 -->
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card text-center" style="padding:10px;">
-				<img src="~/resimler/midye.jpg" />
-                <div class="card-body">
-                    <h5 class="card-title" style="font-size:1.1rem;">Midye Baklava</h5>
-                    <p class="card-text" style="font-size:0.9rem;">..açıklama ...</p>
-                 
-                </div>
-            </div>
+        <!-- İçecekler -->
+<div class="col-12 col-md-6 col-lg-3">
+      <a href="/Home/Icecekler">
+        <div class="category-card">
+  <div class="category-badge">YENİ</div>
+ <div class="category-img-container">
+   <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80" 
+     class="category-img" 
+   alt="İçecekler" 
+          onerror="this.src='https://via.placeholder.com/800x600/8b4513/FFFFFF?text=İçecekler'"
+     loading="lazy">
+     <div class="category-overlay"></div>
+     </div>
+<div class="category-content">
+          <div class="category-name">☕ İçecekler</div>
+         <div class="category-desc">Çay, Kahve, Ayran ve soğuk içecekler...</div>
         </div>
+ </div>
+ </a>
+ </div>
 
-        <!-- Favori 2 -->
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card text-center" style="padding:10px;">
-				<img src="~/resimler/künefe.jpg" />
-                <div class="card-body">
-                    <h5 class="card-title" style="font-size:1.1rem;">Künefe</h5>
-                    <p class="card-text" style="font-size:0.9rem;">..açıklama ...</p>
-                 
-                </div>
-            </div>
-        </div>
-
-        <!-- Favori 3 -->
-        <div class="col-10 col-sm-6 col-md-4">
-            <div class="card dessert-card text-center" style="padding:10px;">
-				<img src="~/resimler/kadayıf.jpg" />
-                <div class="card-body">
-                    <h5 class="card-title" style="font-size:1.1rem;">Kadayıf</h5>
-                    <p class="card-text" style="font-size:0.9rem;">..açıklama ...</p>
-                   
-                </div>
-            </div>
-        </div>
-
-    </div>
+  </div>
 </div>
 
+<!-- Fiyat Bilgilendirme Bölümü - YENİ -->
+<div class="price-info-section">
+    <div class="price-info-icon">ℹ️</div>
+    <h3 class="price-info-title">Fiyat Bilgilendirmesi</h3>
+    <p class="price-info-text">
+        Tatlılarımızın porsiyonu <span class="price-highlight">250 TL</span>'dir.<br>
+        Taze ve kaliteli malzemeler ile özenle hazırlanmaktadır.
+    </p>
+</div>
+
+<div class="favorites-section">
+  <div class="container">
+   <h2 class="favorites-title">Müşteri Favorileri</h2>
+        <div class="row g-4 justify-content-center">
+
+            <!-- Favori 1 -->
+         <div class="col-12 col-sm-6 col-md-4">
+     <div class="card favorite-card">
+         <img src="~/resimler/midye.jpg" class="favorite-img" alt="Midye Baklava" loading="lazy">
+        <div class="card-body">
+        <h5 class="card-title">Midye Baklava</h5>
+           <p class="card-text">Özel fıstık dolgulu, el yapımı midye baklava. En çok tercih edilen lezzetimiz.</p>
+         </div>
+             </div>
+    </div>
+
+            <!-- Favori 2 -->
+            <div class="col-12 col-sm-6 col-md-4">
+            <div class="card favorite-card">
+     <img src="~/resimler/künefe.jpg" class="favorite-img" alt="Künefe" loading="lazy">
+            <div class="card-body">
+      <h5 class="card-title">Künefe</h5>
+  <p class="card-text">Tel kadayıf ve özel peynir ile hazırlanan, sıcak servis edilen efsane lezzet.</p>
+         </div>
+         </div>
+</div>
+
+<!-- Favori 3 -->
+            <div class="col-12 col-sm-6 col-md-4">
+     <div class="card favorite-card">
+         <img src="~/resimler/kadayıf.jpg" class="favorite-img" alt="Kadayıf" loading="lazy">
+        <div class="card-body">
+     <h5 class="card-title">Fıstıklı Kadayıf</h5>
+         <p class="card-text">Antep fıstığı ve özel şerbeti ile geleneksel kadayıf lezzeti.</p>
+   </div>
+         </div>
+   </div>
+
+ </div>
+    </div>
+</div>

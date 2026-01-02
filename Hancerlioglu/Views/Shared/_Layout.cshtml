@@ -1,310 +1,779 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
     <title>@ViewData["Title"] - Hancerlioglu</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Hancerlioglu.styles.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Hancerlioglu.styles.css" asp-append-version="true" />
+
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Fonts with display swap -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet"></noscript>
+
     <style>
-        /* Animasyonlu Arka Plan - Doğrudan HTML'e eklendi */
-        body {
-            position: relative !important;
-            overflow-x: hidden;
-            background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 30%, #fff8f0 60%, #ffe8d6 100%) !important;
-            background-size: 400% 400% !important;
-            animation: gradientShift 12s ease infinite !important;
-        }
+   /* Critical inline CSS - minimal */
+        body{position:relative!important;overflow-x:hidden;background:linear-gradient(135deg,#fff8f0 0%,#ffe8d6 30%,#fff8f0 60%,#ffe8d6 100%)!important;background-size:400% 400%!important;animation:gradientShift 12s ease infinite!important}
+    @@keyframes gradientShift{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
 
-        @@keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Yüzen Dekoratif Şekiller - Koyu Yeşil Tonları */
-        body::after {
-            content: '' !important;
-            position: fixed !important;
+     /* Yüzen Dekoratif Şekiller - Koyu Yeşil Tonları */
+ body::after {
+         content: '' !important;
+    position: fixed !important;
             top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 5% 10%, rgba(60, 179, 113, 0.18) 0%, transparent 50%),
-                radial-gradient(circle at 95% 90%, rgba(46, 139, 87, 0.16) 0%, transparent 50%),
-                radial-gradient(circle at 5% 90%, rgba(34, 139, 34, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 95% 10%, rgba(72, 209, 204, 0.17) 0%, transparent 50%),
-                radial-gradient(circle at 10% 50%, rgba(50, 205, 50, 0.14) 0%, transparent 50%),
-                radial-gradient(circle at 90% 50%, rgba(85, 107, 47, 0.16) 0%, transparent 50%),
-                radial-gradient(circle at 3% 30%, rgba(107, 142, 35, 0.13) 0%, transparent 50%),
-                radial-gradient(circle at 97% 70%, rgba(60, 179, 113, 0.15) 0%, transparent 50%) !important;
-            animation: floatBackground 25s ease-in-out infinite !important;
+          right: -50%;
+     width: 200%;
+  height: 200%;
+ background: 
+     radial-gradient(circle at 5% 10%, rgba(60, 179, 113, 0.18) 0%, transparent 50%),
+  radial-gradient(circle at 95% 90%, rgba(46, 139, 87, 0.16) 0%, transparent 50%),
+     radial-gradient(circle at 5% 90%, rgba(34, 139, 34, 0.15) 0%, transparent 50%),
+         radial-gradient(circle at 95% 10%, rgba(72, 209, 204, 0.17) 0%, transparent 50%),
+          radial-gradient(circle at 10% 50%, rgba(50, 205, 50, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 90% 50%, rgba(85, 107, 47, 0.16) 0%, transparent 50%),
+      radial-gradient(circle at 3% 30%, rgba(107, 142, 35, 0.13) 0%, transparent 50%),
+radial-gradient(circle at 97% 70%, rgba(60, 179, 113, 0.15) 0%, transparent 50%) !important;
+    animation: floatBackground 25s ease-in-out infinite !important;
             z-index: -1 !important;
-            pointer-events: none;
-        }
+      pointer-events: none;
+  }
 
         @@keyframes floatBackground {
-            0%, 100% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-            25% {
-                transform: translate(-8%, -8%) rotate(90deg) scale(1.1);
-            }
-            50% {
+  0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+}
+     25% {
+  transform: translate(-8%, -8%) rotate(90deg) scale(1.1);
+    }
+        50% {
                 transform: translate(8%, 8%) rotate(180deg) scale(1);
-            }
-            75% {
-                transform: translate(-6%, 6%) rotate(270deg) scale(1.08);
-            }
-        }
+ }
+  75% {
+ transform: translate(-6%, 6%) rotate(270deg) scale(1.08);
+      }
+     }
 
         /* Hareketli Parçacıklar - Koyu Yeşil Tonları */
-        body::before {
-            content: '' !important;
-            position: fixed !important;
-            top: 0;
-            left: 0;
+body::before {
+  content: '' !important;
+  position: fixed !important;
+   top: 0;
+      left: 0;
             width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 2% 15%, rgba(60, 179, 113, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 98% 85%, rgba(46, 139, 87, 0.14) 0%, transparent 40%),
-                radial-gradient(circle at 2% 85%, rgba(34, 139, 34, 0.13) 0%, transparent 40%),
-                radial-gradient(circle at 98% 15%, rgba(72, 209, 204, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 8% 50%, rgba(50, 205, 50, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 92% 50%, rgba(85, 107, 47, 0.14) 0%, transparent 40%),
-                radial-gradient(circle at 4% 70%, rgba(107, 142, 35, 0.11) 0%, transparent 40%),
-                radial-gradient(circle at 96% 30%, rgba(60, 179, 113, 0.13) 0%, transparent 40%) !important;
-            background-size: 350% 350%, 320% 320%, 380% 380%, 340% 340%, 360% 360%, 330% 330%, 370% 370%, 350% 350% !important;
-            background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%, 0% 50%, 100% 50%, 0% 70%, 100% 30% !important;
-            animation: particleMove 20s ease-in-out infinite !important;
-            z-index: -2 !important;
-            pointer-events: none;
-        }
+     height: 100%;
+    background-image: 
+     radial-gradient(circle at 2% 15%, rgba(60, 179, 113, 0.15) 0%, transparent 40%),
+  radial-gradient(circle at 98% 85%, rgba(46, 139, 87, 0.14) 0%, transparent 40%),
+          radial-gradient(circle at 2% 85%, rgba(34, 139, 34, 0.13) 0%, transparent 40%),
+      radial-gradient(circle at 98% 15%, rgba(72, 209, 204, 0.15) 0%, transparent 40%),
+   radial-gradient(circle at 8% 50%, rgba(50, 205, 50, 0.12) 0%, transparent 40%),
+     radial-gradient(circle at 92% 50%, rgba(85, 107, 47, 0.14) 0%, transparent 40%),
+ radial-gradient(circle at 4% 70%, rgba(107, 142, 35, 0.11) 0%, transparent 40%),
+     radial-gradient(circle at 96% 30%, rgba(60, 179, 113, 0.13) 0%, transparent 40%) !important;
+       background-size: 350% 350%, 320% 320%, 380% 380%, 340% 340%, 360% 360%, 330% 330%, 370% 370%, 350% 350% !important;
+   background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%, 0% 50%, 100% 50%, 0% 70%, 100% 30% !important;
+         animation: particleMove 20s ease-in-out infinite !important;
+  z-index: -2 !important;
+     pointer-events: none;
+   }
 
-        @@keyframes particleMove {
+   @@keyframes particleMove {
             0%, 100% {
-                background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%, 0% 50%, 100% 50%, 0% 70%, 100% 30%;
-            }
-            25% {
-                background-position: 12% 12%, 88% 88%, 8% 92%, 92% 8%, 8% 48%, 92% 52%, 5% 75%, 95% 25%;
-            }
-            50% {
-                background-position: 25% 25%, 75% 75%, 15% 85%, 85% 15%, 15% 45%, 85% 55%, 10% 80%, 90% 20%;
-            }
-            75% {
-                background-position: 18% 18%, 82% 82%, 12% 88%, 88% 12%, 12% 49%, 88% 51%, 8% 75%, 92% 25%;
-            }
+   background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0%, 0% 50%, 100% 50%, 0% 70%, 100% 30%;
+  }
+     25% {
+      background-position: 12% 12%, 88% 88%, 8% 92%, 92% 8%, 8% 48%, 92% 52%, 5% 75%, 95% 25%;
+   }
+50% {
+background-position: 25% 25%, 75% 75%, 15% 85%, 85% 15%, 15% 45%, 85% 55%, 10% 80%, 90% 20%;
+    }
+ 75% {
+  background-position: 18% 18%, 82% 82%, 12% 88%, 88% 12%, 12% 49%, 88% 51%, 8% 75%, 92% 25%;
+ }
         }
 
         /* Amblemin üzerine gelmemesi için z-index */
         .logo-container, .logo-img {
-            position: relative !important;
-            z-index: 10 !important;
-        }
+      position: relative !important;
+     z-index: 10 !important;
+    }
 
-        .container, main {
-            position: relative !important;
-            z-index: 5 !important;
+      .container, main {
+        position: relative !important;
+      z-index: 5 !important;
         }
 
         /* Tema Değiştirme Butonu */
         .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(60, 179, 113, 0.3);
-            border-radius: 50px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+    position: fixed;
+   top: 20px;
+      right: 20px;
+  z-index: 1000;
+     background: rgba(255, 255, 255, 0.9);
+ backdrop-filter: blur(10px);
+       border: 2px solid rgba(60, 179, 113, 0.3);
+     border-radius: 50px;
+   width: 60px;
+    height: 60px;
+     display: flex;
+      align-items: center;
+         justify-content: center;
+   cursor: pointer;
+    transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
-        .theme-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(60, 179, 113, 0.3);
-            border-color: rgba(60, 179, 113, 0.6);
-        }
+  .theme-toggle:hover {
+     transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(60, 179, 113, 0.3);
+      border-color: rgba(60, 179, 113, 0.6);
+      }
 
-        .theme-toggle svg {
+      .theme-toggle svg {
             width: 28px;
-            height: 28px;
-            transition: all 0.3s ease;
-        }
+   height: 28px;
+      transition: all 0.3s ease;
+    }
 
-        .theme-toggle .sun-icon {
-            display: block;
-        }
+   .theme-toggle .sun-icon {
+  display: block;
+   }
 
         .theme-toggle .moon-icon {
-            display: none;
+    display: none;
         }
 
         /* Dark Mode Stilleri */
         body.dark-mode {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #1a1a2e 60%, #16213e 100%) !important;
-            color: #e0e0e0 !important;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #1a1a2e 60%, #16213e 100%) !important;
+     color: #e0e0e0 !important;
         }
 
         body.dark-mode .theme-toggle {
-            background: rgba(26, 26, 46, 0.9);
-            border-color: rgba(60, 179, 113, 0.5);
+     background: rgba(26, 26, 46, 0.9);
+    border-color: rgba(60, 179, 113, 0.5);
         }
 
-        body.dark-mode .theme-toggle .sun-icon {
-            display: none;
-        }
+ body.dark-mode .theme-toggle .sun-icon {
+   display: none;
+  }
 
-        body.dark-mode .theme-toggle .moon-icon {
-            display: block;
-        }
+      body.dark-mode .theme-toggle .moon-icon {
+   display: block;
+    }
 
         body.dark-mode .container,
         body.dark-mode main {
-            color: #e0e0e0;
+    color: #e0e0e0;
         }
 
         body.dark-mode .footer {
-            background: rgba(26, 26, 46, 0.3) !important;
-            color: #e0e0e0 !important;
-            border-top: 2px solid rgba(60, 179, 113, 0.4);
-        }
+         background: rgba(26, 26, 46, 0.3) !important;
+   color: #e0e0e0 !important;
+      border-top: 2px solid rgba(60, 179, 113, 0.4);
+    }
 
-        body.dark-mode .footer a {
-            color: #90ee90 !important;
-        }
+     body.dark-mode .footer a {
+     color: #90ee90 !important;
+    }
 
         body.dark-mode .footer .text-muted {
-            color: #b0b0b0 !important;
-        }
+      color: #b0b0b0 !important;
+      }
 
         body.dark-mode .category-card,
-        body.dark-mode .dessert-card {
-            background: rgba(30, 30, 50, 0.8) !important;
-            border-color: rgba(60, 179, 113, 0.3) !important;
-            color: #e0e0e0;
+   body.dark-mode .dessert-card {
+   background: rgba(30, 30, 50, 0.8) !important;
+       border-color: rgba(60, 179, 113, 0.3) !important;
+      color: #e0e0e0;
         }
 
         body.dark-mode .category-name,
-        body.dark-mode .card-title {
+      body.dark-mode .card-title {
             color: #90ee90 !important;
-        }
+ }
 
-        body.dark-mode .category-desc,
-        body.dark-mode .card-text {
-            color: #b0b0b0 !important;
-        }
+     body.dark-mode .category-desc,
+    body.dark-mode .card-text {
+    color: #b0b0b0 !important;
+  }
 
         body.dark-mode h1,
         body.dark-mode h2 {
-            color: #90ee90 !important;
+     color: #90ee90 !important;
         }
 
-        body.dark-mode .btn-dark {
-            background: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%) !important;
-            border: none;
+      body.dark-mode .btn-dark {
+  background: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%) !important;
+ border: none;
         }
 
         @@media (max-width: 768px) {
-            .theme-toggle {
-                width: 50px;
-                height: 50px;
-                top: 15px;
-                right: 15px;
-            }
+  .theme-toggle {
+   width: 50px;
+  height: 50px;
+          top: 15px;
+       right: 15px;
+ }
 
-            .theme-toggle svg {
-                width: 24px;
-                height: 24px;
+    .theme-toggle svg {
+    width: 24px;
+          height: 24px;
             }
         }
+
+  /* Desktop Social Bar (SAĞ TARAF) */
+    .social-bar {
+    position: fixed;
+        right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+   display: flex;
+      flex-direction: column;
+      gap: 15px;
+      }
+
+   .social-icon {
+   display: flex;
+       align-items: center;
+justify-content: center;
+         width: 50px;
+height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+     color: #333;
+  font-size: 20px;
+ transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+  cursor: pointer;
+        border: none;
+    }
+
+   .social-icon:hover {
+      transform: translateX(-5px);
+ box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+ }
+
+  .social-icon.facebook {
+ background: linear-gradient(135deg, #8b7355 0%, #6b5d4f 100%) !important;
+    color: white !important;
+}
+
+        .social-icon.instagram {
+     background: linear-gradient(135deg, #a68968 0%, #8b7355 100%) !important;
+     color: white !important;
+     }
+
+  .social-icon.phone {
+     background: linear-gradient(135deg, #d4a574 0%, #c49e26 100%) !important;
+      color: white !important;
+     }
+
+ .social-icon.location {
+    background: linear-gradient(135deg, #7a6b5a 0%, #6b5d4f 100%) !important;
+ color: white !important;
+  }
+
+.social-icon.menu {
+        background: linear-gradient(135deg, #8b7355 0%, #7a6b5a 100%) !important;
+ color: white !important;
+}
+
+     /* Mobile Social Buttons (Sağ Alt) */
+    .fixed-social-buttons {
+     display: none;
+   }
+
+   /* Telefon Popup Stilleri */
+   .phone-popup {
+     position: fixed;
+        top: 0;
+     left: 0;
+   width: 100%;
+ height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+   display: none;
+       align-items: center;
+ justify-content: center;
+       z-index: 10000;
+    animation: fadeIn 0.3s ease;
+   }
+
+        .phone-popup.active {
+    display: flex;
+   }
+
+     @@keyframes fadeIn {
+      from {
+     opacity: 0;
+      }
+  to {
+   opacity: 1;
+  }
+}
+
+        .phone-popup-content {
+         background: white;
+ border-radius: 20px;
+     padding: 30px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          max-width: 400px;
+   width: 90%;
+    position: relative;
+ animation: slideUp 0.3s ease;
+        }
+
+        @@keyframes slideUp {
+   from {
+ opacity: 0;
+      transform: translateY(50px);
+     }
+  to {
+  opacity: 1;
+     transform: translateY(0);
+        }
+   }
+
+        .phone-popup-close {
+   position: absolute;
+     top: 15px;
+    right: 15px;
+ background: rgba(0, 0, 0, 0.1);
+    border: none;
+       width: 35px;
+   height: 35px;
+       border-radius: 50%;
+    cursor: pointer;
+   display: flex;
+  align-items: center;
+     justify-content: center;
+     font-size: 18px;
+   color: #333;
+      transition: all 0.3s ease;
+        }
+
+        .phone-popup-close:hover {
+       background: rgba(0, 0, 0, 0.2);
+        transform: rotate(90deg);
+        }
+
+  .phone-popup-header {
+ text-align: center;
+   margin-bottom: 25px;
+  }
+
+ .phone-popup-header i {
+   font-size: 3rem;
+  color: #25D366;
+        margin-bottom: 15px;
+}
+
+        .phone-popup-header h3 {
+   font-size: 1.5rem;
+       font-weight: 700;
+      color: #8b4513;
+ margin: 0;
+  }
+
+.phone-popup-body {
+   text-align: center;
+      }
+
+  .phone-number {
+       font-size: 2rem;
+  font-weight: 700;
+  color: #8b4513;
+   margin-bottom: 20px;
+ letter-spacing: 2px;
+   padding: 15px;
+       background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 100%);
+      border-radius: 12px;
+         border: 2px solid #d4a574;
+ }
+
+     .copy-btn {
+      display: inline-flex;
+        align-items: center;
+       gap: 10px;
+          padding: 12px 30px;
+     background: linear-gradient(135deg, #d4a574 0%, #f5c76a 100%);
+ color: #8b4513;
+   border: none;
+border-radius: 25px;
+            font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+   transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+   .copy-btn:hover {
+     transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 165, 116, 0.5);
+        }
+
+  .copy-success {
+  display: none;
+        margin-top: 15px;
+   color: #25D366;
+  font-weight: 600;
+        font-size: 1.1rem;
+  animation: bounceIn 0.5s ease;
+ }
+
+     .copy-success.show {
+  display: block;
+    }
+
+        @@keyframes bounceIn {
+      0% {
+     opacity: 0;
+  transform: scale(0.3);
+  }
+   50% {
+    opacity: 1;
+       transform: scale(1.05);
+ }
+  70% {
+ transform: scale(0.9);
+      }
+   100% {
+transform: scale(1);
+            }
+   }
+
+ .copy-success i {
+     font-size: 1.3rem;
+  }
+
+ /* Dark Mode Stilleri */
+      body.dark-mode .social-bar .social-icon,
+        body.dark-mode .fixed-social-buttons .social-btn {
+        background: rgba(255, 255, 255, 0.1);
+          color: #e0e0e0;
+}
+
+     body.dark-mode .social-bar .social-icon.facebook,
+      body.dark-mode .fixed-social-buttons .social-btn.facebook-btn {
+  background-color: #4e69a2;
+        }
+
+body.dark-mode .social-bar .social-icon.instagram,
+    body.dark-mode .fixed-social-buttons .social-btn.instagram-btn {
+       background: linear-gradient(45deg, #d62976 0%, #962fbf 50%, #4f5bd5 100%);
+ }
+
+      body.dark-mode .social-bar .social-icon.phone,
+        body.dark-mode .fixed-social-buttons .social-btn.phone-btn {
+      background-color: #128C7E;
+  }
+
+        body.dark-mode .social-bar .social-icon.location,
+   body.dark-mode .fixed-social-buttons .social-btn.location-btn {
+            background-color: #0056b3;
+     }
+
+    body.dark-mode .social-bar .social-icon.menu,
+  body.dark-mode .fixed-social-buttons .social-btn.menu-btn {
+   background-color: #495057;
+  }
+
+        body.dark-mode .phone-popup-content {
+          background: #2a2a3e;
+        }
+
+    body.dark-mode .phone-popup-header h3,
+        body.dark-mode .phone-number {
+     color: #90ee90;
+        }
+
+        body.dark-mode .phone-popup-close {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        body.dark-mode .phone-popup-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+      }
+
+   /* Responsive */
+     @@media (max-width: 768px) {
+            .social-bar {
+  display: none; /* Desktop sosyal bar'ı gizle */
+  }
+            
+    .fixed-social-buttons {
+       display: flex; /* Mobile butonları göster */
+     position: fixed;
+    bottom: 20px;
+           right: 20px;
+    z-index: 1000;
+    flex-direction: column;
+      gap: 10px;
+       }
+
+ .social-btn {
+  display: flex;
+      align-items: center;
+       justify-content: center;
+         width: 50px;
+  height: 50px;
+ background: rgba(255, 255, 255, 0.9);
+         border-radius: 50%;
+   color: #333;
+     font-size: 20px;
+    transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border: none;
+       cursor: pointer;
+        text-decoration: none;
+ }
+
+         .social-btn:hover {
+       transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+         }
+
+  .facebook-btn {
+    background-color: #3b5998;
+     color: white;
+     }
+
+     .instagram-btn {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+      }
+
+ .phone-btn {
+     background-color: #25D366;
+      color: white;
+         }
+
+  .location-btn {
+ background-color: #007bff;
+          color: white;
+       }
+
+        .menu-btn {
+        background-color: #343a40;
+       color: white;
+   }
+      
+          .phone-popup-content {
+       padding: 25px;
+      }
+
+  .phone-number {
+        font-size: 1.5rem;
+            }
+
+     .phone-popup-header i {
+       font-size: 2.5rem;
+    }
+  }
+
+        /* Desktop'ta mobil butonları gizle */
+  @@media (min-width: 769px) {
+.fixed-social-buttons {
+   display: none !important;
+          }
+        }
+
     </style>
 </head>
 <body>
     <header>
         <!-- Tema Değiştirme Butonu -->
         <button class="theme-toggle" id="themeToggle" aria-label="Tema Değiştir">
-            <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-4 5a1 1 0 100 2h1a1 1 0 100-2h-1zm-6 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm12-1a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-5-4a1 1 0 100-2H9a1 1 0 100 2h1zM7 10a1 1 0 011-1h1a1 1 0 110 2H8a1 1 0 01-1-1zm14 0a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM17.657 5.343a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zm-12.728 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM5.343 14.657a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zm12.728 0a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414z"></path>
-            </svg>
+      <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
+     <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-4 5a1 1 0 100 2h1a1 1 0 100-2h-1zm-6 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm12-1a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-5-4a1 1 0 100-2H9a1 1 0 100 2h1zM7 10a1 1 0 011-1h1a1 1 0 110 2H8a1 1 0 01-1-1zm14 0a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM17.657 5.343a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zm-12.728 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM5.343 14.657a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zm12.728 0a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414z"></path>
+      </svg>
             <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
+           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+    </svg>
         </button>
-      @*   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hancerlioglu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav> *@
     </header>
+    
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+<main role="main" class="pb-3">
+    @RenderBody()
+  </main>
+ </div>
+
+    <!-- Desktop Social Bar (Sol Taraf) -->
+    <div class="social-bar">
+   <a href="https://www.facebook.com/profile.php?id=61585290026850" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+    </a>
+        <button type="button" data-instagram="https://www.instagram.com/gaziantepli_hancerlioglu/" class="social-icon instagram" aria-label="Instagram">
+ <i class="fab fa-instagram"></i>
+    </button>
+   <a href="#" id="phoneButton" class="social-icon phone" aria-label="Telefon">
+    <i class="fas fa-phone-alt"></i>
+     </a>
+        <a href="https://www.google.com/maps?q=36.611389,34.305528" target="_blank" rel="noopener noreferrer" class="social-icon location" aria-label="Konum">
+   <i class="fas fa-map-marker-alt"></i>
+ </a>
+   <a href="/Home/Index" class="social-icon menu" aria-label="Menü">
+    <i class="fas fa-utensils"></i>
+   </a>
+    </div>
+
+  <!-- Mobile Fixed Social Buttons (Sağ Alt) -->
+    <div class="fixed-social-buttons">
+ <a href="https://www.facebook.com/profile.php?id=61585290026850" target="_blank" rel="noopener noreferrer" class="social-btn facebook-btn" aria-label="Facebook">
+  <i class="fab fa-facebook-f"></i>
+ </a>
+      <button type="button" data-instagram="https://www.instagram.com/gaziantepli_hancerlioglu/" class="social-btn instagram-btn" aria-label="Instagram">
+<i class="fab fa-instagram"></i>
+   </button>
+   <button id="phoneButtonMobile" class="social-btn phone-btn" aria-label="Telefon">
+         <i class="fas fa-phone-alt"></i>
+    </button>
+    <a href="https://www.google.com/maps?q=36.611389,34.305528" target="_blank" rel="noopener noreferrer" class="social-btn location-btn" aria-label="Konum">
+  <i class="fas fa-map-marker-alt"></i>
+     </a>
+      <a href="/Home/Index" class="social-btn menu-btn" aria-label="Menü">
+    <i class="fas fa-utensils"></i>
+</a>
+    </div>
+
+    <!-- Telefon Popup HTML -->
+    <div id="phonePopup" class="phone-popup">
+<div class="phone-popup-content">
+<button id="closePopup" class="phone-popup-close" aria-label="Kapat">&times;</button>
+     <div class="phone-popup-header">
+        <i class="fas fa-phone-alt"></i>
+      <h3>Bize Ulaşın</h3>
+   </div>
+         <div class="phone-popup-body">
+     <div id="phoneNumber" class="phone-number">0541 418 49 76</div>
+   <button id="copyButton" class="copy-btn">
+   <i class="fas fa-copy"></i> Numarayı Kopyala
+        </button>
+        <div id="copySuccess" class="copy-success">
+           <i class="fas fa-check-circle"></i> Kopyalandı!
+    </div>
+    </div>
+      </div>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - HANÇERLİOĞLU
+<div class="container">
+       &copy; 2025 - HANÇERLİOĞLU
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Scripts at bottom for better performance -->
+    <script src="~/js/cache-buster.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js" defer></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="~/js/site.js" asp-append-version="true" defer></script>
+    
     <script>
-        // Tema Değiştirme Fonksiyonu
-        (function() {
-            const themeToggle = document.getElementById('themeToggle');
-            const body = document.body;
-            
-            // LocalStorage'dan tema tercihini oku
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            
-            // Sayfa yüklendiğinde tema tercihini uygula
-            if (savedTheme === 'dark') {
-                body.classList.add('dark-mode');
-            }
-            
-            // Tema değiştirme butonuna tıklama
-            themeToggle.addEventListener('click', function() {
-                body.classList.toggle('dark-mode');
-                
-                // Tema tercihini LocalStorage'a kaydet
-                const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-                localStorage.setItem('theme', currentTheme);
+    // Tema Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+     const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'dark') {
+         body.classList.add('dark-mode');
+        }
+        
+        themeToggle.addEventListener('click', function() {
+   body.classList.toggle('dark-mode');
+          localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+   });
+
+        // Telefon Popup - Desktop
+        const phoneButton = document.getElementById('phoneButton');
+  const phonePopup = document.getElementById('phonePopup');
+      const closePopup = document.getElementById('closePopup');
+        const copyButton = document.getElementById('copyButton');
+        const phoneNumber = document.getElementById('phoneNumber');
+        const copySuccess = document.getElementById('copySuccess');
+  
+     if (phoneButton) {
+            phoneButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      phonePopup.classList.add('active');
+     });
+      }
+        
+        // Telefon Popup - Mobile
+        const phoneButtonMobile = document.getElementById('phoneButtonMobile');
+        if (phoneButtonMobile) {
+          phoneButtonMobile.addEventListener('click', function() {
+         phonePopup.classList.add('active');
+          });
+        }
+        
+        if (closePopup) {
+        closePopup.addEventListener('click', function() {
+      phonePopup.classList.remove('active');
+       copySuccess.classList.remove('show');
             });
-        })();
+        }
+  
+        if (phonePopup) {
+            phonePopup.addEventListener('click', function(e) {
+      if (e.target === phonePopup) {
+       phonePopup.classList.remove('active');
+   copySuccess.classList.remove('show');
+    }
+            });
+        }
+      
+     if (copyButton) {
+    copyButton.addEventListener('click', function() {
+const number = phoneNumber.textContent;
+                navigator.clipboard.writeText(number).then(function() {
+              copySuccess.classList.add('show');
+    setTimeout(function() {
+        copySuccess.classList.remove('show');
+         }, 3000);
+    });
+            });
+}
+
+        // Instagram Güvenli Açılış - Tüm Instagram butonları için
+        const instagramButtons = document.querySelectorAll('[data-instagram]');
+    instagramButtons.forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+      e.preventDefault();
+     const instagramUrl = this.getAttribute('data-instagram');
+   // Yeni sekmede aç ama referrer bilgisi göndermeden
+       const newWindow = window.open('', '_blank');
+   if (newWindow) {
+      newWindow.opener = null;
+       newWindow.location.href = instagramUrl;
+                }
+            });
+        });
+    });
     </script>
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

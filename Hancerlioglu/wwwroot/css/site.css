@@ -348,3 +348,209 @@ a:hover::after {
 .loading {
   animation: pulse 2s infinite;
 }
+
+/* Sabit Sosyal Medya ve İletişim Butonları */
+.fixed-social-buttons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.social-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.social-btn:hover::before {
+  width: 200%;
+  height: 200%;
+}
+
+.social-btn::after {
+  display: none;
+}
+
+.social-btn:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.social-btn i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.social-btn:hover i {
+  transform: scale(1.1);
+}
+
+/* Facebook Button */
+.facebook-btn {
+  background: linear-gradient(135deg, #3b5998 0%, #2d4373 100%);
+}
+
+.facebook-btn:hover {
+  background: linear-gradient(135deg, #4c68a7 0%, #3b5998 100%);
+}
+
+/* Instagram Button */
+.instagram-btn {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.instagram-btn:hover {
+  background: linear-gradient(135deg, #ffa844 0%, #f09433 25%, #e6683c 50%, #dc2743 75%, #cc2366 100%);
+}
+
+/* Phone Button */
+.phone-btn {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.phone-btn:hover {
+  background: linear-gradient(135deg, #2eed73 0%, #25d366 100%);
+}
+
+/* Location Button */
+.location-btn {
+  background: linear-gradient(135deg, #ea4335 0%, #c5221f 100%);
+}
+
+.location-btn:hover {
+  background: linear-gradient(135deg, #f55145 0%, #ea4335 100%);
+}
+
+/* Menu Button */
+.menu-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.menu-btn:hover {
+  background: linear-gradient(135deg, #ff7b7b 0%, #ff6b6b 100%);
+}
+
+/* Tooltip Efekti */
+.social-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: tooltipFadeIn 0.3s ease;
+  display: block;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Dark Mode Uyumluluğu */
+body.dark-mode .social-btn {
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .social-btn:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+  .fixed-social-buttons {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+  
+  .social-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  /* Mobilde tooltip gizle */
+  .social-btn[title]:hover::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .fixed-social-buttons {
+    bottom: 15px;
+    right: 15px;
+    gap: 8px;
+  }
+  
+  .social-btn {
+  width: 45px;
+    height: 45px;
+    font-size: 18px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Tema değiştirme butonu ile çakışma önleme */
+@media (max-width: 768px) {
+  .fixed-social-buttons {
+    bottom: 80px; /* Tema butonunun üzerinde */
+  }
+}

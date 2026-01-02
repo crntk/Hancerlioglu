@@ -1,0 +1,452 @@
+﻿@{
+    ViewData["Title"] = "��ecekler - HAN�ERL�O�LU";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        background-color: #fff8f0;
+   font-family: 'Poppins', sans-serif;
+    }
+
+    .page-header {
+   background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(139, 69, 19, 0.15) 100%);
+     padding: 50px 0;
+  margin-bottom: 50px;
+border-bottom: 3px solid rgba(212, 165, 116, 0.3);
+        animation: fadeIn 0.8s ease;
+ }
+
+    .page-title {
+    font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        font-size: 3.5rem;
+      text-align: center;
+    color: #8b4513;
+      margin-bottom: 20px;
+   position: relative;
+        animation: slideDown 0.8s ease;
+    }
+
+    .page-title i {
+     margin-left: 15px;
+        color: #d4a574;
+    }
+
+    .page-subtitle {
+   text-align: center;
+        font-size: 1.2rem;
+        color: #8b4513;
+        font-weight: 500;
+      margin-bottom: 20px;
+ animation: fadeIn 1s ease;
+    }
+
+    .back-button {
+        display: inline-flex;
+    align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #8b4513 0%, #d4a574 100%);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   box-shadow: 0 5px 20px rgba(139, 69, 19, 0.3);
+        border: none;
+    font-size: 1rem;
+    }
+
+    .back-button:hover {
+    transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+        color: white;
+    }
+
+    .back-button::before {
+        content: '?';
+  font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+  .back-button:hover::before {
+        transform: translateX(-5px);
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @@keyframes slideDown {
+        from { opacity: 0; transform: translateY(-30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+  /* ��ecek Kategorileri */
+    .drinks-container {
+      max-width: 1200px;
+        margin: 0 auto;
+    }
+
+.category-section {
+ margin-bottom: 60px;
+    }
+
+    .category-title {
+     font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #8b4513;
+      margin-bottom: 30px;
+        padding-bottom: 15px;
+   border-bottom: 3px solid rgba(212, 165, 116, 0.3);
+    position: relative;
+  }
+
+  .category-title::before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(90deg, #8b4513 0%, #d4a574 100%);
+    }
+
+    .category-title i {
+    margin-right: 10px;
+        color: #d4a574;
+    }
+
+    .drink-item {
+     background: white;
+        border-radius: 15px;
+      padding: 20px;
+    margin-bottom: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+    justify-content: space-between;
+  align-items: center;
+      animation: fadeInUp 0.6s ease backwards;
+    }
+
+    .drink-item:hover {
+        transform: translateY(-5px);
+   box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+    }
+
+    .drink-info {
+        flex: 1;
+    display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .drink-icon {
+      font-size: 2.5rem;
+        color: #d4a574;
+        min-width: 50px;
+        text-align: center;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .drink-details {
+        flex: 1;
+    }
+
+    .drink-name {
+        font-size: 1.4rem;
+      font-weight: 700;
+    color: #8b4513;
+  margin-bottom: 5px;
+    }
+
+    .drink-description {
+        font-size: 0.95rem;
+        color: #6b3e26;
+        margin-bottom: 0;
+    }
+
+    .drink-price {
+   font-size: 1.5rem;
+        font-weight: 800;
+        color: #8b4513;
+    padding: 10px 25px;
+      background: rgba(212, 165, 116, 0.1);
+        border-radius: 20px;
+        border: 2px solid rgba(212, 165, 116, 0.3);
+        white-space: nowrap;
+    }
+
+    @@keyframes float {
+   0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @@keyframes fadeInUp {
+     from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+  }
+
+    /* Animasyon Gecikmeleri */
+  .drink-item:nth-child(1) { animation-delay: 0.1s; }
+    .drink-item:nth-child(2) { animation-delay: 0.2s; }
+    .drink-item:nth-child(3) { animation-delay: 0.3s; }
+    .drink-item:nth-child(4) { animation-delay: 0.4s; }
+  .drink-item:nth-child(5) { animation-delay: 0.5s; }
+    .drink-item:nth-child(6) { animation-delay: 0.6s; }
+    .drink-item:nth-child(7) { animation-delay: 0.7s; }
+    .drink-item:nth-child(8) { animation-delay: 0.8s; }
+    .drink-item:nth-child(9) { animation-delay: 0.9s; }
+    .drink-item:nth-child(10) { animation-delay: 1.0s; }
+    .drink-item:nth-child(11) { animation-delay: 1.1s; }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .page-title { font-size: 2.5rem; }
+     .page-header { padding: 35px 0; margin-bottom: 35px; }
+.category-title { font-size: 2rem; }
+     .drink-item {
+       flex-direction: column;
+ text-align: center;
+gap: 15px;
+        }
+     .drink-info {
+ flex-direction: column;
+    text-align: center;
+        }
+        .drink-icon { margin-right: 0; margin-bottom: 10px; }
+        .drink-price { margin-top: 10px; }
+ }
+
+    @@media (max-width: 576px) {
+        .page-title { font-size: 2rem; }
+        .category-title { font-size: 1.7rem; }
+   .drink-name { font-size: 1.2rem; }
+        .drink-description { font-size: 0.9rem; }
+        .drink-price { font-size: 1.3rem; padding: 8px 20px; }
+        .back-button { padding: 10px 25px; font-size: 0.95rem; }
+   .drink-icon { font-size: 2rem; }
+    }
+
+    /* Dark Mode Stilleri */
+    body.dark-mode .page-header {
+ background: linear-gradient(135deg, rgba(26, 26, 46, 0.6) 0%, rgba(22, 33, 62, 0.6) 100%);
+      border-bottom: 3px solid rgba(60, 179, 113, 0.4);
+    }
+
+    body.dark-mode .page-title {
+        color: #90ee90;
+    }
+
+    body.dark-mode .page-subtitle {
+        color: #b0b0b0;
+    }
+
+    body.dark-mode .back-button {
+        background: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%);
+    }
+
+  body.dark-mode .back-button:hover {
+        background: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
+    }
+
+    body.dark-mode .category-title {
+        color: #90ee90;
+        border-bottom: 3px solid rgba(60, 179, 113, 0.4);
+    }
+
+    body.dark-mode .category-title::before {
+        background: linear-gradient(90deg, #3cb371 0%, #90ee90 100%);
+    }
+
+    body.dark-mode .category-title i {
+     color: #90ee90;
+    }
+
+    body.dark-mode .drink-item {
+        background: rgba(30, 30, 50, 0.8);
+  border: 1px solid rgba(60, 179, 113, 0.2);
+    }
+
+    body.dark-mode .drink-item:hover {
+     box-shadow: 0 10px 30px rgba(60, 179, 113, 0.3);
+        border-color: rgba(60, 179, 113, 0.4);
+ }
+
+    body.dark-mode .drink-icon {
+    color: #90ee90;
+    }
+
+    body.dark-mode .drink-name {
+  color: #90ee90;
+    }
+
+    body.dark-mode .drink-description {
+        color: #b0b0b0;
+  }
+
+    body.dark-mode .drink-price {
+        color: #90ee90;
+        background: rgba(60, 179, 113, 0.2);
+        border: 2px solid rgba(60, 179, 113, 0.4);
+    }
+</style>
+
+<div class="page-header">
+    <div class="container">
+        <h1 class="page-title">��ecekler<i class="fas fa-mug-hot"></i></h1>
+        <p class="page-subtitle">S�cak ve So�uk ��eceklerimiz</p>
+   <div class="text-center">
+  <a href="/Home/Index" class="back-button">Ana Men�ye D�n</a>
+        </div>
+  </div>
+</div>
+
+<div class="container drinks-container mb-5">
+    
+    <!-- S�cak ��ecekler -->
+    <div class="category-section">
+        <h3 class="category-title"><i class="fas fa-fire"></i> S�cak ��ecekler</h3>
+        <div class="row">
+   <div class="col-12">
+    <div class="drink-item">
+ <div class="drink-info">
+    <i class="fas fa-coffee drink-icon"></i>
+    <div class="drink-details">
+         <div class="drink-name">T�rk Kahvesi</div>
+                <div class="drink-description">Geleneksel usulde haz�rlanan T�rk kahvesi</div>
+          </div>
+          </div>
+           <div class="drink-price">45 ?</div>
+                </div>
+
+    <div class="drink-item">
+ <div class="drink-info">
+    <i class="fas fa-mug-hot drink-icon"></i>
+        <div class="drink-details">
+           <div class="drink-name">Filtre Kahve</div>
+    <div class="drink-description">Taze �ekilmi� kahve �ekirdekleri ile</div>
+             </div>
+      </div>
+  <div class="drink-price">40 ?</div>
+           </div>
+
+       <div class="drink-item">
+   <div class="drink-info">
+             <i class="fas fa-mug-saucer drink-icon"></i>
+              <div class="drink-details">
+      <div class="drink-name">�ay (Bardak)</div>
+              <div class="drink-description">Demleme T�rk �ay�</div>
+    </div>
+  </div>
+      <div class="drink-price">15 ?</div>
+                </div>
+
+         <div class="drink-item">
+           <div class="drink-info">
+                 <i class="fas fa-mug-hot drink-icon"></i>
+      <div class="drink-details">
+      <div class="drink-name">�ay (�aydanl�k)</div>
+       <div class="drink-description">Semaver usul� demlik �ay</div>
+       </div>
+     </div>
+   <div class="drink-price">50 ?</div>
+                </div>
+
+     <div class="drink-item">
+        <div class="drink-info">
+        <i class="fas fa-leaf drink-icon"></i>
+  <div class="drink-details">
+ <div class="drink-name">Bitki �ay�</div>
+      <div class="drink-description">Papatya, ku�burnu, ada �ay�</div>
+            </div>
+         </div>
+            <div class="drink-price">25 ?</div>
+ </div>
+         </div>
+        </div>
+    </div>
+
+ <!-- So�uk ��ecekler -->
+    <div class="category-section">
+ <h3 class="category-title"><i class="fas fa-snowflake"></i> So�uk ��ecekler</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="drink-item">
+     <div class="drink-info">
+                 <i class="fas fa-glass-water drink-icon"></i>
+           <div class="drink-details">
+   <div class="drink-name">Ayran</div>
+        <div class="drink-description">Ev yap�m� taze ayran</div>
+           </div>
+            </div>
+             <div class="drink-price">20 ?</div>
+        </div>
+
+         <div class="drink-item">
+     <div class="drink-info">
+       <i class="fas fa-droplet drink-icon"></i>
+            <div class="drink-details">
+     <div class="drink-name">Su (K���k)</div>
+     <div class="drink-description">0.5 lt �i�e su</div>
+  </div>
+    </div>
+       <div class="drink-price">10 ?</div>
+  </div>
+
+          <div class="drink-item">
+          <div class="drink-info">
+      <i class="fas fa-bottle-water drink-icon"></i>
+     <div class="drink-details">
+               <div class="drink-name">Su (B�y�k)</div>
+          <div class="drink-description">1 lt �i�e su</div>
+   </div>
+</div>
+         <div class="drink-price">15 ?</div>
+         </div>
+
+                <div class="drink-item">
+                    <div class="drink-info">
+           <i class="fas fa-glass-citrus drink-icon"></i>
+               <div class="drink-details">
+    <div class="drink-name">Kola / Fanta / Sprite</div>
+   <div class="drink-description">Gazl� i�ecekler</div>
+           </div>
+      </div>
+    <div class="drink-price">35 ?</div>
+           </div>
+
+          <div class="drink-item">
+     <div class="drink-info">
+        <i class="fas fa-lemon drink-icon"></i>
+      <div class="drink-details">
+      <div class="drink-name">Meyve Suyu</div>
+     <div class="drink-description">Portakal, �eftali, kar���k</div>
+     </div>
+ </div>
+                  <div class="drink-price">30 ?</div>
+                </div>
+
+                <div class="drink-item">
+               <div class="drink-info">
+           <i class="fas fa-glass-water-droplet drink-icon"></i>
+      <div class="drink-details">
+   <div class="drink-name">So�uk �ay</div>
+             <div class="drink-description">�eftali, limon aromal�</div>
+     </div>
+       </div>
+        <div class="drink-price">30 ?</div>
+                </div>
+     </div>
+        </div>
+    </div>
+
+</div>

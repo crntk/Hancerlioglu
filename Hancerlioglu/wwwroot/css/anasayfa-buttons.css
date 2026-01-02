@@ -1,0 +1,140 @@
+/* Ana Sayfa Buton Stilleri - Temaya Uygun Kahverengi-Altýn Palet */
+
+/* Hero Section Butonlarý */
+body.anasayfa-page .hero-btn-primary {
+    background: linear-gradient(135deg, #d4a574 0%, #f5c76a 100%) !important;
+    color: #6b4f4b !important;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4) !important;
+    border: 2px solid transparent !important;
+}
+
+body.anasayfa-page .hero-btn-primary:hover {
+    background: linear-gradient(135deg, #f5c76a 0%, #d4a574 100%) !important;
+    color: #5a413d !important;
+    transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 12px 35px rgba(212, 165, 116, 0.6) !important;
+}
+
+body.anasayfa-page .hero-btn-secondary {
+    background: rgba(139, 69, 19, 0.15) !important;
+    color: #6b4f4b !important;
+    border: 2px solid #8b4513 !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+body.anasayfa-page .hero-btn-secondary:hover {
+    background: #8b4513 !important;
+    color: #f5f5dc !important;
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 12px 35px rgba(139, 69, 19, 0.5) !important;
+}
+
+/* Instagram Butonlarý */
+body.anasayfa-page .instagram-follow-btn {
+    background: linear-gradient(135deg, #8b4513 0%, #d4a574 100%) !important;
+    color: #fff8f0 !important;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3) !important;
+}
+
+body.anasayfa-page .instagram-follow-btn:hover {
+    background: linear-gradient(135deg, #d4a574 0%, #f5c76a 100%) !important;
+    color: #6b4f4b !important;
+ transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5) !important;
+}
+
+body.anasayfa-page .instagram-link {
+    background: #fff8f0 !important;
+    color: #8b4513 !important;
+    border: 2px solid #8b4513 !important;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2) !important;
+}
+
+body.anasayfa-page .instagram-link:hover {
+    background: linear-gradient(135deg, #8b4513 0%, #d4a574 100%) !important;
+    color: #fff8f0 !important;
+    border-color: transparent !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4) !important;
+}
+
+/* Harita Butonlarý */
+body.anasayfa-page .map-btn {
+    background: linear-gradient(135deg, #d4a574 0%, #f5c76a 100%) !important;
+    color: #6b4f4b !important;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3) !important;
+}
+
+body.anasayfa-page .map-btn:hover {
+    background: linear-gradient(135deg, #f5c76a 0%, #d4a574 100%) !important;
+    color: #5a413d !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5) !important;
+}
+
+body.anasayfa-page .map-btn-secondary {
+    background: rgba(139, 69, 19, 0.15) !important;
+    color: #fff8f0 !important;
+ border: 2px solid #fff8f0 !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+body.anasayfa-page .map-btn-secondary:hover {
+    background: #fff8f0 !important;
+    color: #8b4513 !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 35px rgba(255, 248, 240, 0.4) !important;
+}
+
+/* Product Link Butonlarý */
+body.anasayfa-page .product-link {
+    background: linear-gradient(135deg, #d4a574 0%, #f5c76a 100%) !important;
+    color: #6b4f4b !important;
+}
+
+body.anasayfa-page .product-link:hover {
+    background: linear-gradient(135deg, #f5c76a 0%, #d4a574 100%) !important;
+    color: #5a413d !important;
+}
+
+/* Dark Mode'da Butonlar */
+body.anasayfa-page.dark-mode .hero-btn-primary,
+body.anasayfa-page.dark-mode .map-btn,
+body.anasayfa-page.dark-mode .product-link {
+    background: linear-gradient(135deg, #c49e26 0%, #d4af37 100%) !important;
+    color: #2a2a2a !important;
+}
+
+body.anasayfa-page.dark-mode .hero-btn-secondary,
+body.anasayfa-page.dark-mode .map-btn-secondary {
+    background: rgba(212, 175, 55, 0.2) !important;
+    color: #f5f5dc !important;
+    border-color: #d4af37 !important;
+}
+
+body.anasayfa-page.dark-mode .instagram-follow-btn,
+body.anasayfa-page.dark-mode .instagram-link {
+    background: linear-gradient(135deg, #d4af37 0%, #c49e26 100%) !important;
+    color: #2a2a2a !important;
+    border-color: transparent !important;
+}
+
+/* Swiper Butonlarý - Ana Sayfa */
+body.anasayfa-page .swiper-button-next,
+body.anasayfa-page .swiper-button-prev {
+ background: linear-gradient(135deg, #d4a574 0%, #f5c76a 100%) !important;
+    color: #6b4f4b !important;
+}
+
+body.anasayfa-page .swiper-button-next:hover,
+body.anasayfa-page .swiper-button-prev:hover {
+    background: linear-gradient(135deg, #f5c76a 0%, #d4a574 100%) !important;
+}
+
+body.anasayfa-page .swiper-pagination-bullet {
+    background: #d4a574 !important;
+}
+
+body.anasayfa-page .swiper-pagination-bullet-active {
+    background: #8b4513 !important;
+}
