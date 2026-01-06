@@ -7,176 +7,164 @@
 
 <style>
     body {
-        background-color: #fff8f0;
+ background-color: #e8dfd2;
         font-family: 'Poppins', sans-serif;
     }
 
     .page-header {
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.08) 0%, rgba(147, 112, 219, 0.08) 100%);
+        background: linear-gradient(135deg, rgba(232, 223, 210, 0.5) 0%, rgba(245, 237, 225, 0.5) 100%);
         padding: 50px 0;
-        margin-bottom: 50px;
-        border-bottom: 3px solid rgba(138, 43, 226, 0.2);
+    margin-bottom: 50px;
+        border-bottom: 3px solid rgba(212, 165, 116, 0.3);
         animation: fadeIn 0.8s ease;
     }
 
-    .page-title {
-        font-family: 'Playfair Display', serif;
+  .page-title {
+font-family: 'Playfair Display', serif;
         font-weight: 800;
-        font-size: 3.5rem;
+      font-size: 3.5rem;
         text-align: center;
-        color: #8b4513;
+  color: #8b7355;
         margin-bottom: 20px;
-        position: relative;
+    position: relative;
         animation: slideDown 0.8s ease;
     }
 
-        .page-title::after {
+ .page-title::after {
             content: '✨';
-            margin-left: 15px;
+     margin-left: 15px;
         }
 
     .page-subtitle {
-        text-align: center;
+    text-align: center;
         font-size: 1.2rem;
-        color: #8b4513;
-        font-weight: 500;
-        margin-bottom: 20px;
-        animation: fadeIn 1s ease;
+        color: #8b7355;
+     font-weight: 500;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease;
     }
 
     .back-button {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        background: linear-gradient(135deg, #8b4513 0%, #d4a574 100%);
-        color: white;
-        padding: 12px 30px;
-        border-radius: 30px;
+  gap: 10px;
+ background: linear-gradient(135deg, #8b7355 0%, #d4a574 100%);
+      color: white;
+ padding: 12px 30px;
+      border-radius: 30px;
         font-weight: 600;
-        text-decoration: none;
+     text-decoration: none;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 5px 20px rgba(139, 69, 19, 0.3);
+        box-shadow: 0 5px 20px rgba(139, 115, 85, 0.3);
         border: none;
-        font-size: 1rem;
+ font-size: 1rem;
     }
 
         .back-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(139, 69, 19, 0.4);
-            background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
-            color: white;
+            box-shadow: 0 8px 30px rgba(139, 115, 85, 0.4);
+          background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%);
+         color: white;
         }
 
-        .back-button::before {
-            content: '←';
+  .back-button::before {
+        content: '←';
             font-size: 1.2rem;
             transition: transform 0.3s ease;
         }
 
-        .back-button:hover::before {
-            transform: translateX(-5px);
+    .back-button:hover::before {
+    transform: translateX(-5px);
         }
 
     @@keyframes fadeIn {
-        from
-
-    {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-
+   from {
+            opacity: 0;
+   }
+to {
+      opacity: 1;
+        }
     }
 
     @@keyframes slideDown {
-        from
-
-    {
-        opacity: 0;
+     from {
+            opacity: 0;
         transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
+        }
+        to {
+            opacity: 1;
+ transform: translateY(0);
+     }
     }
 
     /* Ürün Kartları - Premium Tasarım */
     .special-container {
-        max-width: 1000px;
+  max-width: 1000px;
         margin: 0 auto;
     }
 
     .special-card {
-        position: relative;
-        border-radius: 25px;
-        overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        background: white;
+      position: relative;
+     border-radius: 25px;
+ overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+   background: white;
         border: none;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 40px rgba(139, 115, 85, 0.1);
         margin-bottom: 40px;
         animation: fadeInUp 0.8s ease backwards;
     }
 
-        .special-card:nth-child(1) {
-            animation-delay: 0.2s;
+     .special-card:nth-child(1) {
+      animation-delay: 0.2s;
         }
 
         .special-card:nth-child(2) {
             animation-delay: 0.4s;
-        }
+    }
 
     @@keyframes fadeInUp {
-        from
-
-    {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
+        from {
+   opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+    opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .special-card:hover {
         transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 20px 60px rgba(138, 43, 226, 0.25);
+   box-shadow: 0 20px 60px rgba(139, 115, 85, 0.25);
     }
 
     .special-img-container {
         position: relative;
         overflow: hidden;
-        height: 380px;
+     height: 380px;
     }
 
     .special-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+ transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .special-card:hover .special-img {
-        transform: scale(1.15) rotate(-2deg);
+    transform: scale(1.15) rotate(-2deg);
     }
 
     .special-overlay {
-        position: absolute;
-        top: 0;
+ position: absolute;
+    top: 0;
         left: 0;
-        right: 0;
+right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(138, 43, 226, 0.3) 0%, rgba(147, 112, 219, 0.3) 100%);
+        background: linear-gradient(135deg, rgba(212, 165, 116, 0.3) 0%, rgba(166, 137, 104, 0.3) 100%);
         opacity: 0;
-        transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
     }
 
     .special-card:hover .special-overlay {
@@ -184,43 +172,39 @@
     }
 
     .special-badge {
-        position: absolute;
+   position: absolute;
         top: 20px;
         right: 20px;
-        background: linear-gradient(135deg, #8a2be2 0%, #9370db 100%);
-        color: white;
+        background: linear-gradient(135deg, #d4a574 0%, #a68968 100%);
+color: white;
         padding: 10px 25px;
         border-radius: 25px;
         font-size: 0.9rem;
         font-weight: 700;
-        letter-spacing: 1px;
-        z-index: 10;
-        box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
-        animation: specialPulse 2s ease-in-out infinite;
+letter-spacing: 1px;
+  z-index: 10;
+        box-shadow: 0 5px 20px rgba(212, 165, 116, 0.4);
+ animation: specialPulse 2s ease-in-out infinite;
     }
 
     @@keyframes specialPulse {
-        0%, 100%
-
-    {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
+        0%, 100% {
+      transform: scale(1);
+        }
+        50% {
+     transform: scale(1.05);
+      }
     }
 
     .special-content {
         padding: 35px;
-        background: linear-gradient(to bottom, white 0%, rgba(255, 248, 240, 0.5) 100%);
+        background: linear-gradient(to bottom, white 0%, rgba(245, 237, 225, 0.5) 100%);
     }
 
     .special-title {
-        font-size: 2rem;
+      font-size: 2rem;
         font-weight: 800;
-        color: #8b4513;
+        color: #8b7355;
         margin-bottom: 15px;
         transition: color 0.3s ease;
     }
@@ -231,9 +215,9 @@
 
     .special-description {
         font-size: 1.05rem;
-        color: #6b3e26;
+        color: #6b5d4f;
         line-height: 1.7;
-        margin-bottom: 20px;
+    margin-bottom: 20px;
     }
 
     .special-features {
@@ -244,47 +228,47 @@
     }
 
     .feature-tag {
-        background: rgba(138, 43, 226, 0.1);
-        color: #8a2be2;
-        padding: 6px 16px;
+        background: rgba(212, 165, 116, 0.1);
+color: #8b7355;
+padding: 6px 16px;
         border-radius: 20px;
-        font-size: 0.9rem;
+     font-size: 0.9rem;
         font-weight: 600;
-        border: 2px solid rgba(138, 43, 226, 0.2);
+        border: 2px solid rgba(212, 165, 116, 0.2);
     }
 
         .feature-tag.gold {
-            background: rgba(212, 165, 116, 0.1);
-            color: #d4a574;
+            background: rgba(212, 165, 116, 0.15);
+        color: #d4a574;
             border-color: rgba(212, 165, 116, 0.3);
         }
 
     .price-container {
         display: flex;
-        align-items: center;
+     align-items: center;
         justify-content: center;
         padding-top: 20px;
-        border-top: 2px solid rgba(138, 43, 226, 0.2);
+        border-top: 2px solid rgba(212, 165, 116, 0.2);
     }
 
     .price-badge {
-        display: inline-block;
-        padding: 15px 40px;
+  display: inline-block;
+    padding: 15px 40px;
         border-radius: 30px;
-        font-size: 1.5rem;
+      font-size: 1.5rem;
         font-weight: 800;
-        color: white;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+    box-shadow: 0 5px 20px rgba(139, 115, 85, 0.3);
         transition: all 0.3s ease;
     }
 
         .price-badge.premium {
-            background: linear-gradient(135deg, #28a745 0%, #218838 100%);
-        }
+   background: linear-gradient(135deg, #8b7355 0%, #6b5d4f 100%);
+   }
 
         .price-badge.special {
-            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
-            color: #333;
+        background: linear-gradient(135deg, #d4a574 0%, #c49e26 100%);
+    color: white;
         }
 
     .special-card:hover .price-badge {
@@ -293,69 +277,63 @@
 
     /* Responsive */
     @@media (max-width: 768px) {
-        .page-title
+        .page-title {
+   font-size: 2.5rem;
+        }
 
-    {
-        font-size: 2.5rem;
-    }
+        .page-header {
+    padding: 35px 0;
+    margin-bottom: 35px;
+   }
 
-    .page-header {
-        padding: 35px 0;
-        margin-bottom: 35px;
-    }
+        .special-img-container {
+    height: 300px;
+        }
 
-    .special-img-container {
-        height: 300px;
-    }
+  .special-title {
+      font-size: 1.6rem;
+     }
 
-    .special-title {
-        font-size: 1.6rem;
-    }
+   .special-content {
+padding: 25px;
+        }
 
-    .special-content {
-        padding: 25px;
-    }
-
-    .price-badge {
-        font-size: 1.3rem;
-        padding: 12px 30px;
-    }
-
+   .price-badge {
+            font-size: 1.3rem;
+       padding: 12px 30px;
+   }
     }
 
     @@media (max-width: 576px) {
-        .page-title
+        .page-title {
+font-size: 2rem;
+        }
 
-    {
-        font-size: 2rem;
-    }
+        .special-img-container {
+height: 250px;
+        }
 
-    .special-img-container {
-        height: 250px;
-    }
+ .special-title {
+ font-size: 1.4rem;
+        }
 
-    .special-title {
-        font-size: 1.4rem;
-    }
+        .special-description {
+    font-size: 0.95rem;
+        }
 
-    .special-description {
-        font-size: 0.95rem;
-    }
+        .special-content {
+    padding: 20px;
+        }
 
-    .special-content {
-        padding: 20px;
-    }
+        .back-button {
+            padding: 10px 25px;
+    font-size: 0.95rem;
+        }
 
-    .back-button {
-        padding: 10px 25px;
-        font-size: 0.95rem;
-    }
-
-    .price-badge {
-        font-size: 1.2rem;
-        padding: 10px 25px;
-    }
-
+        .price-badge {
+    font-size: 1.2rem;
+            padding: 10px 25px;
+  }
     }
 </style>
 
@@ -363,8 +341,8 @@
     <div class="container">
         <h1 class="page-title">Özel Tatlılar</h1>
         <p class="page-subtitle">Kadayıf & Geleneksel Lezzetler</p>
-        <div class="text-center">
-            <a href="/Home/Index" class="back-button">Ana Menüye Dön</a>
+    <div class="text-center">
+   <a href="/Home/Index" class="back-button">Ana Menüye Dön</a>
         </div>
     </div>
 </div>
@@ -373,57 +351,57 @@
     <div class="row g-4 justify-content-center">
 
         <!-- Fıstıklı Kadayıf -->
-        <div class="col-12">
+     <div class="col-12">
             <div class="special-card">
-                <span class="special-badge">⭐ ÖZEL TARİF</span>
+    <span class="special-badge">⭐ ÖZEL TARİF</span>
                 <div class="special-img-container">
-                    <img src="~/resimler/kadayıf.jpg" class="special-img" alt="Fıstıklı Kadayıf">
-                    <div class="special-overlay"></div>
-                </div>
-                <div class="special-content">
-                    <h5 class="special-title">Fıstıklı Kadayıf</h5>
-                    <p class="special-description">
-                        İnce tel kadayıf ile hazırlanan, içine Antep fıstığı konularak fırında altın rengi
-                        alana kadar pişirilen ve üzerine özel şerbeti ile tatlandırılan geleneksel lezzetimiz.
-                        Her lokmada fıstığın lezzeti damağınızda kalacak.
-                    </p>
-                    <div class="special-features">
-                        <span class="feature-tag gold">🥜 Antep Fıstığı</span>
-                        <span class="feature-tag">🍯 Özel Şerbet</span>
-                        <span class="feature-tag">✨ El Yapımı</span>
-                        <span class="feature-tag gold">🔥 Taze Üretim</span>
-                    </div>
-                    <div class="price-container">
-                        <span class="price-badge premium">1200 ₺</span>
-                    </div>
-                </div>
-            </div>
+    <img src="~/resimler/kadayıf.jpg" class="special-img" alt="Fıstıklı Kadayıf">
+       <div class="special-overlay"></div>
+    </div>
+         <div class="special-content">
+           <h5 class="special-title">Fıstıklı Kadayıf</h5>
+         <p class="special-description">
+   İnce tel kadayıf ile hazırlanan, içine Antep fıstığı konularak fırında altın rengi
+        alana kadar pişirilen ve üzerine özel şerbeti ile tatlandırılan geleneksel lezzetimiz.
+              Her lokmada fıstığın lezzeti damağınızda kalacak.
+         </p>
+         <div class="special-features">
+       <span class="feature-tag gold">🥜 Antep Fıstığı</span>
+         <span class="feature-tag">🍯 Özel Şerbet</span>
+            <span class="feature-tag">✨ El Yapımı</span>
+             <span class="feature-tag gold">🔥 Taze Üretim</span>
+       </div>
+  <div class="price-container">
+      <span class="price-badge premium">1200 ₺</span>
         </div>
+       </div>
+       </div>
+      </div>
 
         <!-- Kerebiç -->
         <div class="col-12">
-            <div class="special-card">
-                <span class="special-badge">💎 GELENEKSEL</span>
-                <div class="special-img-container">
-                    <img src="https://images.unsplash.com/photo-1655210932788-7ccfa6f7fe66" class="special-img" alt="Kerebiç">
-                    <div class="special-overlay"></div>
-                </div>
-                <div class="special-content">
-                    <h5 class="special-title">Kerebiç</h5>
-                    <p class="special-description">
-                        Yöresel tarifimizle hazırlanan kerebiç, özel hamuru ve ceviz dolgulu yapısıyla
-                        damak tadınıza hitap ediyor. Fırında pişirilen hamuru, ceviz içi ve özel şerbeti
-                        ile benzersiz bir lezzet deneyimi sunuyor.
-                    </p>
-                    <div class="special-features">
-                        <span class="feature-tag">🌰 Ceviz Dolgulu</span>
-                        <span class="feature-tag gold">📜 Geleneksel Tarif</span>
-                        <span class="feature-tag">🍯 Hafif Şerbet</span>
-                        <span class="feature-tag">⭐ Yöresel</span>
-                    </div>
-                    <div class="price-container">
-                        <span class="price-badge special">900 ₺</span>
-                    </div>
+      <div class="special-card">
+        <span class="special-badge">💎 GELENEKSEL</span>
+        <div class="special-img-container">
+      <img src="https://images.unsplash.com/photo-1655210932788-7ccfa6f7fe66" class="special-img" alt="Kerebiç">
+       <div class="special-overlay"></div>
+ </div>
+        <div class="special-content">
+   <h5 class="special-title">Kerebiç</h5>
+              <p class="special-description">
+        Yöresel tarifimizle hazırlanan kerebiç, özel hamuru ve ceviz dolgulu yapısıyla
+        damak tadınıza hitap ediyor. Fırında pişirilen hamuru, ceviz içi ve özel şerbeti
+  ile benzersiz bir lezzet deneyimi sunuyor.
+        </p>
+         <div class="special-features">
+     <span class="feature-tag">🌰 Ceviz Dolgulu</span>
+      <span class="feature-tag gold">📜 Geleneksel Tarif</span>
+         <span class="feature-tag">🍯 Hafif Şerbet</span>
+                <span class="feature-tag">⭐ Yöresel</span>
+  </div>
+           <div class="price-container">
+  <span class="price-badge special">900 ₺</span>
+        </div>
                 </div>
             </div>
         </div>

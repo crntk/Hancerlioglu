@@ -1,0 +1,23 @@
+/* Star Icons Fix - Global */
+.rating-stars,
+.review-stars {
+    font-family: Arial, 'Segoe UI Symbol', 'Apple Color Emoji', sans-serif !important;
+    font-style: normal !important;
+ display: inline-flex;
+    gap: 3px;
+}
+
+.rating-stars span,
+.review-stars span {
+    display: inline-block;
+    font-size: inherit;
+    line-height: 1;
+    font-family: Arial, 'Segoe UI Symbol', 'Apple Color Emoji', sans-serif !important;
+}
+
+/* Ensure proper star rendering */
+.rating-stars span,
+.review-stars span {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

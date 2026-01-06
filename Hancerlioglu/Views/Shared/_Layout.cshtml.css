@@ -8,7 +8,7 @@ a.navbar-brand {
 }
 
 a {
-  color: #8b4513;
+  color: #8b7355;
   transition: all 0.3s ease;
 }
 
@@ -18,23 +18,23 @@ a:hover {
 
 .btn-primary {
   color: #fff;
-  background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%);
   border: none;
   border-radius: 12px;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #8b4513 0%, #d4a574 100%);
+  background: linear-gradient(135deg, #8b7355 0%, #d4a574 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+  box-shadow: 0 6px 20px rgba(139, 115, 85, 0.4);
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%);
   border: none;
 }
 
@@ -47,7 +47,7 @@ a:hover {
 }
 
 .box-shadow {
-  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15) !important;
+  box-shadow: 0 8px 32px rgba(139, 115, 85, 0.15) !important;
 }
 
 button.accept-policy {
@@ -55,21 +55,21 @@ button.accept-policy {
   line-height: inherit;
 }
 
-/* Footer - Modern Glassmorphism Tasarım */
+/* Footer - Krem/Bej Tema ile Modern Tasarım */
 .footer {
   position: relative;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
-  background: rgba(240, 255, 240, 0.25) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-top: 2px solid rgba(60, 179, 113, 0.5);
-  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #e8dfd2 0%, #f5ede1 50%, #e8dfd2 100%) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 3px solid #d4a574;
+  box-shadow: 0 -8px 32px rgba(212, 165, 116, 0.2), 
+       inset 0 1px 0 rgba(255, 255, 255, 0.3);
   margin-top: 50px;
   padding: 20px 0;
-  color: #5c4033;
+  color: #6b5d4f;
   animation: slideUp 0.6s ease-out;
   overflow: hidden;
 }
@@ -77,7 +77,7 @@ button.accept-policy {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+  transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -91,15 +91,15 @@ button.accept-policy {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+height: 3px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(60, 179, 113, 0.7) 20%,
-    rgba(46, 139, 87, 0.7) 35%,
-    rgba(72, 209, 204, 0.7) 50%,
-    rgba(50, 205, 50, 0.7) 65%,
-    rgba(85, 107, 47, 0.7) 80%,
-    transparent 100%);
+    rgba(212, 165, 116, 0.8) 20%,
+    rgba(139, 115, 85, 0.8) 35%,
+ rgba(212, 165, 116, 0.8) 50%,
+    rgba(139, 115, 85, 0.8) 65%,
+    rgba(212, 165, 116, 0.8) 80%,
+transparent 100%);
   background-size: 200% 100%;
   animation: shimmer-footer 4s linear infinite;
   z-index: 1;
@@ -122,9 +122,9 @@ button.accept-policy {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 10% 50%, rgba(60, 179, 113, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 90% 50%, rgba(46, 139, 87, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 50% 0%, rgba(72, 209, 204, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 10% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 50%, rgba(139, 115, 85, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 0%, rgba(212, 165, 116, 0.08) 0%, transparent 50%);
   animation: footerGlow 8s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -137,7 +137,7 @@ button.accept-policy {
   }
   50% {
     opacity: 0.8;
-    transform: scale(1.05);
+ transform: scale(1.05);
   }
 }
 
@@ -156,7 +156,7 @@ button.accept-policy {
 }
 
 .footer a {
-  color: #8b4513;
+  color: #8b7355;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -173,15 +173,15 @@ button.accept-policy {
   bottom: 0;
   left: 0;
   background: linear-gradient(90deg, 
-    rgba(60, 179, 113, 0.9) 0%, 
-    rgba(46, 139, 87, 0.9) 50%,
-    rgba(72, 209, 204, 0.9) 100%);
+    rgba(212, 165, 116, 0.9) 0%, 
+    rgba(139, 115, 85, 0.9) 50%,
+    rgba(212, 165, 116, 0.9) 100%);
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
 .footer a:hover {
-  color: #5c4033;
+  color: #d4a574;
   transform: translateY(-2px);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -191,7 +191,7 @@ button.accept-policy {
 }
 
 .footer .text-muted {
-  color: #8b4513 !important;
+  color: #8b7355 !important;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
@@ -234,11 +234,11 @@ main {
   z-index: 2;
 }
 
-/* Animasyonlu Arka Plan - Güçlendirilmiş Versiyon */
+/* Animasyonlu Arka Plan - Ana Sayfa Teması */
 body {
   position: relative !important;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #fff8f0 0%, #ffe8d6 30%, #fff8f0 60%, #ffe8d6 100%) !important;
+  background: linear-gradient(135deg, #e8dfd2 0%, #f5ede1 30%, #e8dfd2 60%, #f5ede1 100%) !important;
   background-size: 400% 400% !important;
   animation: gradientShift 15s ease infinite !important;
 }
@@ -264,11 +264,11 @@ body::after {
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.25) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 214, 153, 0.20) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(139, 69, 19, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 30% 80%, rgba(212, 165, 116, 0.18) 0%, transparent 50%),
-    radial-gradient(circle at 70% 20%, rgba(255, 214, 153, 0.15) 0%, transparent 50%) !important;
+    radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(166, 137, 104, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(139, 115, 85, 0.10) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(212, 165, 116, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 20%, rgba(166, 137, 104, 0.10) 0%, transparent 50%) !important;
   animation: floatBackground 25s ease-in-out infinite !important;
   z-index: -1 !important;
   pointer-events: none;
@@ -294,15 +294,15 @@ body::before {
   content: '' !important;
   position: fixed !important;
   top: 0;
-  left: 0;
+left: 0;
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(212, 165, 116, 0.15) 0%, transparent 35%),
-    radial-gradient(circle at 90% 80%, rgba(255, 214, 153, 0.12) 0%, transparent 35%),
-    radial-gradient(circle at 30% 60%, rgba(139, 69, 19, 0.10) 0%, transparent 35%),
-    radial-gradient(circle at 60% 40%, rgba(212, 165, 116, 0.08) 0%, transparent 35%),
-    radial-gradient(circle at 80% 20%, rgba(255, 214, 153, 0.10) 0%, transparent 35%) !important;
+    radial-gradient(circle at 10% 20%, rgba(212, 165, 116, 0.10) 0%, transparent 35%),
+    radial-gradient(circle at 90% 80%, rgba(166, 137, 104, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 30% 60%, rgba(139, 115, 85, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 60% 40%, rgba(212, 165, 116, 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(166, 137, 104, 0.08) 0%, transparent 35%) !important;
   background-size: 250% 250%, 200% 200%, 280% 280%, 220% 220%, 240% 240% !important;
   background-position: 0% 0%, 100% 100%, 50% 50%, 20% 80%, 80% 20% !important;
   animation: particleMove 20s ease-in-out infinite !important;

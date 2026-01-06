@@ -2,12 +2,12 @@
    Base & Typography
    =================================================================== */
 :root {
-    --color-primary: #8b4513; /* SaddleBrown - Ana Marka Rengi */
-    --color-secondary: #d4a574; /* Tan - Ýkincil, Vurgu Rengi */
-    --color-accent: #f5c76a; /* Gold - Parlak Vurgu */
-    --color-background-light: #fff8f0; /* Light Cream - Açýk Zemin */
-    --color-background-dark: #ffe8d6; /* Light Peach - Koyu Zemin */
-    --color-text-dark: #6b3e26; /* Dark Brown - Koyu Metin */
+    --color-primary: #8b7355; /* SaddleBrown - Ana Marka Rengi */
+    --color-secondary: #a68968; /* Tan - Ýkincil, Vurgu Rengi */
+    --color-accent: #d4c5a9; /* Gold - Parlak Vurgu */
+    --color-background-light: #f5f0e8; /* Light Cream - Açýk Zemin */
+    --color-background-dark: #e8dfd2; /* Light Peach - Koyu Zemin */
+    --color-text-dark: #6b5d4f; /* Dark Brown - Koyu Metin */
     --color-text-light: #ffffff; /* White - Açýk Metin */
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Playfair Display', serif;
@@ -42,7 +42,7 @@ body {
     font-family: var(--font-secondary);
     font-size: 3.5rem;
     font-weight: 800;
-    color: #6b5738;
+    color: #8b7355;
     text-align: center;
     margin-bottom: 20px;
     position: relative;
@@ -99,7 +99,7 @@ body {
   display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(245, 235, 215, 0.95) 0%, rgba(250, 240, 230, 0.90) 100%), url('/Resimler/arka.png') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(245, 240, 232, 0.95) 0%, rgba(240, 235, 225, 0.90) 100%), url('/Resimler/arka.png') center/cover no-repeat;
     background-attachment: fixed;
     color: var(--color-text-light);
     text-align: center;
@@ -114,9 +114,9 @@ body {
     height: 100%;
     background: linear-gradient(
    135deg,
- rgba(245, 235, 215, 0.7) 0%,
-     rgba(255, 248, 240, 0.5) 50%,
-        rgba(250, 235, 215, 0.7) 100%
+ rgba(245, 240, 232, 0.7) 0%,
+     rgba(245, 240, 232, 0.5) 50%,
+        rgba(240, 230, 218, 0.7) 100%
     );
 }
 
@@ -136,7 +136,7 @@ body {
     max-width: 400px;
     width: 100%;
     margin-bottom: 30px;
-    filter: drop-shadow(0 10px 30px rgba(139, 69, 19, 0.3));
+    filter: drop-shadow(0 10px 30px rgba(139, 115, 85, 0.3));
     animation: logoFloat 3s ease-in-out infinite;
 }
 
@@ -151,12 +151,12 @@ font-family: 'Playfair Display', serif;
     font-weight: 900;
     margin-bottom: 20px;
     letter-spacing: 8px;
-    color: #6b4f4b;
+    color: #8b7355;
     text-shadow: 
-        0 2px 4px rgba(139, 69, 19, 0.2),
-        0 4px 8px rgba(139, 69, 19, 0.15),
-      0 8px 16px rgba(139, 69, 19, 0.1),
-    0 0 40px rgba(212, 165, 116, 0.3);
+        0 2px 4px rgba(139, 115, 85, 0.2),
+        0 4px 8px rgba(139, 115, 85, 0.15),
+      0 8px 16px rgba(139, 115, 85, 0.1),
+    0 0 40px rgba(166, 137, 104, 0.3);
     position: relative;
 }
 
@@ -165,16 +165,16 @@ font-family: 'Playfair Display', serif;
     font-weight: 600;
   margin-bottom: 40px;
     letter-spacing: 3px;
-    color: #8b4513;
+    color: #8b7355;
  text-shadow: 
         0 2px 4px rgba(255, 255, 255, 0.5),
         0 4px 8px rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 248, 240, 0.8);
+    background-color: rgba(245, 240, 232, 0.8);
     padding: 12px 35px;
     border-radius: var(--border-radius-medium);
     display: inline-block;
   backdrop-filter: blur(8px);
-    border: 2px solid rgba(212, 165, 116, 0.3);
+    border: 2px solid rgba(166, 137, 104, 0.3);
 }
 
 .hero-buttons {
@@ -200,12 +200,12 @@ font-family: 'Playfair Display', serif;
 .hero-btn-primary {
     background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
     color: var(--color-primary);
-    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+    box-shadow: 0 8px 25px rgba(166, 137, 104, 0.4);
 }
 
 .hero-btn-primary:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 35px rgba(212, 165, 116, 0.6);
+    box-shadow: 0 12px 35px rgba(166, 137, 104, 0.6);
     color: var(--color-primary);
 }
 
@@ -239,7 +239,7 @@ font-family: 'Playfair Display', serif;
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(166, 137, 104, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     animation: float 15s ease-in-out infinite;
 }
@@ -276,7 +276,7 @@ font-family: 'Playfair Display', serif;
 
 .about-img:hover {
     transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 15px 40px rgba(139, 115, 85, 0.3);
 }
 
 .about-img:nth-child(1) {
@@ -291,7 +291,7 @@ font-family: 'Playfair Display', serif;
 .about-text h3 {
     font-family: var(--font-secondary);
     font-size: 2.5rem;
-    color: #6b5738;
+    color: #8b7355;
     margin-bottom: 25px;
 }
 
@@ -322,7 +322,7 @@ gap: 15px;
 
 .feature-item:hover {
     transform: translateX(10px);
-    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.2);
+    box-shadow: 0 8px 20px rgba(139, 115, 85, 0.2);
 }
 
 .feature-icon {
@@ -366,7 +366,7 @@ gap: 15px;
 
 .product-card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 20px 60px rgba(139, 69, 19, 0.25);
+    box-shadow: 0 20px 60px rgba(139, 115, 85, 0.25);
 }
 
 .product-img-wrapper {
@@ -412,7 +412,7 @@ gap: 15px;
 font-family: var(--font-secondary);
     font-size: 1.8rem;
     font-weight: 700;
-    color: #6b5738;
+    color: #8b7355;
     margin-bottom: 15px;
 }
 
@@ -438,7 +438,7 @@ font-family: var(--font-secondary);
 
 .product-link:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(212, 165, 116, 0.4);
+    box-shadow: 0 8px 20px rgba(166, 137, 104, 0.4);
     color: var(--color-primary);
 }
 
@@ -470,7 +470,7 @@ font-family: var(--font-secondary);
 
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 12px 35px rgba(139, 115, 85, 0.3);
     z-index: 10;
 }
 
@@ -491,7 +491,7 @@ font-family: var(--font-secondary);
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(139, 69, 19, 0.9) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(139, 115, 85, 0.9) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
  display: flex;
@@ -699,7 +699,7 @@ content: '';
 }
 
 .instagram-header .section-title {
-    color: #6b5738;
+    color: #8b7355;
 }
 
 .instagram-header .section-subtitle {
@@ -937,7 +937,7 @@ font-size: 3rem;
 }
 
 .contact-card a:hover {
-    color: #ffdf91;
+    color: #d4c5a9;
 }
 
 .map-section {
@@ -1002,13 +1002,13 @@ text-decoration: none;
     border-radius: var(--border-radius-large);
     font-size: 1.1rem;
     font-weight: 600;
-    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+    box-shadow: 0 8px 25px rgba(166, 137, 104, 0.3);
     transition: all 0.4s ease;
 }
 
 .map-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(212, 165, 116, 0.5);
+    box-shadow: 0 12px 35px rgba(166, 137, 104, 0.5);
     color: var(--color-primary);
 }
 
@@ -1062,7 +1062,7 @@ background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accen
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+    box-shadow: 0 6px 20px rgba(166, 137, 104, 0.4);
 }
 
 .swiper-pagination {
@@ -1322,10 +1322,10 @@ right: 0;
     flex-direction: column;
     gap: 8px;
     padding: 10px;
-    background: rgba(107, 79, 75, 0.15);
+    background: rgba(107, 93, 79, 0.15);
  backdrop-filter: blur(5px);
     border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
-    box-shadow: -4px 0 15px rgba(107, 79, 75, 0.2);
+    box-shadow: -4px 0 15px rgba(107, 93, 79, 0.2);
 }
 
 .social-icon {
@@ -1339,12 +1339,12 @@ right: 0;
     color: white;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(107, 79, 75, 0.3);
+    box-shadow: 0 2px 8px rgba(107, 93, 79, 0.3);
 }
 
 .social-icon:hover {
     transform: scale(1.15) translateX(-5px);
-    box-shadow: 0 5px 15px rgba(107, 79, 75, 0.5);
+    box-shadow: 0 5px 15px rgba(107, 93, 79, 0.5);
 }
 
 .social-icon.facebook { 
@@ -1356,7 +1356,7 @@ right: 0;
 }
 
 .social-icon.phone { 
-    background: linear-gradient(135deg, #d4a574 0%, #c49e26 100%);
+    background: linear-gradient(135deg, #a68968 0%, #c49e26 100%);
 }
 
 .social-icon.location { 

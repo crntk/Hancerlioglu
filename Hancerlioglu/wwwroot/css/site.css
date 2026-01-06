@@ -4,7 +4,7 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
+html {
     font-size: 16px;
   }
 }
@@ -22,18 +22,20 @@ body {
   min-height: 100vh;
   /* Background animasyonu _Layout.cshtml.css'de tanımlı */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #5c4033;
+  color: #6b5d4f;
   overflow-x: hidden;
 }
 
-/* Baklavacı Teması - Ana Renkler */
+/* Ana Sayfa Teması - Renk Paleti */
 :root {
   --baklava-gold: #d4a574;
-  --baklava-brown: #8b4513;
-  --baklava-dark-brown: #5c4033;
-  --baklava-cream: #fff8f0;
-  --baklava-orange: #ff8c42;
-  --baklava-shadow: rgba(139, 69, 19, 0.2);
+  --baklava-brown: #8b7355;
+  --baklava-dark-brown: #6b5d4f;
+  --baklava-cream: #e8dfd2;
+  --baklava-light-cream: #f5ede1;
+  --baklava-tan: #a68968;
+  --baklava-accent: #d4c5a9;
+  --baklava-shadow: rgba(139, 115, 85, 0.2);
 }
 
 /* Container Animasyonları */
@@ -46,7 +48,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
-  to {
+to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -55,13 +57,13 @@ body {
 /* Başlık Stilleri */
 h1, h2, h3, h4, h5 {
   font-weight: 700;
-  color: var(--baklava-dark-brown);
+  color: var(--baklava-brown);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.5px;
 }
 
 h1 {
-  background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -92,12 +94,12 @@ h1 {
 }
 
 .btn-dark {
-  background: linear-gradient(135deg, var(--baklava-dark-brown) 0%, var(--baklava-brown) 100%);
+  background: linear-gradient(135deg, var(--baklava-brown) 0%, var(--baklava-tan) 100%);
   border: none;
 }
 
 .btn-dark:hover {
-  background: linear-gradient(135deg, var(--baklava-brown) 0%, var(--baklava-gold) 100%);
+  background: linear-gradient(135deg, var(--baklava-tan) 0%, var(--baklava-gold) 100%);
 }
 
 /* Card Stilleri - Modern Glassmorphism */
@@ -107,7 +109,7 @@ h1 {
   border-radius: 20px;
   border: 2px solid rgba(212, 165, 116, 0.3);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+  box-shadow: 0 8px 32px rgba(139, 115, 85, 0.15);
   overflow: hidden;
   position: relative;
 }
@@ -129,7 +131,7 @@ h1 {
 
 .card:hover, .dessert-card:hover, .category-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 15px 40px rgba(139, 115, 85, 0.3);
   border-color: var(--baklava-gold);
 }
 
@@ -205,15 +207,15 @@ h1 {
 }
 
 .bg-success {
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+  background: linear-gradient(135deg, #a68968 0%, #8b7355 100%) !important;
 }
 
 .bg-warning {
-  background: linear-gradient(135deg, #ffc107 0%, #ff8c42 100%) !important;
+  background: linear-gradient(135deg, #d4a574 0%, #d4c5a9 100%) !important;
 }
 
 .bg-danger {
-  background: linear-gradient(135deg, #dc3545 0%, #e85d75 100%) !important;
+  background: linear-gradient(135deg, #8b7355 0%, #6b5d4f 100%) !important;
 }
 
 /* Category Card Özel Stiller */
@@ -225,7 +227,7 @@ h1 {
 
 .category-card:hover .category-img {
   transform: scale(1.1) rotate(5deg);
-  border-color: var(--baklava-gold);
+border-color: var(--baklava-gold);
 }
 
 .category-img {
@@ -236,9 +238,9 @@ h1 {
 
 .category-name {
   margin-top: 15px;
-  font-size: 1.5rem;
+font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--baklava-dark-brown) 0%, var(--baklava-gold) 100%);
+  background: linear-gradient(135deg, var(--baklava-brown) 0%, var(--baklava-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -248,9 +250,6 @@ h1 {
 .category-card:hover .category-name {
   transform: scale(1.05);
 }
-
-/* Arka Plan Dekoratif Elementler - Layout.css'deki animasyonlar kullanılıyor */
-/* body::before animasyonu _Layout.cshtml.css'de tanımlı */
 
 /* Scrollbar Stilleri */
 ::-webkit-scrollbar {
@@ -268,7 +267,7 @@ h1 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--baklava-brown) 0%, var(--baklava-gold) 100%);
+background: linear-gradient(135deg, var(--baklava-brown) 0%, var(--baklava-gold) 100%);
 }
 
 /* Link Stilleri */
@@ -310,7 +309,7 @@ a:hover::after {
   }
   
   .card, .dessert-card, .category-card {
-    border-radius: 15px;
+ border-radius: 15px;
   }
   
   .badge {
@@ -331,7 +330,7 @@ a:hover::after {
   
   .badge {
     font-size: 0.85rem;
-    padding: 5px 10px;
+  padding: 5px 10px;
   }
 }
 
@@ -364,9 +363,9 @@ a:hover::after {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(100px);
+transform: translateX(100px);
   }
-  to {
+to {
     opacity: 1;
     transform: translateX(0);
   }
@@ -379,7 +378,7 @@ a:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+color: white;
   text-decoration: none;
   font-size: 22px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -391,10 +390,10 @@ a:hover::after {
 .social-btn::before {
   content: '';
   position: absolute;
-top: 50%;
+  top: 50%;
   left: 50%;
   width: 0;
-  height: 0;
+height: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
@@ -426,49 +425,49 @@ top: 50%;
   transform: scale(1.1);
 }
 
-/* Facebook Button */
+/* Facebook Button - Ana Sayfa Teması */
 .facebook-btn {
-  background: linear-gradient(135deg, #3b5998 0%, #2d4373 100%);
+  background: linear-gradient(135deg, #8b7355 0%, #6b5d4f 100%);
 }
 
 .facebook-btn:hover {
-  background: linear-gradient(135deg, #4c68a7 0%, #3b5998 100%);
+  background: linear-gradient(135deg, #a68968 0%, #8b7355 100%);
 }
 
-/* Instagram Button */
+/* Instagram Button - Ana Sayfa Teması */
 .instagram-btn {
-  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(135deg, #a68968 0%, #8b7355 100%);
 }
 
 .instagram-btn:hover {
-  background: linear-gradient(135deg, #ffa844 0%, #f09433 25%, #e6683c 50%, #dc2743 75%, #cc2366 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #a68968 100%);
 }
 
-/* Phone Button */
+/* Phone Button - Ana Sayfa Teması */
 .phone-btn {
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #c49e26 100%);
 }
 
 .phone-btn:hover {
-  background: linear-gradient(135deg, #2eed73 0%, #25d366 100%);
+  background: linear-gradient(135deg, #e6b985 0%, #d4a574 100%);
 }
 
-/* Location Button */
+/* Location Button - Ana Sayfa Teması */
 .location-btn {
-  background: linear-gradient(135deg, #ea4335 0%, #c5221f 100%);
+  background: linear-gradient(135deg, #7a6b5a 0%, #6b5d4f 100%);
 }
 
 .location-btn:hover {
-  background: linear-gradient(135deg, #f55145 0%, #ea4335 100%);
+  background: linear-gradient(135deg, #8b7a68 0%, #7a6b5a 100%);
 }
 
-/* Menu Button */
+/* Menu Button - Ana Sayfa Teması */
 .menu-btn {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  background: linear-gradient(135deg, #8b7355 0%, #7a6b5a 100%);
 }
 
 .menu-btn:hover {
-  background: linear-gradient(135deg, #ff7b7b 0%, #ff6b6b 100%);
+background: linear-gradient(135deg, #a68968 0%, #8b7355 100%);
 }
 
 /* Tooltip Efekti */
@@ -478,7 +477,7 @@ top: 50%;
   right: 70px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(107, 93, 79, 0.95);
   color: white;
   padding: 8px 15px;
   border-radius: 8px;
@@ -488,7 +487,7 @@ top: 50%;
   z-index: 2;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.4);
   animation: tooltipFadeIn 0.3s ease;
   display: block;
 }
@@ -498,19 +497,10 @@ top: 50%;
     opacity: 0;
     transform: translateY(-50%) translateX(10px);
   }
-  to {
+to {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
   }
-}
-
-/* Dark Mode Uyumluluğu */
-body.dark-mode .social-btn {
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
-
-body.dark-mode .social-btn:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* Mobil Uyumluluk */
@@ -524,7 +514,7 @@ body.dark-mode .social-btn:hover {
   .social-btn {
     width: 50px;
     height: 50px;
-    font-size: 20px;
+ font-size: 20px;
   }
   
   /* Mobilde tooltip gizle */
@@ -541,16 +531,9 @@ body.dark-mode .social-btn:hover {
   }
   
   .social-btn {
-  width: 45px;
+    width: 45px;
     height: 45px;
     font-size: 18px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  }
-}
-
-/* Tema değiştirme butonu ile çakışma önleme */
-@media (max-width: 768px) {
-  .fixed-social-buttons {
-    bottom: 80px; /* Tema butonunun üzerinde */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   }
 }

@@ -1,5 +1,5 @@
-ï»¿@{
-    ViewData["Title"] = "HANÃ‡ERLÄ°OÄžLU - Ana Sayfa";
+@{
+    ViewData["Title"] = "HANÇERLÝOÐLU - Ana Sayfa";
 }
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,95 +19,27 @@
 <link rel="stylesheet" href="~/css/anasayfa-buttons.css" asp-append-version="true" />
 
 <style>
-    /* Ana Sayfa Ã¶zel arka plan rengi - Layout'taki animasyonlarÄ± devre dÄ±ÅŸÄ± bÄ±rak */
+    /* Ana Sayfa özel arka plan rengi - Layout'taki animasyonlarý devre dýþý býrak */
     body.anasayfa-page {
-        background: #d4c5a9 !important;
-        animation: none !important;
+        background: #e8dfd2 !important;
+     animation: none !important;
         background-size: auto !important;
     }
     
     body.anasayfa-page::before,
     body.anasayfa-page::after {
-     display: none !important;
-    }
-    
-    /* Dark Mode iÃ§in Ana Sayfa Stilleri */
-    body.anasayfa-page.dark-mode {
- background: #8b7355 !important; /* Koyu krem/kahverengi ton */
-    }
-    
-    /* Dark Mode'da section arka planlarÄ± */
-    body.anasayfa-page.dark-mode .about-section {
-      background: linear-gradient(135deg, #6b5d4f 0%, #7a6b5a 100%) !important;
-    }
-    
-    body.anasayfa-page.dark-mode .products-section {
- background: #7a6b5a !important;
-    }
-    
-    body.anasayfa-page.dark-mode .gallery-section {
- background: linear-gradient(135deg, #6b5d4f 0%, #7a6b5a 100%) !important;
-    }
-    
-    body.anasayfa-page.dark-mode .reviews-section {
-        background: #7a6b5a !important;
-    }
-    
-body.anasayfa-page.dark-mode .instagram-section {
-        background: linear-gradient(135deg, #6b5d4f 0%, #7a6b5a 100%) !important;
-    }
-    
-  /* Dark Mode'da metin renkleri */
-    body.anasayfa-page.dark-mode .section-title,
-    body.anasayfa-page.dark-mode .section-subtitle,
-    body.anasayfa-page.dark-mode .about-text h3,
-    body.anasayfa-page.dark-mode .about-text p,
-body.anasayfa-page.dark-mode .product-title,
-  body.anasayfa-page.dark-mode .product-desc {
-        color: #f5f5dc !important;
-  }
-    
-    /* Dark Mode'da kartlar */
-    body.anasayfa-page.dark-mode .product-card,
-    body.anasayfa-page.dark-mode .review-card,
-    body.anasayfa-page.dark-mode .feature-item {
-      background: rgba(107, 93, 79, 0.5) !important;
-        color: #f5f5dc !important;
-    }
-    
-    body.anasayfa-page.dark-mode .google-address {
-        background: linear-gradient(135deg, #6b5d4f 0%, #7a6b5a 100%) !important;
-    }
-    
-    body.anasayfa-page.dark-mode .google-address h4,
-    body.anasayfa-page.dark-mode .google-address p {
-      color: #f5f5dc !important;
-    }
-    
-    /* Dark Mode'da Instagram */
-    body.anasayfa-page.dark-mode .instagram-post {
-        background: rgba(107, 93, 79, 0.5) !important;
-    }
-    
-    body.anasayfa-page.dark-mode .instagram-post-placeholder {
-  background: linear-gradient(135deg, rgba(107, 93, 79, 0.3) 0%, rgba(122, 107, 90, 0.3) 100%) !important;
-        border-color: rgba(212, 165, 116, 0.5) !important;
-    }
-  
-    body.anasayfa-page.dark-mode .instagram-post-placeholder p,
-    body.anasayfa-page.dark-mode .instagram-header .section-title {
-        color: #f5f5dc !important;
+  display: none !important;
     }
 </style>
 
 <script>
-    // Sayfa yÃ¼klendiÄŸinde body'ye Ã¶zel class ekle
+    // Sayfa yüklendiðinde body'ye özel class ekle
     document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('anasayfa-page');
     });
     
-    // Sayfa deÄŸiÅŸtiÄŸinde class'Ä± kaldÄ±r
-  window.addEventListener('beforeunload', function() {
+    // Sayfa deðiþtiðinde class'ý kaldýr
+    window.addEventListener('beforeunload', function() {
         document.body.classList.remove('anasayfa-page');
     });
 </script>
@@ -117,63 +49,63 @@ body.anasayfa-page.dark-mode .product-title,
     <div class="hero-overlay"></div>
     <div class="container">
         <div class="hero-content">
-            <img src="https://static.ticimax.cloud/71939//uploads/editoruploads/kalitelissdsd.png" alt="HANÃ‡ERLÄ°OÄžLU Logo" class="hero-logo">
-            <h1 class="hero-title">HANÃ‡ERLÄ°OÄžLU</h1>
-            <p class="hero-subtitle">Geleneksel TÃ¼rk TatlÄ±larÄ±</p>
-            <div class="hero-buttons">
-                <a href="/Home/Index" class="hero-btn hero-btn-primary">MenÃ¼yÃ¼ Ä°nceleyin</a>
-                <a href="#iletisim" class="hero-btn hero-btn-secondary smooth-scroll">Ä°letiÅŸime GeÃ§in</a>
-            </div>
-        </div>
+      <img src="https://static.ticimax.cloud/71939//uploads/editoruploads/kalitelissdsd.png" alt="HANÇERLÝOÐLU Logo" class="hero-logo">
+   <h1 class="hero-title">HANÇERLÝOÐLU</h1>
+    <p class="hero-subtitle">Geleneksel Türk Tatlýlarý</p>
+      <div class="hero-buttons">
+          <a href="/Home/Index" class="hero-btn hero-btn-primary">Menüyü Ýnceleyin</a>
+    <a href="#iletisim" class="hero-btn hero-btn-secondary smooth-scroll">Ýletiþime Geçin</a>
+   </div>
+     </div>
     </div>
 </section>
 
 <!-- About Section -->
 <section class="about-section" id="hakkimizda">
     <div class="container">
-        <h2 class="section-title">HakkÄ±mÄ±zda</h2>
-        <p class="section-subtitle">Lezzet ve Kalitenin BuluÅŸtuÄŸu Adres</p>
+        <h2 class="section-title">Hakkýmýzda</h2>
+        <p class="section-subtitle">Lezzet ve Kalitenin Buluþtuðu Adres</p>
 
         <div class="about-content">
-            <div class="about-image-grid">
-                <img src="~/Resimler/baklava.jpg" alt="Baklava" class="about-img">
-                <img src="~/Resimler/kÃ¼nefe.jpg" alt="KÃ¼nefe" class="about-img">
-                <img src="~/Resimler/kadayÄ±f.jpg" alt="KadayÄ±f" class="about-img">
-            </div>
+         <div class="about-image-grid">
+        <img src="~/Resimler/baklava.jpg" alt="Baklava" class="about-img">
+ <img src="~/Resimler/künefe.jpg" alt="Künefe" class="about-img">
+      <img src="~/Resimler/kadayýf.jpg" alt="Kadayýf" class="about-img">
+  </div>
 
-            <div class="about-text">
-                <h3>Lezzet GeleneÄŸimiz</h3>
-                <p>
-                    HANÃ‡ERLÄ°OÄžLU olarak, geleneksel TÃ¼rk tatlÄ±larÄ±nÄ± modern dokunuÅŸlarla
-                    birleÅŸtirerek sizlere en kaliteli Ã¼rÃ¼nleri sunuyoruz. YÄ±llarÄ±n deneyimi
-                    ve ustalarÄ±mÄ±zÄ±n maharetli elleriyle hazÄ±rlanan her bir Ã¼rÃ¼nÃ¼mÃ¼z,
-                    damak tadÄ±nÄ±za hitap edecek eÅŸsiz lezzetler sunar.
-                </p>
-                <p>
-                    En kaliteli malzemeleri kullanarak, hijyen standartlarÄ±na uygun ÅŸekilde
-                    Ã¼rettiÄŸimiz tatlÄ±larÄ±mÄ±z, geleneksel tariflerle hazÄ±rlanÄ±r. Her lokmada
-                    aÅŸk ve Ã¶zenle hazÄ±rlanmÄ±ÅŸ lezzetleri tadacaksÄ±nÄ±z.
-                </p>
+  <div class="about-text">
+      <h3>Lezzet Geleneðimiz</h3>
+     <p>
+         HANÇERLÝOÐLU olarak, geleneksel Türk tatlýlarýný modern dokunuþlarla
+      birleþtirerek sizlere en kaliteli ürünleri sunuyoruz. Yýllarýn deneyimi
+        ve ustalarýmýzýn maharetli elleriyle hazýrlanan her bir ürünümüz,
+  damak tadýnýza hitap edecek eþsiz lezzetler sunar.
+        </p>
+       <p>
+   En kaliteli malzemeleri kullanarak, hijyen standartlarýna uygun þekilde
+  ürettiðimiz tatlýlarýmýz, geleneksel tariflerle hazýrlanýr. Her lokmada
+    aþk ve özenle hazýrlanmýþ lezzetleri tadacaksýnýz.
+     </p>
 
-                <div class="about-features">
-                    <div class="feature-item">
-                        <i class="fas fa-star feature-icon"></i>
-                        <span class="feature-text">Premium Kalite</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-trophy feature-icon"></i>
-                        <span class="feature-text">Usta Eller</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-leaf feature-icon"></i>
-                        <span class="feature-text">DoÄŸal Malzemeler</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-heart feature-icon"></i>
-                        <span class="feature-text">Hijyenik Ãœretim</span>
-                    </div>
-                </div>
+    <div class="about-features">
+     <div class="feature-item">
+       <i class="fas fa-star feature-icon"></i>
+    <span class="feature-text">Premium Kalite</span>
             </div>
+  <div class="feature-item">
+  <i class="fas fa-trophy feature-icon"></i>
+     <span class="feature-text">Usta Eller</span>
+  </div>
+    <div class="feature-item">
+     <i class="fas fa-leaf feature-icon"></i>
+          <span class="feature-text">Doðal Malzemeler</span>
+    </div>
+         <div class="feature-item">
+    <i class="fas fa-heart feature-icon"></i>
+  <span class="feature-text">Hijyenik Üretim</span>
+        </div>
+</div>
+      </div>
         </div>
     </div>
 </section>
@@ -181,207 +113,207 @@ body.anasayfa-page.dark-mode .product-title,
 <!-- Products Section - Carousel -->
 <section class="products-section">
     <div class="container">
-        <h2 class="section-title">Ã–ne Ã‡Ä±kan Lezzetler</h2>
-        <p class="section-subtitle">En PopÃ¼ler ÃœrÃ¼nlerimiz</p>
+<h2 class="section-title">Öne Çýkan Lezzetler</h2>
+  <p class="section-subtitle">En Popüler Ürünlerimiz</p>
 
         <div class="products-carousel">
-            <div class="swiper swiper-products">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-img-wrapper">
-                                <span class="product-badge">POPÃœLER</span>
-                                <img src="~/Resimler/midye.jpg" alt="Midye Baklava" class="product-img">
-                            </div>
-                            <div class="product-content">
-                                <h3 class="product-title">Midye Baklava</h3>
-                                <p class="product-desc">
-                                    Ã–zel fÄ±stÄ±k dolgulu, el yapÄ±mÄ± midye baklava. Hafif ve Ã§Ä±tÄ±r katmanlarÄ±
-                                    ile efsane lezzet.
-                                </p>
-                                <a href="/Home/Baklava" class="product-link">DetaylÄ± Ä°ncele</a>
-                            </div>
-                        </div>
-                    </div>
+   <div class="swiper swiper-products">
+        <div class="swiper-wrapper">
+  <div class="swiper-slide">
+            <div class="product-card">
+           <div class="product-img-wrapper">
+   <span class="product-badge">POPÜLER</span>
+          <img src="~/Resimler/midye.jpg" alt="Midye Baklava" class="product-img">
+           </div>
+     <div class="product-content">
+    <h3 class="product-title">Midye Baklava</h3>
+    <p class="product-desc">
+  Özel fýstýk dolgulu, el yapýmý midye baklava. Hafif ve çýtýr katmanlarý
+          ile efsane lezzet.
+     </p>
+   <a href="/Home/Baklava" class="product-link">Detaylý Ýncele</a>
+    </div>
+   </div>
+  </div>
 
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-img-wrapper">
-                                <span class="product-badge">SICAK SERVÄ°S</span>
-                                <img src="~/Resimler/kÃ¼nefe.jpg" alt="KÃ¼nefe" class="product-img">
-                            </div>
-                            <div class="product-content">
-                                <h3 class="product-title">KÃ¼nefe</h3>
-                                <p class="product-desc">
-                                    Tel kadayÄ±f ve Ã¶zel peynir ile hazÄ±rlanan, sÄ±cak servis edilen
-                                    geleneksel lezzet.
-                                </p>
-                                <a href="/Home/Kunefe" class="product-link">DetaylÄ± Ä°ncele</a>
-                            </div>
-                        </div>
-                    </div>
+     <div class="swiper-slide">
+  <div class="product-card">
+    <div class="product-img-wrapper">
+        <span class="product-badge">SICAK SERVÝS</span>
+ <img src="~/Resimler/künefe.jpg" alt="Künefe" class="product-img">
+          </div>
+  <div class="product-content">
+       <h3 class="product-title">Künefe</h3>
+     <p class="product-desc">
+      Tel kadayýf ve özel peynir ile hazýrlanan, sýcak servis edilen
+geleneksel lezzet.
+            </p>
+    <a href="/Home/Kunefe" class="product-link">Detaylý Ýncele</a>
+    </div>
+         </div>
+ </div>
 
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-img-wrapper">
-                                <span class="product-badge">Ã–ZEL</span>
-                                <img src="~/Resimler/fÄ±stÄ±klÄ± b.jpg" alt="FÄ±stÄ±klÄ± Baklava" class="product-img">
-                            </div>
-                            <div class="product-content">
-                                <h3 class="product-title">FÄ±stÄ±klÄ± Baklava</h3>
-                                <p class="product-desc">
-                                    Antep fÄ±stÄ±ÄŸÄ± ile zenginleÅŸtirilmiÅŸ, klasik baklava tarifimizin
-                                    Ã¶zel versiyonu.
-                                </p>
-                                <a href="/Home/Baklava" class="product-link">DetaylÄ± Ä°ncele</a>
-                            </div>
-                        </div>
-                    </div>
+<div class="swiper-slide">
+            <div class="product-card">
+  <div class="product-img-wrapper">
+           <span class="product-badge">ÖZEL</span>
+  <img src="~/Resimler/fýstýklý b.jpg" alt="Fýstýklý Baklava" class="product-img">
+   </div>
+       <div class="product-content">
+              <h3 class="product-title">Fýstýklý Baklava</h3>
+     <p class="product-desc">
+       Antep fýstýðý ile zenginleþtirilmiþ, klasik baklava tarifimizin
+  özel versiyonu.
+      </p>
+      <a href="/Home/Baklava" class="product-link">Detaylý Ýncele</a>
+    </div>
+</div>
+  </div>
 
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-img-wrapper">
-                                <span class="product-badge">TAZE</span>
-                                <img src="~/Resimler/ÅŸÃ¶biyet.jpg" alt="ÅžÃ¶biyet" class="product-img">
-                            </div>
-                            <div class="product-content">
-                                <h3 class="product-title">ÅžÃ¶biyet</h3>
-                                <p class="product-desc">
-                                    Kaymak dolgulu, Ã¶zel ÅŸerbeti ile hazÄ±rlanan geleneksel TÃ¼rk tatlÄ±sÄ±.
-                                    Her lokmada erime lezzeti.
-                                </p>
-                                <a href="/Home/Baklava" class="product-link">DetaylÄ± Ä°ncele</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-img-wrapper">
-                                <span class="product-badge">Ã–NERÄ°LEN</span>
-                                <img src="~/Resimler/havucdilimi.jpg" alt="HavuÃ§ Dilim" class="product-img">
-                            </div>
-                            <div class="product-content">
-                                <h3 class="product-title">HavuÃ§ Dilim</h3>
-                                <p class="product-desc">
-                                    Ã–zel ÅŸerbeti ve hafif dokusu ile vazgeÃ§ilmez bir lezzet.
-                                    Geleneksel baklava Ã§eÅŸitlerimizden.
-                                </p>
-                                <a href="/Home/Baklava" class="product-link">DetaylÄ± Ä°ncele</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-img-wrapper">
-                                <span class="product-badge">GELENEKSEL</span>
-                                <img src="~/Resimler/kadayÄ±f.jpg" alt="KadayÄ±f" class="product-img">
-                            </div>
-                            <div class="product-content">
-                                <h3 class="product-title">FÄ±stÄ±klÄ± KadayÄ±f</h3>
-                                <p class="product-desc">
-                                    Antep fÄ±stÄ±ÄŸÄ± ve Ã¶zel ÅŸerbeti ile geleneksel kadayÄ±f lezzeti.
-                                    YumuÅŸak dokusu ile damakta iz bÄ±rakÄ±r.
-                                </p>
-                                <a href="/Home/Kadayif" class="product-link">DetaylÄ± Ä°ncele</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation buttons -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
+    <div class="swiper-slide">
+     <div class="product-card">
+  <div class="product-img-wrapper">
+    <span class="product-badge">TAZE</span>
+      <img src="~/Resimler/þöbiyet.jpg" alt="Þöbiyet" class="product-img">
         </div>
+  <div class="product-content">
+     <h3 class="product-title">Þöbiyet</h3>
+    <p class="product-desc">
+   Kaymak dolgulu, özel þerbeti ile hazýrlanan geleneksel Türk tatlýsý.
+     Her lokmada erime lezzeti.
+      </p>
+   <a href="/Home/Baklava" class="product-link">Detaylý Ýncele</a>
+    </div>
+     </div>
+  </div>
+
+     <div class="swiper-slide">
+         <div class="product-card">
+  <div class="product-img-wrapper">
+    <span class="product-badge">ÖNERÝLEN</span>
+  <img src="~/Resimler/havucdilimi.jpg" alt="Havuç Dilim" class="product-img">
+</div>
+          <div class="product-content">
+<h3 class="product-title">Havuç Dilim</h3>
+   <p class="product-desc">
+      Özel þerbeti ve hafif dokusu ile vazgeçilmez bir lezzet.
+     Geleneksel baklava çeþitlerimizden.
+   </p>
+ <a href="/Home/Baklava" class="product-link">Detaylý Ýncele</a>
+     </div>
+</div>
+          </div>
+
+   <div class="swiper-slide">
+ <div class="product-card">
+       <div class="product-img-wrapper">
+           <span class="product-badge">GELENEKSEL</span>
+    <img src="~/Resimler/kadayýf.jpg" alt="Kadayýf" class="product-img">
+      </div>
+ <div class="product-content">
+   <h3 class="product-title">Fýstýklý Kadayýf</h3>
+ <p class="product-desc">
+       Antep fýstýðý ve özel þerbeti ile geleneksel kadayýf lezzeti.
+         Yumuþak dokusu ile damakta iz býrakýr.
+        </p>
+        <a href="/Home/Kadayif" class="product-link">Detaylý Ýncele</a>
+     </div>
+      </div>
+          </div>
+         </div>
+
+  <!-- Navigation buttons -->
+   <div class="swiper-button-next"></div>
+       <div class="swiper-button-prev"></div>
+
+  <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+          </div>
+</div>
     </div>
 </section>
 
 <!-- Gallery Section - Carousel -->
 <section class="gallery-section">
     <div class="container">
-        <h2 class="section-title">Lezzet Galerisi</h2>
-        <p class="section-subtitle">GÃ¶rsel ÅžÃ¶len</p>
+<h2 class="section-title">Lezzet Galerisi</h2>
+        <p class="section-subtitle">Görsel Þölen</p>
 
-        <div class="gallery-carousel">
-            <div class="swiper swiper-gallery">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="gallery-item">
-                            <img src="~/Resimler/baklava.jpg" alt="Baklava" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <h4 class="gallery-title">Baklava Ã‡eÅŸitleri</h4>
-                            </div>
-                        </div>
-                    </div>
+   <div class="gallery-carousel">
+        <div class="swiper swiper-gallery">
+    <div class="swiper-wrapper">
+          <div class="swiper-slide">
+   <div class="gallery-item">
+     <img src="~/Resimler/baklava.jpg" alt="Baklava" class="gallery-img">
+        <div class="gallery-overlay">
+<h4 class="gallery-title">Baklava Çeþitleri</h4>
+      </div>
+      </div>
+         </div>
 
-                    <div class="swiper-slide">
-                        <div class="gallery-item">
-                            <img src="~/Resimler/kÃ¼nefe.jpg" alt="KÃ¼nefe" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <h4 class="gallery-title">SÄ±cak KÃ¼nefe</h4>
-                            </div>
-                        </div>
-                    </div>
+     <div class="swiper-slide">
+             <div class="gallery-item">
+   <img src="~/Resimler/künefe.jpg" alt="Künefe" class="gallery-img">
+  <div class="gallery-overlay">
+ <h4 class="gallery-title">Sýcak Künefe</h4>
+      </div>
+    </div>
+     </div>
 
-                    <div class="swiper-slide">
-                        <div class="gallery-item">
-                            <img src="~/Resimler/kadayÄ±f.jpg" alt="KadayÄ±f" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <h4 class="gallery-title">FÄ±stÄ±klÄ± KadayÄ±f</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="gallery-item">
-                            <img src="~/Resimler/midye.jpg" alt="Midye Baklava" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <h4 class="gallery-title">Midye Baklava</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="gallery-item">
-                            <img src="~/Resimler/havucdilimi.jpg" alt="HavuÃ§ Dilim" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <h4 class="gallery-title">HavuÃ§ Dilim</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="gallery-item">
-                            <img src="~/Resimler/ÅŸÃ¶biyet.jpg" alt="ÅžÃ¶biyet" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <h4 class="gallery-title">ÅžÃ¶biyet</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="gallery-item">
-                            <img src="~/Resimler/fÄ±stÄ±klÄ± b.jpg" alt="FÄ±stÄ±klÄ± Baklava" class="gallery-img">
-                            <div class="gallery-overlay">
-                                <h4 class="gallery-title">FÄ±stÄ±klÄ± Baklava</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation buttons -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
+    <div class="swiper-slide">
+               <div class="gallery-item">
+  <img src="~/Resimler/kadayýf.jpg" alt="Kadayýf" class="gallery-img">
+     <div class="gallery-overlay">
+  <h4 class="gallery-title">Fýstýklý Kadayýf</h4>
+       </div>
             </div>
+     </div>
+
+          <div class="swiper-slide">
+      <div class="gallery-item">
+    <img src="~/Resimler/midye.jpg" alt="Midye Baklava" class="gallery-img">
+         <div class="gallery-overlay">
+       <h4 class="gallery-title">Midye Baklava</h4>
+  </div>
+     </div>
+  </div>
+
+  <div class="swiper-slide">
+    <div class="gallery-item">
+      <img src="~/Resimler/havucdilimi.jpg" alt="Havuç Dilim" class="gallery-img">
+      <div class="gallery-overlay">
+   <h4 class="gallery-title">Havuç Dilim</h4>
+       </div>
+    </div>
         </div>
+
+    <div class="swiper-slide">
+        <div class="gallery-item">
+       <img src="~/Resimler/þöbiyet.jpg" alt="Þöbiyet" class="gallery-img">
+     <div class="gallery-overlay">
+      <h4 class="gallery-title">Þöbiyet</h4>
+            </div>
+         </div>
+    </div>
+
+   <div class="swiper-slide">
+        <div class="gallery-item">
+        <img src="~/Resimler/fýstýklý b.jpg" alt="Fýstýklý Baklava" class="gallery-img">
+        <div class="gallery-overlay">
+    <h4 class="gallery-title">Fýstýklý Baklava</h4>
+    </div>
+       </div>
+       </div>
+    </div>
+
+     <!-- Navigation buttons -->
+         <div class="swiper-button-next"></div>
+   <div class="swiper-button-prev"></div>
+
+          <!-- Pagination -->
+   <div class="swiper-pagination"></div>
+     </div>
+  </div>
     </div>
 </section>
 
@@ -389,441 +321,481 @@ body.anasayfa-page.dark-mode .product-title,
 <section class="reviews-section">
     <div class="container">
         <div class="reviews-header">
-            <h2 class="section-title">MÃ¼ÅŸteri YorumlarÄ±</h2>
-            <p class="section-subtitle">MÃ¼ÅŸterilerimizin GÃ¶rÃ¼ÅŸleri</p>
+    <h2 class="section-title">Müþteri Yorumlarý</h2>
+   <p class="section-subtitle">Müþterilerimizin Görüþleri</p>
 
-            <div class="google-info">
-                <svg class="google-logo" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
-                    <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
-                    <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
-                    <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
-                    <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
-                    <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/>
-                </svg>
+    <div class="google-info">
+         <svg class="google-logo" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+  <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/>
+           <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/>
+      <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z"/>
+          <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/>
+            <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z"/>
+       </svg>
 
-                <div class="google-rating">
-                    <div class="rating-score" id="rating-score">4.8</div>
-                    <div class="rating-stars" id="rating-stars">
-                        <span>â˜…</span><span>â˜…</span><span>â˜…</span><span>â˜…</span><span>â˜…</span>
-                    </div>
-                    <div class="rating-count" id="rating-count"> Google yorumu</div>
-                </div>
-            </div>
+       <div class="google-rating">
+     <div class="rating-score" id="rating-score">4.8</div>
+   <div class="rating-stars" id="rating-stars">
+           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    <div class="rating-count" id="rating-count"> Google yorumu</div>
+    </div>
+      </div>
 
             <div class="google-address">
-   <h4 id="place-name"><i class="fas fa-map-marker-alt" style="color: #d4a574; margin-right: 8px;"></i> HANÃ‡ERLÄ°OÄžLU Baklava (TÃ¼rbe Åžube)</h4>
-  <p id="place-address">J864+Q2 Erdemli, Mersin<br>TÃ¼rbe Cd. No:71 H/4, 33730 Erdemli/Mersin</p>
-</div>
-        </div>
+  <h4 id="place-name"><i class="fas fa-map-marker-alt" style="color: #d4a574; margin-right: 8px;"></i> HANÇERLÝOÐLU Baklava (Türbe Þube)</h4>
+   <p id="place-address">J864+Q2 Erdemli, Mersin<br>Türbe Cd. No:71 H/4, 33730 Erdemli/Mersin</p>
+     </div>
+     </div>
 
-        <div class="reviews-carousel">
-            <div class="swiper swiper-reviews">
-                <div class="swiper-wrapper" id="reviews-wrapper">
-                    <!-- Yorumlar JavaScript ile yÃ¼klenecek -->
-                    <div class="swiper-slide">
-                        <div class="review-card">
-                            <div style="text-align: center; padding: 40px;">
-                                <div style="font-size: 3rem; margin-bottom: 20px;"><i class="fas fa-spinner fa-spin"></i></div>
-                                <p>Yorumlar yÃ¼kleniyor...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="reviews-carousel">
+   <div class="swiper swiper-reviews">
+      <div class="swiper-wrapper" id="reviews-wrapper">
+       <!-- Yorumlar JavaScript ile yüklenecek -->
+           <div class="swiper-slide">
+           <div class="review-card">
+       <div style="text-align: center; padding: 40px;">
+        <div style="font-size: 3rem; margin-bottom: 20px;"><i class="fas fa-spinner fa-spin"></i></div>
+     <p>Yorumlar yükleniyor...</p>
+          </div>
+   </div>
+       </div>
+    </div>
 
-                <!-- Navigation buttons -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+      <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
 
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
+  <!-- Pagination -->
+   <div class="swiper-pagination"></div>
+     </div>
         </div>
     </div>
-    
 </section>
 
 <!-- Instagram Feed Section -->
 <section class="instagram-section">
-    <div class="container">
+ <div class="container">
         <div class="instagram-header">
-            <h2 class="section-title">Instagram'da Bizi Takip Edin</h2>
-            <p class="section-subtitle">@@gaziantepli_hancerlioglu</p>
-            <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank" class="instagram-follow-btn">
-      <i class="fab fa-instagram"></i>
-    Takip Et
-     </a>
+<h2 class="section-title">Instagram'da Bizi Takip Edin</h2>
+      <p class="section-subtitle" style="color:#d4a574">@@gaziantepli_hancerlioglu</p>
+   <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank" class="instagram-follow-btn">
+    <i class="fab fa-instagram"></i>
+  Takip Et
+    </a>
         </div>
 
-   <div class="instagram-carousel">
-     <div class="swiper swiper-instagram">
-        <div class="swiper-wrapper" id="instagram-wrapper">
-   <!-- Instagram postlarÄ± buraya yÃ¼klenecek -->
-      <div class="swiper-slide">
-    <div class="instagram-post-placeholder">
- <div class="instagram-icon">
-           <i class="fab fa-instagram"></i>
+     <div class="instagram-carousel">
+       <div class="swiper swiper-instagram">
+            <div class="swiper-wrapper" id="instagram-wrapper">
+   <!-- Instagram postlarý buraya yüklenecek -->
+    <div class="swiper-slide">
+            <div class="instagram-post-placeholder">
+          <div class="instagram-icon">
+ <i class="fab fa-instagram"></i>
+    </div>
+         <p>Instagram postlarý yükleniyor...</p>
+</div>
         </div>
-                 <p>Instagram postlarÄ± yÃ¼kleniyor...</p>
-       </div>
-            </div>
-          </div>
+   </div>
 
-     <!-- Navigation buttons -->
- <div class="swiper-button-next"></div>
-           <div class="swiper-button-prev"></div>
+         <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+     <div class="swiper-button-prev"></div>
 
-       <!-- Pagination -->
+<!-- Pagination -->
           <div class="swiper-pagination"></div>
-     </div>
         </div>
-
-   <div class="instagram-footer">
-            <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank" class="instagram-link">
-      <i class="fab fa-instagram"></i>
-            Instagram'da Daha FazlasÄ±nÄ± GÃ¶rÃ¼n
-            </a>
       </div>
+
+    <div class="instagram-footer">
+   <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank" class="instagram-link">
+     <i class="fab fa-instagram"></i>
+         Instagram'da Daha Fazlasýný Görün
+    </a>
+        </div>
     </div>
 </section>
 
 <!-- Contact Section -->
 <section class="contact-section" id="iletisim">
     <div class="container">
- <h2 class="section-title">Ä°letiÅŸim</h2>
-        <p class="section-subtitle">Bize UlaÅŸÄ±n</p>
+      <h2 class="section-title">Ýletiþim</h2>
+        <p class="section-subtitle">Bize Ulaþýn</p>
 
         <div class="contact-grid">
-   <div class="contact-card">
-          <div class="contact-icon">
-          <i class="fas fa-map-marker-alt"></i>
-                </div>
-    <h3>Adres</h3>
-    <p>
-                    4.Noter Ã‡aprazÄ±, Merkez, TÃ¼rbe Cd. No:71 H/4, 33730 Erdemli/Mersin
-   </p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <h3>Telefon</h3>
-                <p>
-                    <a href="tel:+905414184976">+90 (541) 418 49 76</a>
-                </p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <h3>Ã‡alÄ±ÅŸma Saatleri</h3>
-                <p>
-                    Hafta Ä°Ã§i: 08:00 - 00:00<br>
-                    Hafta Sonu: 08:00 - 00:00
-                </p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-share-alt"></i>
-                </div>
-                <h3>Sosyal Medya</h3>
-                <p>
-                    <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a><br>
-                    <a href="https://www.facebook.com/profile.php?id=61585290026850" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i> Facebook</a>
-                </p>
-            </div>
-        </div>
-
-        <!-- Map Section -->
-        <div class="map-section">
-            <h3 class="map-title">
-      <i class="fas fa-map-marked-alt"></i> Konumumuz
-   </h3>
-     <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d399.44889427285814!2d34.305524868702754!3d36.611384375735975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDM2JzQxLjAiTiAzNMKwMTgnMTkuOSJF!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
-        width="100%"
-          height="450"
-       style="border:0;"
-     allowfullscreen=""
-              loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-         </iframe>
-            </div>
-        <div class="map-actions">
-   <a href="https://www.google.com/maps/dir/?api=1&destination=J864%2BQ2+Erdemli%2C+Mersin"
-        target="_blank"
-          class="map-btn">
-         <i class="fas fa-directions"></i>
-         Yol Tarifi Al
-      </a>
-       <a href="https://www.google.com/maps/place/J864%2BQ2+Erdemli%2C+Mersin"
-target="_blank"
-           class="map-btn map-btn-secondary">
-   <i class="fas fa-external-link-alt"></i>
-    Google Maps'te AÃ§
-            </a>
+  <div class="contact-card">
+    <div class="contact-icon">
+<i class="fas fa-map-marker-alt"></i>
        </div>
+       <h3>Adres</h3>
+  <p>
+  4.Noter Çaprazý, Merkez, Türbe Cd. No:71 H/4, 33730 Erdemli/Mersin
+   </p>
+       </div>
+
+   <div class="contact-card">
+   <div class="contact-icon">
+         <i class="fas fa-phone-alt"></i>
+      </div>
+        <h3>Telefon</h3>
+         <p>
+ <a href="tel:+905414184976">+90 (541) 418 49 76</a>
+        </p>
+ </div>
+
+         <div class="contact-card">
+     <div class="contact-icon">
+    <i class="fas fa-clock"></i>
+      </div>
+   <h3>Çalýþma Saatleri</h3>
+  <p>
+   Hafta Ýçi: 08:00 - 00:00<br>
+     Hafta Sonu: 08:00 - 00:00
+        </p>
+     </div>
+
+         <div class="contact-card">
+<div class="contact-icon">
+   <i class="fas fa-share-alt"></i>
         </div>
-    </div>
+             <h3>Sosyal Medya</h3>
+ <p>
+       <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a><br>
+       <a href="https://www.facebook.com/profile.php?id=61585290026850" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i> Facebook</a>
+  </p>
+ </div>
+        </div>
+
+ <!-- Map Section - Türbe Þube -->
+        <div class="map-section">
+        <h3 class="map-title">
+           <i class="fas fa-map-marked-alt"></i> Konumumuz (Türbe Þube)
+       </h3>
+   <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d399.44889427285814!2d34.305524868702754!3d36.611384375735975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDM2JzQxLjAiTiAzNMKwMTgnMTkuOSJF!5e0!3m2!1str!2str!4v1234567890123!5m2!1str!2str"
+       width="100%"
+        height="450"
+style="border:0;"
+      allowfullscreen=""
+             loading="lazy"
+     referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+     </div>
+   <div class="map-actions">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=J864%2BQ2+Erdemli%2C+Mersin"
+       target="_blank"
+   class="map-btn">
+<i class="fas fa-directions"></i>
+     Yol Tarifi Al
+    </a>
+<a href="https://www.google.com/maps/place/J864%2BQ2+Erdemli%2C+Mersin"
+     target="_blank"
+      class="map-btn map-btn-secondary">
+       <i class="fas fa-external-link-alt"></i>
+   Google Maps'te Aç
+      </a>
+  </div>
+        </div>
+
+    <!-- Ýkinci Þube Map Section - Merkez Þube -->
+      <div class="map-section" style="margin-top: 50px;">
+            <h3 class="map-title">
+                <i class="fas fa-map-marked-alt"></i> Diðer Þubemiz (Merkez Þube)
+         </h3>
+            <div class="google-address" style="margin-bottom: 20px; text-align: center;">
+    <h4 style="color: #8b4513; font-size: 1.3rem; margin-bottom: 10px;">
+  <i class="fas fa-store" style="color: #d4a574; margin-right: 8px;"></i> 
+ HANÇERLÝOÐLU Baklava (Merkez Þube)
+         </h4>
+        <p style="color: #6b3e26; font-size: 1.1rem;">
+         Merkez, Sabahattin Çakmakoðlu Cd. No:14/D<br>
+     33730 Erdemli/Mersin
+      </p>
+     </div>
+            <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.8!2d33.6!3d36.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDM2JzAwLjAiTiAzM8KwMzYnMDAuMCJF!5e0!3m2!1str!2str!4v1234567890124!5m2!1str!2str&q=Sabahattin+Çakmakoðlu+Cd.+No:14/D,+33730+Erdemli/Mersin"
+ width="100%"
+    height="450"
+   style="border:0;"
+     allowfullscreen=""
+  loading="lazy"
+           referrerpolicy="no-referrer-when-downgrade">
+       </iframe>
+            </div>
+            <div class="map-actions">
+       <a href="https://www.google.com/maps/dir/?api=1&destination=Sabahattin+Çakmakoðlu+Cd.+No:14/D,+33730+Erdemli/Mersin"
+         target="_blank"
+         class="map-btn">
+        <i class="fas fa-directions"></i>
+      Yol Tarifi Al
+          </a>
+                <a href="https://www.google.com/maps/search/Sabahattin+Çakmakoðlu+Cd.+No:14%2FD,+33730+Erdemli%2FMersin"
+       target="_blank"
+      class="map-btn map-btn-secondary">
+            <i class="fas fa-external-link-alt"></i>
+          Google Maps'te Aç
+          </a>
+ </div>
+        </div>
+</div>
 </section>
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-    // Instagram PostlarÄ±nÄ± YÃ¼kle - FONKSÄ°YON TANIMI (Ã–NCE GELMELÄ°)
+    // Instagram Postlarýný Yükle - FONKSÝYON TANIMI (ÖNCE GELMELÝ)
     function loadInstagramPosts() {
-        // BURAYA KENDÄ° INSTAGRAM POST URL'LERÄ°NÄ°ZÄ° EKLEYÄ°N
-
-        var instagramPosts = [
-     // AÅŸaÄŸÄ±ya kendi Instagram post linklerinizi ekleyin
-     'https://www.instagram.com/p/DSKgcsmkbR5/',
-     'https://www.instagram.com/p/DSF-izcDnvi/',
-     'https://www.instagram.com/p/DSF9oEdjNCL/',
-     'https://www.instagram.com/p/DSGBV5tDgSs/'
+ // BURAYA KENDÝ INSTAGRAM POST URL'LERÝNÝZÝ EKLEYÝN
+var instagramPosts = [
+     // Aþaðýya kendi Instagram post linklerinizi ekleyin
+      'https://www.instagram.com/p/DSKgcsmkbR5/',
+      'https://www.instagram.com/p/DSF-izcDnvi/',
+            'https://www.instagram.com/p/DSF9oEdjNCL/',
+    'https://www.instagram.com/p/DSGBV5tDgSs/'
         ];
   
-   var instagramWrapper = document.getElementById('instagram-wrapper');
-        var atChar = '@@'.substring(0, 1);
+        var instagramWrapper = document.getElementById('instagram-wrapper');
+   var atChar = '@@'.substring(0, 1);
     
-        if (instagramPosts.length === 0) {
-            instagramWrapper.innerHTML = '<div class="swiper-slide"><div class="instagram-post-placeholder"><div class="instagram-icon"><i class="fab fa-instagram"></i></div><p>Instagram\'da <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank">' + atChar + 'gaziantepli_hancerlioglu</a> hesabÄ±mÄ±zÄ± takip edin!</p><p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">En yeni lezzetlerimiz ve Ã¶zel kampanyalarÄ±mÄ±z iÃ§in bizi takipte kalÄ±n.</p></div></div>';
-            instagramSwiper.update();
-            return;
+     if (instagramPosts.length === 0) {
+         instagramWrapper.innerHTML = '<div class="swiper-slide"><div class="instagram-post-placeholder"><div class="instagram-icon"><i class="fab fa-instagram"></i></div><p>Instagram\'da <a href="https://www.instagram.com/gaziantepli_hancerlioglu/" target="_blank">' + atChar + 'gaziantepli_hancerlioglu</a> hesabýmýzý takip edin!</p><p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">En yeni lezzetlerimiz ve özel kampanyalarýmýz için bizi takipte kalýn.</p></div></div>';
+instagramSwiper.update();
+      return;
   }
 
-        instagramWrapper.innerHTML = '';
+     instagramWrapper.innerHTML = '';
         instagramPosts.forEach(function(postUrl) {
-      var slide = document.createElement('div');
-   slide.className = 'swiper-slide';
-   var embedUrl = postUrl.replace('/p/', '/p/') + 'embed/';
-     slide.innerHTML = '<div class="instagram-post"><iframe src="' + embedUrl + '" frameborder="0" scrolling="no" allowtransparency="true" class="instagram-embed"></iframe></div>';
-   instagramWrapper.appendChild(slide);
-   });
+        var slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+ var embedUrl = postUrl.replace('/p/', '/p/') + 'embed/';
+      slide.innerHTML = '<div class="instagram-post"><iframe src="' + embedUrl + '" frameborder="0" scrolling="no" allowtransparency="true" class="instagram-embed"></iframe></div>';
+    instagramWrapper.appendChild(slide);
+        });
 
-        instagramSwiper.update();
-  instagramSwiper.slideToLoop(0, 0);
+     instagramSwiper.update();
+        instagramSwiper.slideToLoop(0, 0);
     }
 
     // Products Carousel
     const productsSwiper = new Swiper('.swiper-products', {
-  slidesPerView: 1,
-spaceBetween: 30,
+   slidesPerView: 1,
+        spaceBetween: 30,
         loop: true,
-    autoplay: {
-         delay: 3500,
-            disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-        },
+        autoplay: {
+  delay: 3500,
+      disableOnInteraction: false,
+pauseOnMouseEnter: true,
+    },
         speed: 800,
         effect: 'slide',
-    navigation: {
-       nextEl: '.swiper-products .swiper-button-next',
-            prevEl: '.swiper-products .swiper-button-prev',
-        },
+        navigation: {
+   nextEl: '.swiper-products .swiper-button-next',
+       prevEl: '.swiper-products .swiper-button-prev',
+},
         pagination: {
-        el: '.swiper-products .swiper-pagination',
- clickable: true,
-  dynamicBullets: true,
-     },
-    breakpoints: {
- 640: {
-     slidesPerView: 1,
-     spaceBetween: 20,
+  el: '.swiper-products .swiper-pagination',
+       clickable: true,
+      dynamicBullets: true,
     },
-            768: {
-    slidesPerView: 2,
-       spaceBetween: 30,
-     },
-   1024: {
-                slidesPerView: 3,
+     breakpoints: {
+        640: {
+       slidesPerView: 1,
+  spaceBetween: 20,
+   },
+  768: {
+             slidesPerView: 2,
+     spaceBetween: 30,
+  },
+          1024: {
+    slidesPerView: 3,
     spaceBetween: 30,
-        },
- 1400: {
-     slidesPerView: 3,
-              spaceBetween: 40,
-  }
-    }
+   },
+1400: {
+slidesPerView: 3,
+    spaceBetween: 40,
+            }
+        }
     });
 
     // Gallery Carousel
     const gallerySwiper = new Swiper('.swiper-gallery', {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true,
+    loop: true,
         autoplay: {
             delay: 3000,
-     disableOnInteraction: false,
+ disableOnInteraction: false,
    pauseOnMouseEnter: true,
-        },
-  speed: 1000,
-  effect: 'slide',
+     },
+     speed: 1000,
+        effect: 'slide',
         navigation: {
-   nextEl: '.swiper-gallery .swiper-button-next',
-         prevEl: '.swiper-gallery .swiper-button-prev',
+            nextEl: '.swiper-gallery .swiper-button-next',
+    prevEl: '.swiper-gallery .swiper-button-prev',
         },
-      pagination: {
-      el: '.swiper-gallery .swiper-pagination',
-            clickable: true,
-     dynamicBullets: true,
+ pagination: {
+         el: '.swiper-gallery .swiper-pagination',
+    clickable: true,
+  dynamicBullets: true,
     },
-      breakpoints: {
-        480: {
-            slidesPerView: 2,
+  breakpoints: {
+    480: {
+    slidesPerView: 2,
     spaceBetween: 15,
-    },
-     768: {
-                slidesPerView: 3,
-       spaceBetween: 20,
-       },
-            1024: {
-                slidesPerView: 4,
+     },
+   768: {
+    slidesPerView: 3,
      spaceBetween: 20,
-   },
+          },
+      1024: {
+   slidesPerView: 4,
+   spaceBetween: 20,
+            },
             1400: {
-          slidesPerView: 5,
-  spaceBetween: 25,
+slidesPerView: 5,
+     spaceBetween: 25,
        }
-        }
+     }
     });
 
     // Reviews Carousel
-    const reviewsSwiper = new Swiper('.swiper-reviews', {
-     slidesPerView: 1,
-  spaceBetween: 30,
-        loop: true,
+  const reviewsSwiper = new Swiper('.swiper-reviews', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+      loop: true,
         autoplay: {
-       delay: 4000,
+         delay: 4000,
         disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        },
+   pauseOnMouseEnter: true,
+  },
         speed: 800,
-        effect: 'slide',
+      effect: 'slide',
       navigation: {
        nextEl: '.swiper-reviews .swiper-button-next',
-         prevEl: '.swiper-reviews .swiper-button-prev',
+    prevEl: '.swiper-reviews .swiper-button-prev',
      },
-     pagination: {
-        el: '.swiper-reviews .swiper-pagination',
- clickable: true,
-            dynamicBullets: true,
-        },
+        pagination: {
+ el: '.swiper-reviews .swiper-pagination',
+clickable: true,
+      dynamicBullets: true,
+  },
   breakpoints: {
             640: {
-     slidesPerView: 1,
-        spaceBetween: 20,
-            },
-      768: {
-     slidesPerView: 2,
-     spaceBetween: 25,
-         },
+ slidesPerView: 1,
+      spaceBetween: 20,
+    },
+     768: {
+    slidesPerView: 2,
+      spaceBetween: 25,
+ },
             1024: {
- slidesPerView: 3,
+    slidesPerView: 3,
        spaceBetween: 30,
-         }
+   }
         }
-    });
+  });
 
     // Instagram Carousel
     const instagramSwiper = new Swiper('.swiper-instagram', {
         slidesPerView: 1,
-      spaceBetween: 20,
-        loop: true,
+        spaceBetween: 20,
+  loop: true,
         autoplay: {
-   delay: 3500,
-    disableOnInteraction: false,
-pauseOnMouseEnter: true,
-        },
-        speed: 800,
-        effect: 'slide',
+      delay: 3500,
+            disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+ },
+     speed: 800,
+   effect: 'slide',
         navigation: {
       nextEl: '.swiper-instagram .swiper-button-next',
- prevEl: '.swiper-instagram .swiper-button-prev',
-        },
-pagination: {
-     el: '.swiper-instagram .swiper-pagination',
-            clickable: true,
-       dynamicBullets: true,
-  },
-        breakpoints: {
-    480: {
-      slidesPerView: 2,
-       spaceBetween: 15,
- },
-     768: {
-     slidesPerView: 3,
-    spaceBetween: 20,
+    prevEl: '.swiper-instagram .swiper-button-prev',
    },
-            1024: {
-                slidesPerView: 4,
-         spaceBetween: 25,
-         }
-  }
+        pagination: {
+    el: '.swiper-instagram .swiper-pagination',
+   clickable: true,
+    dynamicBullets: true,
+        },
+        breakpoints: {
+   480: {
+        slidesPerView: 2,
+      spaceBetween: 15,
+        },
+    768: {
+  slidesPerView: 3,
+   spaceBetween: 20,
+   },
+      1024: {
+            slidesPerView: 4,
+   spaceBetween: 25,
+            }
+        }
     });
 
-    // Google Reviews API'den Veri Ã‡ekme
+    // Google Reviews API'den Veri Çekme
     async function loadGoogleReviews() {
-     try {
-         const response = await fetch('/api/reviews');
+      try {
+        const response = await fetch('/api/reviews');
 
-   if (!response.ok) {
-  console.error('API isteÄŸi baÅŸarÄ±sÄ±z oldu');
-    return;
-     }
+         if (!response.ok) {
+     console.error('API isteði baþarýsýz oldu');
+return;
+      }
 
- const data = await response.json();
+      const data = await response.json();
 
-        // Rating bilgilerini gÃ¼ncelle
-            document.getElementById('rating-score').textContent = data.rating.toFixed(1);
-          document.getElementById('rating-count').textContent = `${data.userRatingsTotal} Google yorumu`;
+            // Rating bilgilerini güncelle
+         document.getElementById('rating-score').textContent = data.rating.toFixed(1);
+ document.getElementById('rating-count').textContent = `${data.userRatingsTotal} Google yorumu`;
 
-            // YÄ±ldÄ±zlarÄ± gÃ¼ncelle
+
+// Yýldýzlarý güncelle
        updateStars(data.rating);
 
-            // Adres bilgilerini gÃ¼ncelle - Font Awesome ikonu kullan
-   const placeNameElement = document.getElementById('place-name');
-        placeNameElement.innerHTML = `<i class="fas fa-map-marker-alt" style="color: #d4a574; margin-right: 8px;"></i> ${data.name}`;
-            document.getElementById('place-address').innerHTML = data.formattedAddress.replace(',', '<br>');
+   // Adres bilgilerini güncelle - Font Awesome ikonu kullan
+       const placeNameElement = document.getElementById('place-name');
+          placeNameElement.innerHTML = `<i class="fas fa-map-marker-alt" style="color: #d4a574; margin-right: 8px;"></i> ${data.name}`;
+ document.getElementById('place-address').innerHTML = data.formattedAddress.replace(',', '<br>');
 
-    // YorumlarÄ± ekle
-   if (data.reviews && data.reviews.length > 0) {
-       const reviewsWrapper = document.getElementById('reviews-wrapper');
-    reviewsWrapper.innerHTML = '';
+            // Yorumlarý ekle
+       if (data.reviews && data.reviews.length > 0) {
+         const reviewsWrapper = document.getElementById('reviews-wrapper');
+  reviewsWrapper.innerHTML = '';
 
-     data.reviews.forEach(review => {
-              const reviewSlide = createReviewSlide(review);
-        reviewsWrapper.innerHTML += reviewSlide;
-              });
+      data.reviews.forEach(review => {
+    const reviewSlide = createReviewSlide(review);
+     reviewsWrapper.innerHTML += reviewSlide;
+  });
 
-       // Swiper'Ä± gÃ¼ncelle
-     reviewsSwiper.update();
-   reviewsSwiper.slideToLoop(0, 0);
+        // Swiper'ý güncelle
+   reviewsSwiper.update();
+    reviewsSwiper.slideToLoop(0, 0);
+          }
+   } catch (error) {
+    console.error('Yorumlar yüklenirken hata:', error);
      }
-        } catch (error) {
-            console.error('Yorumlar yÃ¼klenirken hata:', error);
-        }
-  }
-
-    function updateStars(rating) {
-const starsContainer = document.getElementById('rating-stars');
-        const fullStars = Math.floor(rating);
-        const hasHalfStar = rating % 1 >= 0.5;
-        let starsHtml = '';
-
-        for (let i = 0; i < fullStars; i++) {
-    starsHtml += '<span>â˜…</span>';
     }
 
-      if (hasHalfStar && fullStars < 5) {
- starsHtml += '<span>â˜…</span>';
+    function updateStars(rating) {
+        const starsContainer = document.getElementById('rating-stars');
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 >= 0.5;
+let starsHtml = '';
+
+        for (let i = 0; i < fullStars; i++) {
+   starsHtml += '<i class="fas fa-star"></i>';
+        }
+
+   if (hasHalfStar && fullStars < 5) {
+            starsHtml += '<i class="fas fa-star-half-alt"></i>';
         }
 
         const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-        for (let i = 0; i < emptyStars; i++) {
-    starsHtml += '<span style="opacity: 0.3;">â˜…</span>';
+      for (let i = 0; i < emptyStars; i++) {
+            starsHtml += '<i class="far fa-star"></i>';
         }
 
         starsContainer.innerHTML = starsHtml;
@@ -831,92 +803,92 @@ const starsContainer = document.getElementById('rating-stars');
 
     function createReviewSlide(review) {
         const initials = getInitials(review.authorName);
-        const stars = createStars(review.rating);
+ const stars = createStars(review.rating);
 
         return `
 <div class="swiper-slide">
     <div class="review-card">
-        <div class="review-header">
-    <div class="review-avatar">${initials}</div>
-            <div class="review-user-info">
-            <div class="review-user-name">${escapeHtml(review.authorName)}</div>
-      <div class="review-date">${escapeHtml(review.relativeTimeDescription)}</div>
-       </div>
-    </div>
-        <div class="review-stars">
-     ${stars}
+ <div class="review-header">
+            <div class="review-avatar">${initials}</div>
+  <div class="review-user-info">
+     <div class="review-user-name">${escapeHtml(review.authorName)}</div>
+ <div class="review-date">${escapeHtml(review.relativeTimeDescription)}</div>
+         </div>
      </div>
-        <p class="review-text">
-     ${escapeHtml(review.text)}
-        </p>
+     <div class="review-stars">
+      ${stars}
+     </div>
+    <p class="review-text">
+ ${escapeHtml(review.text)}
+  </p>
    <div class="review-platform">
-            <svg viewBox="0 0 24 24" width="20" height="20">
-        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-         <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+      <svg viewBox="0 0 24 24" width="20" height="20">
+    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+<path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+   <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-  <span>Google'da yayinlandi</span>
-        </div>
+       <span>Google'da yayinlandi</span>
+      </div>
     </div>
 </div>
 `;
-    }
+}
 
     function getInitials(name) {
-     const words = name.split(' ');
+        const words = name.split(' ');
         if (words.length >= 2) {
-            return (words[0][0] + words[1][0]).toUpperCase();
-        }
+        return (words[0][0] + words[1][0]).toUpperCase();
+   }
    return name.substring(0, 2).toUpperCase();
     }
 
-  function createStars(rating) {
-     let starsHtml = '';
-        for (let i = 0; i < rating; i++) {
-            starsHtml += '<span>â˜…</span>';
-        }
+    function createStars(rating) {
+        let starsHtml = '';
+      for (let i = 0; i < rating; i++) {
+  starsHtml += '<i class="fas fa-star"></i>';
+  }
         for (let i = rating; i < 5; i++) {
-            starsHtml += '<span style="opacity: 0.3;">â˜…</span>';
-        }
-        return starsHtml;
+            starsHtml += '<i class="far fa-star" style="opacity: 0.3;"></i>';
+      }
+return starsHtml;
     }
 
     // HTML karakterlerini escape et
     function escapeHtml(text) {
- const div = document.createElement('div');
-    div.textContent = text;
+  const div = document.createElement('div');
+        div.textContent = text;
         return div.innerHTML;
-    }
+  }
 
-    // Sayfa yÃ¼klendiÄŸinde yorumlarÄ± Ã§ek
-  document.addEventListener('DOMContentLoaded', function() {
-  loadGoogleReviews();
+    // Sayfa yüklendiðinde yorumlarý çek
+    document.addEventListener('DOMContentLoaded', function() {
+ loadGoogleReviews();
         loadInstagramPosts();
 
-    // Smooth scroll iÃ§in tÃ¼m linklere event listener ekle
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-         const href = this.getAttribute('href');
+        // Smooth scroll için tüm linklere event listener ekle
+   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+   anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
 
-     // Sadece sayfa iÃ§i link ise scroll yap
+        // Sadece sayfa içi link ise scroll yap
     if (href && href !== '#') {
-           const target = document.querySelector(href);
+          const target = document.querySelector(href);
 
-    if (target) {
-     e.preventDefault();
+   if (target) {
+        e.preventDefault();
 
-    // Smooth scroll animasyonu
-       target.scrollIntoView({
-  behavior: 'smooth',
-    block: 'start'
+        // Smooth scroll animasyonu
+   target.scrollIntoView({
+       behavior: 'smooth',
+             block: 'start'
    });
 
-    // URL'yi gÃ¼ncelle
+           // URL'yi güncelle
       history.pushState(null, null, href);
+     }
    }
-         }
-            });
+ });
         });
     });
 </script>
