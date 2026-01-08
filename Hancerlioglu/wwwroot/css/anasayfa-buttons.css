@@ -1,5 +1,12 @@
 /* Ana Sayfa Buton Stilleri - Temaya Uygun Kahverengi-Altýn Palet */
 
+/* Hide desktop social-bar on AnaSayfa for mobile to prevent duplicate right-side sets */
+@media (max-width:768px) {
+ body.anasayfa-page .social-bar {
+ display: none !important;
+ }
+}
+
 /* Hero Section Butonlarý */
 body.anasayfa-page .hero-btn-primary {
     background: linear-gradient(135deg, #d4a574 0%, #f5c76a 100%) !important;
@@ -137,4 +144,21 @@ body.anasayfa-page .swiper-pagination-bullet {
 
 body.anasayfa-page .swiper-pagination-bullet-active {
     background: #8b4513 !important;
+}
+
+/* AnaSayfa: show only the desktop-style right social bar on small screens */
+@media (max-width:768px) {
+ body.anasayfa-page .fixed-social-buttons {
+ display: none !important;
+ }
+
+ /* Override inline/mobile layout rules to show the desktop social-bar on AnaSayfa */
+ body.anasayfa-page .social-bar {
+ display: flex !important;
+ position: fixed !important;
+ right:20px !important;
+ top:50% !important;
+ transform: translateY(-50%) !important;
+ z-index:1000 !important;
+ }
 }

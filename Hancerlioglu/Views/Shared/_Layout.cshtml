@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="tr">
 <head>
  <meta charset="utf-8" />
@@ -44,7 +44,7 @@
             100% { background-position: 0 50%; }
         }
 
- /* Amblemin üzerine gelmemesi için z-index */
+ /* Amblemin Ã¼zerine gelmemesi iÃ§in z-index */
   .logo-container, .logo-img {
  position: relative !important;
       z-index: 10 !important;
@@ -61,7 +61,7 @@
         color: #6b5d4f !important;
 border-top: 3px solid #d4a574 !important;
        padding: 20px 0;
-            box-shadow: 0 -4px 15px rgba(212, 165, 116, 0.15);
+            box-shadow: 0 -4px 15px rgba(212,165,116,0.15);
      }
 
     .footer .text-muted {
@@ -78,7 +78,7 @@ border-top: 3px solid #d4a574 !important;
             color: #d4a574 !important;
         }
 
-        /* Desktop Social Bar (SAÐ TARAF) */
+        /* Desktop Social Bar (SAÄž TARAF) */
         .social-bar {
     position: fixed;
     right: 20px;
@@ -142,7 +142,7 @@ border-top: 3px solid #d4a574 !important;
        color: white !important;
     }
 
-        /* Mobile Social Buttons (Sað Alt) */
+        /* Mobile Social Buttons (SaÄŸ Alt) */
         .fixed-social-buttons {
    display: none;
         }
@@ -315,79 +315,61 @@ box-shadow: 0 8px 25px rgba(212, 165, 116, 0.5);
        .fixed-social-buttons {
    display: flex;
            position: fixed;
-           bottom: 20px;
-     right: 20px;
+           right: 20px; /* same as desktop */
+   top: 50%;
+     transform: translateY(-50%);
    z-index: 1000;
   flex-direction: column;
-      gap: 10px;
-            }
-
-   .social-btn {
-   display: flex;
-       align-items: center;
-      justify-content: center;
-       width: 50px;
-      height: 50px;
-           background: rgba(255, 255, 255, 0.9);
-        border-radius: 50%;
-        color: #333;
-      font-size: 20px;
-       transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      border: none;
-        cursor: pointer;
-        text-decoration: none;
+      gap: 15px;
  }
 
-         .social-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
+         /* Use same visuals as desktop .social-icon */
+         .fixed-social-buttons .social-icon,
+ .fixed-social-buttons a.social-icon,
+ .fixed-social-buttons button.social-icon {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width:50px;
+ height:50px;
+ background: rgba(255,255,255,0.9);
+ border-radius:50%;
+ color: #333;
+ font-size:20px;
+ transition: all 0.3s ease;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ text-decoration: none;
+ cursor: pointer;
+ border: none;
+ }
+ 
+ .fixed-social-buttons .social-icon:hover {
+ transform: translateX(-5px);
+ box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+ }
+ 
+ /* Per-button gradients matching desktop */
+ .fixed-social-buttons .facebook { background: linear-gradient(135deg, #8b73550%, #6b5d4f100%) !important; color: white !important; }
+ .fixed-social-buttons .instagram { background: linear-gradient(135deg, #a689680%, #8b7355100%) !important; color: white !important; }
+ .fixed-social-buttons .phone { background: linear-gradient(135deg, #d4a5740%, #c49e26100%) !important; color: white !important; }
+ .fixed-social-buttons .location { background: linear-gradient(135deg, #7a6b5a0%, #6b5d4f100%) !important; color: white !important; }
+ .fixed-social-buttons .menu { background: linear-gradient(135deg, #8b73550%, #7a6b5a100%) !important; color: white !important; }
+ .fixed-social-buttons .home { background: linear-gradient(135deg, #f5c76a0%, #d4a574100%) !important; color: white !important; }
 
-            .facebook-btn {
-        background-color: #3b5998;
- color: white;
+ .phone-popup-content {
+ padding:25px;
  }
 
-            .instagram-btn {
-          background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  color: white;
-     }
+ .phone-number {
+ font-size:1.5rem;
+ }
 
-   .phone-btn {
-         background-color: #25D366;
-   color: white;
-     }
+ .phone-popup-header i {
+ font-size:2.5rem;
+ }
+ }
 
-       .location-btn {
-      background-color: #007bff;
-   color: white;
-            }
-
-          .menu-btn {
-     background-color: #343a40;
-          color: white;
-      }
-            
-            .home-btn {
-           background: linear-gradient(135deg, #f5c76a 0%, #d4a574 100%);
-         color: white;
-            }
-      
-       .phone-popup-content {
-       padding: 25px;
-            }
-
-            .phone-number {
-      font-size: 1.5rem;
-  }
-
-    .phone-popup-header i {
-     font-size: 2.5rem;
-      }
-        }
-
-        /* Desktop'ta mobil butonlarý gizle */
+        /* Desktop'ta mobil butonlarÄ± gizle */
         @@media (min-width: 769px) {
  .fixed-social-buttons {
 display: none !important;
@@ -422,56 +404,56 @@ display: none !important;
     <a href="https://www.google.com/maps?q=36.611389,34.305528" target="_blank" rel="noopener noreferrer" class="social-icon location" aria-label="Konum">
             <i class="fas fa-map-marker-alt"></i>
         </a>
-  <a href="/Home/Index" class="social-icon menu" aria-label="Menü">
+  <a href="/Home/Index" class="social-icon menu" aria-label="MenÃ¼">
         <i class="fas fa-utensils"></i>
         </a>
     </div>
 
-    <!-- Mobile Fixed Social Buttons (Sað Alt) -->
+    <!-- Mobile Fixed Social Buttons (SaÄŸ Alt) - always rendered to match desktop on all pages -->
     <div class="fixed-social-buttons">
-<a href="/Home/AnaSayfa" class="social-btn home-btn" aria-label="Ana Sayfa">
-            <i class="fas fa-home"></i>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61585290026850" target="_blank" rel="noopener noreferrer" class="social-btn facebook-btn" aria-label="Facebook">
-   <i class="fab fa-facebook-f"></i>
+<a href="/Home/AnaSayfa" class="social-icon home" aria-label="Ana Sayfa">
+ <i class="fas fa-home"></i>
  </a>
-     <button type="button" data-instagram="https://www.instagram.com/gaziantepli_hancerlioglu/" class="social-btn instagram-btn" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </button>
-<button id="phoneButtonMobile" class="social-btn phone-btn" aria-label="Telefon">
-   <i class="fas fa-phone-alt"></i>
-   </button>
-        <a href="https://www.google.com/maps?q=36.611389,34.305528" target="_blank" rel="noopener noreferrer" class="social-btn location-btn" aria-label="Konum">
-    <i class="fas fa-map-marker-alt"></i>
-        </a>
-     <a href="/Home/Index" class="social-btn menu-btn" aria-label="Menü">
-  <i class="fas fa-utensils"></i>
-      </a>
-    </div>
+ <a href="https://www.facebook.com/profile.php?id=61585290026850" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+ <i class="fab fa-facebook-f"></i>
+ </a>
+ <button type="button" data-instagram="https://www.instagram.com/gaziantepli_hancerlioglu/" class="social-icon instagram" aria-label="Instagram">
+ <i class="fab fa-instagram"></i>
+ </button>
+<button id="phoneButtonMobile" class="social-icon phone" aria-label="Telefon">
+ <i class="fas fa-phone-alt"></i>
+ </button>
+ <a href="https://www.google.com/maps?q=36.611389,34.305528" target="_blank" rel="noopener noreferrer" class="social-icon location" aria-label="Konum">
+ <i class="fas fa-map-marker-alt"></i>
+ </a>
+ <a href="/Home/Index" class="social-icon menu" aria-label="MenÃ¼">
+ <i class="fas fa-utensils"></i>
+ </a>
+ </div>
 
     <!-- Telefon Popup HTML -->
     <div id="phonePopup" class="phone-popup">
         <div class="phone-popup-content">
             <button id="closePopup" class="phone-popup-close" aria-label="Kapat">&times;</button>
  <div class="phone-popup-header">
-     <i class="fas fa-phone-alt"></i>
-      <h3>Bize Ulaþýn</h3>
-        </div>
- <div class="phone-popup-body">
-       <div id="phoneNumber" class="phone-number">0541 418 49 76</div>
-       <button id="copyButton" class="copy-btn">
-           <i class="fas fa-copy"></i> Numarayý Kopyala
-           </button>
-       <div id="copySuccess" class="copy-success">
-    <i class="fas fa-check-circle"></i> Kopyalandý!
-    </div>
-            </div>
-        </div>
-    </div>
+ <i class="fas fa-phone-alt"></i>
+ <h3>Bize UlaÅŸÄ±n</h3>
+ </div>
+ <div class="phone-popup_body">
+ <div id="phoneNumber" class="phone-number">05414184976</div>
+ <button id="copyButton" class="copy-btn">
+ <i class="fas fa-copy"></i> NumarayÄ± Kopyala
+ </button>
+ <div id="copySuccess" class="copy-success">
+ <i class="fas fa-check-circle"></i> KopyalandÄ±!
+ </div>
+ </div>
+ </div>
+ </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - HANÇERLÝOÐLU
+            &copy; 2025 - HANÃ‡ERLÄ°OÄžLU
         </div>
     </footer>
 
@@ -534,13 +516,13 @@ closePopup.addEventListener('click', function() {
        });
             }
 
-            // Instagram Güvenli Açýlýþ - Tüm Instagram butonlarý için
+            // Instagram GÃ¼venli AÃ§Ä±lÄ±ÅŸ - TÃ¼m Instagram butonlarÄ± iÃ§in
    const instagramButtons = document.querySelectorAll('[data-instagram]');
             instagramButtons.forEach(function(btn) {
              btn.addEventListener('click', function(e) {
  e.preventDefault();
   const instagramUrl = this.getAttribute('data-instagram');
-             // Yeni sekmede aç ama referrer bilgisi göndermeden
+             // Yeni sekmede aÃ§ ama referrer bilgisi gÃ¶ndermeden
  const newWindow = window.open('', '_blank');
  if (newWindow) {
    newWindow.opener = null;
