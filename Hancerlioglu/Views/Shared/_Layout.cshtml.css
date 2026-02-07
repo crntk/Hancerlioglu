@@ -240,7 +240,8 @@ body {
   overflow-x: hidden;
   background: linear-gradient(135deg, #e8dfd2 0%, #f5ede1 30%, #e8dfd2 60%, #f5ede1 100%) !important;
   background-size: 400% 400% !important;
-  animation: gradientShift 15s ease infinite !important;
+  /* Slow background animation to reduce CPU */
+  animation: gradientShift 120s linear infinite !important;
 }
 
 @keyframes gradientShift {
@@ -252,75 +253,5 @@ body {
   }
   100% {
     background-position: 0% 50%;
-  }
-}
-
-/* Yüzen Dekoratif Şekiller - body::after */
-body::after {
-  content: '' !important;
-  position: fixed !important;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(166, 137, 104, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(139, 115, 85, 0.10) 0%, transparent 50%),
-    radial-gradient(circle at 30% 80%, rgba(212, 165, 116, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 70% 20%, rgba(166, 137, 104, 0.10) 0%, transparent 50%) !important;
-  animation: floatBackground 25s ease-in-out infinite !important;
-  z-index: -1 !important;
-  pointer-events: none;
-}
-
-@keyframes floatBackground {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-  }
-  25% {
-    transform: translate(-8%, -8%) rotate(90deg) scale(1.1);
-  }
-  50% {
-    transform: translate(8%, 8%) rotate(180deg) scale(1);
-  }
-  75% {
-    transform: translate(-5%, 5%) rotate(270deg) scale(1.05);
-  }
-}
-
-/* Ek Hareketli Parçacıklar - body::before override */
-body::before {
-  content: '' !important;
-  position: fixed !important;
-  top: 0;
-left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(212, 165, 116, 0.10) 0%, transparent 35%),
-    radial-gradient(circle at 90% 80%, rgba(166, 137, 104, 0.08) 0%, transparent 35%),
-    radial-gradient(circle at 30% 60%, rgba(139, 115, 85, 0.08) 0%, transparent 35%),
-    radial-gradient(circle at 60% 40%, rgba(212, 165, 116, 0.06) 0%, transparent 35%),
-    radial-gradient(circle at 80% 20%, rgba(166, 137, 104, 0.08) 0%, transparent 35%) !important;
-  background-size: 250% 250%, 200% 200%, 280% 280%, 220% 220%, 240% 240% !important;
-  background-position: 0% 0%, 100% 100%, 50% 50%, 20% 80%, 80% 20% !important;
-  animation: particleMove 20s ease-in-out infinite !important;
-  z-index: -2 !important;
-  pointer-events: none;
-}
-
-@keyframes particleMove {
-  0%, 100% {
-    background-position: 0% 0%, 100% 100%, 50% 50%, 20% 80%, 80% 20%;
-  }
-  25% {
-    background-position: 25% 25%, 75% 75%, 30% 70%, 40% 60%, 60% 40%;
-  }
-  50% {
-    background-position: 100% 100%, 0% 0%, 30% 70%, 80% 20%, 20% 80%;
-  }
-  75% {
-    background-position: 75% 75%, 25% 25%, 70% 30%, 60% 40%, 40% 60%;
   }
 }

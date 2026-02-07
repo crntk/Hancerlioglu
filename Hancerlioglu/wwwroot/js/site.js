@@ -49,14 +49,21 @@ function debounce(func, wait) {
     };
 }
 
-// Optimize animations on scroll
+// Optimize animations on scroll - use passive listener and rAF
 let ticking = false;
-window.addEventListener('scroll', function() {
+function onScrollHandler() {
     if (!ticking) {
      window.requestAnimationFrame(function() {
-  // Your scroll handling code here
-            ticking = false;
+        // Minimal work in animation frame - defer expensive work
+        // e.g., toggle classes, but avoid layout reads here
+        ticking = false;
         });
      ticking = true;
  }
-});
+}
+
+// Use passive listener to avoid blocking scroll
+window.addEventListener('scroll', onScrollHandler, { passive: true });
+
+// Expose debounce for other scripts
+window.hancerliogluDebounce = debounce;

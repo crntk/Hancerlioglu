@@ -12,50 +12,56 @@ namespace Hancerlioglu.Middleware
         private const int SlowRequestThresholdMs = 500;
 
         public PerformanceMonitoringMiddleware(RequestDelegate next, ILogger<PerformanceMonitoringMiddleware> logger)
-     {
+        {
             _next = next;
-      _logger = logger;
+            _logger = logger;
         }
 
         public async Task InvokeAsync(HttpContext context)
         {
-     var sw = Stopwatch.StartNew();
-            
+            var sw = Stopwatch.StartNew();
+
             try
-      {
-       await _next(context);
-      }
-      finally
             {
-        sw.Stop();
- 
-  if (sw.ElapsedMilliseconds > SlowRequestThresholdMs)
-    {
-          _logger.LogWarning(
-              "Slow request detected: {Method} {Path} took {ElapsedMs}ms",
-    context.Request.Method,
-               context.Request.Path,
-             sw.ElapsedMilliseconds);
-      }
-  else
-           {
-              _logger.LogDebug(
-             "Request completed: {Method} {Path} in {ElapsedMs}ms",
-           context.Request.Method,
- context.Request.Path,
-  sw.ElapsedMilliseconds);
-      }
-   }
- }
- }
+                await _next(context);
+            }
+            finally
+            {
+                sw.Stop();
+
+                if (sw.ElapsedMilliseconds > SlowRequestThresholdMs)
+                {
+                    if (_logger.IsEnabled(LogLevel.Warning))
+                    {
+                        _logger.LogWarning(
+                            "Slow request detected: {Method} {Path} took {ElapsedMs}ms",
+                            context.Request.Method,
+                            context.Request.Path,
+                            sw.ElapsedMilliseconds);
+                    }
+                }
+                else
+                {
+                    if (_logger.IsEnabled(LogLevel.Debug))
+                    {
+                        _logger.LogDebug(
+                            "Request completed: {Method} {Path} in {ElapsedMs}ms",
+                            context.Request.Method,
+                            context.Request.Path,
+                            sw.ElapsedMilliseconds);
+                    }
+                }
+            }
+        }
+    }
 
     /// <summary>
     /// Extension method for middleware registration
-  /// </summary>
+    /// </summary>
     public static class PerformanceMonitoringMiddlewareExtensions
     {
         public static IApplicationBuilder UsePerformanceMonitoring(this IApplicationBuilder builder)
-  {
+        {
             return builder.UseMiddleware<PerformanceMonitoringMiddleware>();
         }
     }
